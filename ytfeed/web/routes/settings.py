@@ -68,6 +68,18 @@ def _run_sync_bg() -> None:
 
 
 @router.post("/settings/sync")
-def trigger_sync(request: Request, background_tasks: BackgroundTasks):
-    background_tasks.add_task(_run_sync_bg)
+def trigger_sync(
+    request: Request,
+    background_tasks: BackgroundTasks,
+    db: Session = Depends(get_db),
+):
+    # don't stack a second sync on top of one that's still running
+    running = db.scalar(
+        select(SyncRun)
+        .where(SyncRun.finished_at.is_(None))
+        .order_by(SyncRun.started_at.desc())
+        .limit(1)
+    )
+    if running is None:
+        background_tasks.add_task(_run_sync_bg)
     return RedirectResponse("/settings", status_code=303)

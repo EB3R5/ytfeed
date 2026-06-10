@@ -156,8 +156,10 @@ def sync_my_playlists(session: Session, youtube) -> tuple[int, int]:
             snippet_pi = pi_item.get("snippet", {})
             pi = existing.get(video.video_id)
             if pi is None:
+                # YouTube playlists can contain the same video twice; keep one row
                 pi = PlaylistItem(playlist_id=playlist_id, video_id=video.video_id)
                 session.add(pi)
+                existing[video.video_id] = pi
             pi.position = snippet_pi.get("position", 0)
             pi.added_at = _parse_dt(snippet_pi.get("publishedAt"))
         session.commit()
@@ -278,21 +280,30 @@ def sync_all(
         channels = list(
             session.scalars(select(Channel).where(Channel.is_active.is_(True)))
         )
+        failed_channels = 0
         for i, channel in enumerate(channels, 1):
             report(f"Syncing uploads {i}/{len(channels)}: {channel.title}")
-            run.videos_upserted += sync_channel_uploads(
-                session,
-                youtube,
-                channel,
-                force_full=force_full,
-                initial_backfill=config.sync.initial_backfill,
-            )
+            try:
+                run.videos_upserted += sync_channel_uploads(
+                    session,
+                    youtube,
+                    channel,
+                    force_full=force_full,
+                    initial_backfill=config.sync.initial_backfill,
+                )
+            except Exception as exc:  # one bad channel must not kill the run
+                session.rollback()
+                failed_channels += 1
+                logger.warning("uploads sync failed for %s: %s", channel.title, exc)
+        if failed_channels:
+            run.error_message = f"{failed_channels} channel(s) failed; see logs"
         run.finished_at = utcnow().replace(tzinfo=None)
         session.commit()
         report(
             f"Sync complete: {run.channels_synced} channels, {run.videos_upserted} videos upserted."
         )
     except Exception as exc:  # record failure in the audit row, then re-raise
+        session.rollback()
         run.error_message = str(exc)
         run.finished_at = utcnow().replace(tzinfo=None)
         session.commit()

@@ -15,11 +15,14 @@
     </summary>
     <div class="picker-list">
       {% for channel in channels %}
-      <label class="picker-item">
-        <input type="checkbox" name="channel" value="{{ channel.channel_id }}"
-               {{ 'checked' if channel.channel_id in selected_channel_ids else '' }}>
-        {{ channel.title }} {% if channel.is_monitored %}★{% endif %}
-      </label>
+      <div class="picker-item">
+        <label>
+          <input type="checkbox" name="channel" value="{{ channel.channel_id }}"
+                 {{ 'checked' if channel.channel_id in selected_channel_ids else '' }}>
+          {{ channel.title }}
+        </label>
+        {% include "partials/monitor_button.html" %}
+      </div>
       {% endfor %}
     </div>
   </details>
