@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+config.toml
+secrets/
+!secrets/.gitkeep
+data/
+!data/.gitkeep
+.DS_Store

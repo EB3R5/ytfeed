@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}{{ playlist.title }} — ytfeed{% endblock %}
+{% block content %}
+<h1>{{ playlist.title }}</h1>
+<p class="meta">{{ videos|length }} videos</p>
+
+<form class="filters"
+      hx-get="/playlists/{{ playlist.playlist_id }}"
+      hx-target="#video-list"
+      hx-swap="outerHTML"
+      hx-trigger="keyup changed delay:300ms from:input[name='q']">
+  <input type="search" name="q" value="{{ q }}" placeholder="Search this playlist…">
+</form>
+
+{% include "partials/video_list.html" %}
+{% endblock %}

@@ -1,0 +1,6 @@
+<button class="btn btn-star {{ 'starred' if channel.is_monitored else '' }}"
+        hx-post="/channels/{{ channel.channel_id }}/monitor"
+        hx-swap="outerHTML"
+        title="{{ 'Unstar (remove from Recents)' if channel.is_monitored else 'Star (show on Recents)' }}">
+  {{ '★' if channel.is_monitored else '☆' }}
+</button>

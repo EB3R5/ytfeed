@@ -1,0 +1,26 @@
+<div id="video-list">
+  {% if videos %}
+  <form id="queue-form" method="post" action="/queue">
+    <input type="hidden" name="next_url" value="{{ request.url.path }}">
+    <div class="queue-bar">
+      <button type="submit" class="btn btn-primary">Queue selected for transcription</button>
+      <span class="hint">{{ videos|length }} videos shown</span>
+    </div>
+  </form>
+  <table class="video-table">
+    <tbody>
+      {% for video in videos %}
+        {% include "partials/video_row.html" %}
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p class="empty">
+    {% if used_picker is defined and not used_picker and not selected_channel_ids %}
+      No channels monitored yet — star channels on the Subscriptions page, or pick some above for a one-off view.
+    {% else %}
+      No videos found.
+    {% endif %}
+  </p>
+  {% endif %}
+</div>

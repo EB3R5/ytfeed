@@ -1,0 +1,17 @@
+<div id="sync-status"
+     {% if last_run and not last_run.finished_at %}hx-get="/settings" hx-trigger="every 2s" hx-swap="outerHTML"{% endif %}>
+  {% if last_run %}
+    {% if last_run.finished_at %}
+      {% if last_run.error_message %}
+      <p class="badge badge-failed">Last sync failed: {{ last_run.error_message }}</p>
+      {% else %}
+      <p>Last sync ({{ last_run.kind }}) finished {{ last_run.finished_at.strftime('%Y-%m-%d %H:%M') }} —
+        {{ last_run.channels_synced }} channels, {{ last_run.videos_upserted }} videos upserted.</p>
+      {% endif %}
+    {% else %}
+    <p class="badge badge-in_progress">Sync running… started {{ last_run.started_at.strftime('%H:%M:%S') }}</p>
+    {% endif %}
+  {% else %}
+  <p class="empty">No syncs yet.</p>
+  {% endif %}
+</div>

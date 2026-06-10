@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ytfeed"
+version = "0.1.0"
+description = "Personal YouTube feed: sync subscriptions/playlists into SQLite, browse locally, pipe transcripts into the Obsidian RAG vault"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "jinja2",
+    "python-multipart",
+    "sqlalchemy>=2.0",
+    "google-api-python-client",
+    "google-auth-oauthlib",
+    "google-auth",
+    "yt-dlp",
+    "youtube-transcript-api",
+    "notebooklm-py",
+]
+
+[project.scripts]
+ytfeed = "ytfeed.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["ytfeed*"]

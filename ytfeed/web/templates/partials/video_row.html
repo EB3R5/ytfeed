@@ -1,0 +1,26 @@
+<tr class="video-row">
+  <td class="check-cell">
+    <input type="checkbox" name="video_ids" value="{{ video.video_id }}" form="queue-form">
+  </td>
+  <td class="thumb-cell">
+    {% if video.thumbnail_url %}
+    <a href="{{ video.url }}" target="_blank" rel="noopener">
+      <img src="{{ video.thumbnail_url }}" alt="" loading="lazy" class="thumb">
+    </a>
+    {% endif %}
+  </td>
+  <td class="title-cell">
+    <a href="{{ video.url }}" target="_blank" rel="noopener">{{ video.title }}</a>
+    <div class="meta">
+      {% if video.channel_id %}
+      <a href="/channels/{{ video.channel_id }}" target="_blank">{{ video.channel_title }}</a>
+      {% else %}
+      {{ video.channel_title }}
+      {% endif %}
+      {% if video.published_at %}· {{ video.published_at.strftime('%Y-%m-%d') }}{% endif %}
+    </div>
+  </td>
+  <td class="status-cell">
+    <span class="badge badge-{{ video.transcript_status }}">{{ video.transcript_status }}</span>
+  </td>
+</tr>

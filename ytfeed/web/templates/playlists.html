@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Playlists — ytfeed{% endblock %}
+{% block content %}
+<h1>Playlists</h1>
+{% if playlists %}
+<table class="channel-table">
+  <thead><tr><th></th><th>Playlist</th><th>Items</th><th>Last synced</th></tr></thead>
+  <tbody>
+    {% for playlist in playlists %}
+    <tr>
+      <td class="thumb-cell">
+        {% if playlist.thumbnail_url %}<img src="{{ playlist.thumbnail_url }}" alt="" class="avatar" loading="lazy">{% endif %}
+      </td>
+      <td><a href="/playlists/{{ playlist.playlist_id }}">{{ playlist.title }}</a></td>
+      <td>{{ playlist.item_count }}</td>
+      <td>{{ playlist.last_synced_at.strftime('%Y-%m-%d %H:%M') if playlist.last_synced_at else 'never' }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p class="empty">No playlists synced yet. Run a sync from <a href="/settings">Settings</a>.</p>
+{% endif %}
+{% endblock %}

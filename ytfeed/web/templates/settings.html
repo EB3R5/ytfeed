@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Settings — ytfeed{% endblock %}
+{% block content %}
+<h1>Settings</h1>
+
+<section>
+  <h2>Sync</h2>
+  <form method="post" action="/settings/sync" class="inline">
+    <button type="submit" class="btn btn-primary">Sync now</button>
+  </form>
+  {% include "partials/sync_status.html" %}
+</section>
+
+<section>
+  <h2>Stats</h2>
+  <ul>
+    <li>{{ stats.channels }} channels</li>
+    <li>{{ stats.playlists }} playlists</li>
+    <li>{{ stats.videos }} videos ({{ stats.transcribed }} transcribed)</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Config</h2>
+  <table class="config-table">
+    {% for key, value in config_summary.items() %}
+    <tr><th>{{ key }}</th><td><code>{{ value }}</code></td></tr>
+    {% endfor %}
+  </table>
+</section>
+
+<section>
+  <h2>Channels (by last sync)</h2>
+  <table class="channel-table">
+    <thead><tr><th>Channel</th><th>Last synced</th><th>Newest video</th></tr></thead>
+    <tbody>
+      {% for channel in channels %}
+      <tr>
+        <td><a href="/channels/{{ channel.channel_id }}" target="_blank">{{ channel.title }}</a></td>
+        <td>{{ channel.last_synced_at.strftime('%Y-%m-%d %H:%M') if channel.last_synced_at else 'never' }}</td>
+        <td>{{ channel.last_video_published_at.strftime('%Y-%m-%d') if channel.last_video_published_at else '—' }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endblock %}

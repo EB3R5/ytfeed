@@ -1,0 +1,20 @@
+# Copy to config.toml and edit. config.toml is gitignored.
+
+[paths]
+db_path = "data/ytfeed.db"
+client_secret_path = "/Users/christian/Documents/GitHub/Archive/Obsidian-IO/Tokens/inputoutput.json"
+token_path = "secrets/token.json"
+rag_output_dir = "/Users/christian/Documents/RAG/raw"
+audio_output_dir = "data/audio"
+
+[sync]
+initial_backfill = 50   # videos per channel on first sync; full history on demand
+
+[notebooklm]
+enabled = true
+batch_size = 50          # free-tier source limit per notebook
+profile = "default"
+delete_notebook_after_extract = true
+
+[download]
+download_audio = false
