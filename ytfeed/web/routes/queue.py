@@ -62,6 +62,7 @@ def queue_view(
     rows = db.execute(
         select(TranscriptionQueueItem, Video)
         .join(Video, Video.video_id == TranscriptionQueueItem.video_id)
+        .where(TranscriptionQueueItem.is_hidden.is_(False))
         .order_by(TranscriptionQueueItem.requested_at.desc())
         .limit(200)
     ).all()
@@ -94,6 +95,32 @@ def _run_pipeline_bg() -> None:
 @router.post("/queue/run")
 def run_queue(request: Request, background_tasks: BackgroundTasks):
     background_tasks.add_task(_run_pipeline_bg)
+    return RedirectResponse("/queue", status_code=303)
+
+
+@router.post("/queue/clear")
+def clear_queue(request: Request, db: Session = Depends(get_db)):
+    """Empty the queue page: cancel pending items, hide finished ones.
+
+    Rows stay in the DB as history; items mid-processing are left visible.
+    """
+    items = list(
+        db.scalars(
+            select(TranscriptionQueueItem).where(
+                TranscriptionQueueItem.is_hidden.is_(False)
+            )
+        )
+    )
+    for item in items:
+        if item.status == "processing":
+            continue
+        if item.status == "pending":
+            item.status = "cancelled"
+            video = db.scalar(select(Video).where(Video.video_id == item.video_id))
+            if video is not None and video.transcript_status == "queued":
+                video.transcript_status = "none"
+        item.is_hidden = True
+    db.commit()
     return RedirectResponse("/queue", status_code=303)
 
 

@@ -3,8 +3,11 @@
   <form id="queue-form" method="post" action="/queue">
     <input type="hidden" name="next_url" value="{{ request.url.path }}">
     <div class="queue-bar">
+      <label class="hint select-all-label">
+        <input type="checkbox" class="select-all"> Select all
+      </label>
       <button type="submit" class="btn btn-primary">Queue selected for transcription</button>
-      <span class="hint">{{ videos|length }} videos shown</span>
+      <span class="hint">{{ videos|length }} videos shown · shift-click selects a range</span>
     </div>
   </form>
   <table class="video-table">

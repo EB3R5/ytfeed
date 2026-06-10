@@ -116,7 +116,8 @@ class TranscriptionQueueItem(Base):
     video_id: Mapped[str] = mapped_column(String(32), ForeignKey("videos.video_id"), index=True)
     status: Mapped[str] = mapped_column(
         String(16), default="pending", index=True
-    )  # pending|processing|done|failed
+    )  # pending|processing|done|failed|cancelled
+    is_hidden: Mapped[bool] = mapped_column(Boolean, default=False)
     requested_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow)
     started_at: Mapped[datetime | None] = mapped_column(DateTime)
     completed_at: Mapped[datetime | None] = mapped_column(DateTime)

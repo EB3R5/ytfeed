@@ -13,6 +13,9 @@
       {{ 'Transcription running…' if processing else 'Run transcription now' }}
     </button>
   </form>
+  <form method="post" action="/queue/clear" class="inline">
+    <button type="submit" class="btn">Clear queue</button>
+  </form>
   <span class="hint">{{ pending_count }} pending</span>
 </div>
 
