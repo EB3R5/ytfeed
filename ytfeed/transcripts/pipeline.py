@@ -10,9 +10,12 @@ from __future__ import annotations
 
 import asyncio
 import logging
+import threading
+import time
+from datetime import timedelta
 from pathlib import Path
 
-from sqlalchemy import select
+from sqlalchemy import or_, select
 from sqlalchemy.orm import Session
 
 from ytfeed.config import Config
@@ -22,6 +25,13 @@ from ytfeed.transcripts.base import TranscriptResult, VideoRef
 from ytfeed.transcripts.markdown_writer import write_transcript_file
 
 logger = logging.getLogger(__name__)
+
+# one pipeline run at a time, ever — concurrent runs race over queue items
+_run_lock = threading.Lock()
+
+RETRY_DELAY = timedelta(minutes=5)
+MAX_RETRY_ATTEMPTS = 5
+TIER2_REQUEST_SPACING_SECONDS = 1.0  # pace caption requests to avoid IP blocks
 
 
 def _now():
@@ -33,7 +43,13 @@ def _select_queue_items(
 ) -> list[TranscriptionQueueItem]:
     stmt = (
         select(TranscriptionQueueItem)
-        .where(TranscriptionQueueItem.status == "pending")
+        .where(
+            TranscriptionQueueItem.status == "pending",
+            or_(
+                TranscriptionQueueItem.not_before.is_(None),
+                TranscriptionQueueItem.not_before <= _now(),
+            ),
+        )
         .order_by(TranscriptionQueueItem.requested_at)
     )
     if video_ids:
@@ -74,7 +90,26 @@ def _finalize_item(
     video: Video,
     result: TranscriptResult | None,
 ) -> None:
-    """Write the transcript/placeholder file and update DB rows for one video."""
+    """Write the transcript/placeholder file and update DB rows for one video.
+
+    Retryable failures (IP blocks) are deferred instead: no file is written,
+    the item returns to 'pending' with not_before set, and the auto-retry
+    loop picks it up later. Only after MAX_RETRY_ATTEMPTS does it become a
+    placeholder.
+    """
+    if (
+        result is not None
+        and not result.success
+        and result.retryable
+        and item.attempt_count < MAX_RETRY_ATTEMPTS
+    ):
+        item.status = "pending"
+        item.not_before = _now() + RETRY_DELAY
+        item.error_message = f"{result.error} — retry {item.attempt_count}/{MAX_RETRY_ATTEMPTS} at {item.not_before:%H:%M}"
+        video.transcript_status = "queued"
+        session.commit()
+        return
+
     rag_dir = Path(config.paths.rag_output_dir)
 
     if result and result.success:
@@ -177,14 +212,24 @@ def _process_batch(
             logger.warning("NotebookLM tier failed wholesale: %s — falling to tier 2", exc)
             results = {}
 
-    # tier 2: youtube-transcript-api for anything still missing
+    # tier 2: youtube-transcript-api for anything still missing, paced to
+    # stay under YouTube's rate limit
+    consecutive_blocks = 0
     for ref in refs:
         prior = results.get(ref.video_id)
         if prior is not None and prior.success:
             continue
         tier1_error = prior.error if prior else None
-        result = youtube_api_provider.fetch(ref.video_id)
-        if not result.success and tier1_error:
+        if consecutive_blocks >= 3:
+            # IP is blocked right now; stop hammering and defer the rest
+            result = TranscriptResult(
+                ref.video_id, False, error="IpBlocked (deferred)", retryable=True
+            )
+        else:
+            result = youtube_api_provider.fetch(ref.video_id)
+            consecutive_blocks = consecutive_blocks + 1 if result.retryable else 0
+            time.sleep(TIER2_REQUEST_SPACING_SECONDS)
+        if not result.success and tier1_error and not result.retryable:
             result.error = f"notebooklm: {tier1_error}; youtube_api: {result.error}"
         results[ref.video_id] = result
 
@@ -203,6 +248,40 @@ def run_transcription_pipeline(
     limit: int | None = None,
 ) -> dict[str, TranscriptResult]:
     """Process pending queue items in batches. Returns per-video results."""
+    if not _run_lock.acquire(blocking=False):
+        logger.info("pipeline run already in progress; skipping")
+        return {}
+    try:
+        return _run_locked(session, config, video_ids=video_ids, limit=limit)
+    finally:
+        _run_lock.release()
+
+
+def has_due_pending(session: Session) -> bool:
+    """True if any pending queue item is ready to process (retry timers included)."""
+    return (
+        session.scalar(
+            select(TranscriptionQueueItem.id)
+            .where(
+                TranscriptionQueueItem.status == "pending",
+                or_(
+                    TranscriptionQueueItem.not_before.is_(None),
+                    TranscriptionQueueItem.not_before <= _now(),
+                ),
+            )
+            .limit(1)
+        )
+        is not None
+    )
+
+
+def _run_locked(
+    session: Session,
+    config: Config,
+    *,
+    video_ids: list[str] | None = None,
+    limit: int | None = None,
+) -> dict[str, TranscriptResult]:
     items = _select_queue_items(session, video_ids, limit)
     if not items:
         return {}

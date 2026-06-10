@@ -25,3 +25,6 @@ class TranscriptResult:
     text: str | None = None
     source: str | None = None  # "notebooklm" | "youtube_api"
     error: str | None = None
+    # transient failure (e.g. YouTube IP rate-limit): defer and retry instead
+    # of finalizing a placeholder
+    retryable: bool = False

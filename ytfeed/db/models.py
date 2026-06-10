@@ -119,6 +119,8 @@ class TranscriptionQueueItem(Base):
     )  # pending|processing|done|failed|cancelled
     is_hidden: Mapped[bool] = mapped_column(Boolean, default=False)
     requested_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow)
+    # deferred retry: pending items are not picked up before this time
+    not_before: Mapped[datetime | None] = mapped_column(DateTime)
     started_at: Mapped[datetime | None] = mapped_column(DateTime)
     completed_at: Mapped[datetime | None] = mapped_column(DateTime)
     error_message: Mapped[str | None] = mapped_column(Text)

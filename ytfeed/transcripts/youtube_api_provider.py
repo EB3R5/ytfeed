@@ -5,7 +5,9 @@ from __future__ import annotations
 import logging
 
 from youtube_transcript_api import (
+    IpBlocked,
     NoTranscriptFound,
+    RequestBlocked,
     TranscriptsDisabled,
     VideoUnavailable,
     YouTubeTranscriptApi,
@@ -23,6 +25,12 @@ def fetch(video_id: str) -> TranscriptResult:
         if not text.strip():
             return TranscriptResult(video_id, False, error="Empty transcript returned")
         return TranscriptResult(video_id, True, text=text, source="youtube_api")
+    except (IpBlocked, RequestBlocked) as exc:
+        # transient: YouTube rate-limited this IP — caller should retry later
+        logger.warning("YouTube blocked transcript request for %s (rate limit)", video_id)
+        return TranscriptResult(
+            video_id, False, error=type(exc).__name__, retryable=True
+        )
     except (TranscriptsDisabled, NoTranscriptFound, VideoUnavailable) as exc:
         return TranscriptResult(video_id, False, error=type(exc).__name__)
     except Exception as exc:  # network or parsing failures shouldn't kill the batch
