@@ -28,4 +28,11 @@ app.include_router(settings.router)
 
 @app.on_event("startup")
 def _startup() -> None:
-    init_db(get_config())
+    config = get_config()
+    init_db(config)
+    # a restart kills any in-flight pipeline run; un-stick its queue items
+    from ytfeed.db.session import get_session_factory
+    from ytfeed.transcripts.pipeline import recover_stale_processing
+
+    with get_session_factory(config)() as session:
+        recover_stale_processing(session)

@@ -86,7 +86,9 @@ def sync_subscriptions(session: Session, youtube) -> int:
     """Upsert channels from the user's subscriptions. Returns count synced."""
     count = 0
     seen_ids: list[str] = []
-    for item in yt.fetch_subscriptions(youtube):
+    # network first, writes second — keep the SQLite write lock short
+    subscription_items = list(yt.fetch_subscriptions(youtube))
+    for item in subscription_items:
         snippet = item.get("snippet", {})
         channel_id = snippet.get("resourceId", {}).get("channelId")
         if not channel_id:
@@ -126,9 +128,16 @@ def sync_my_playlists(session: Session, youtube) -> tuple[int, int]:
     """Upsert playlists + playlist_items + videos. Returns (playlists, videos_upserted)."""
     playlists_synced = 0
     videos_upserted = 0
-    for item in yt.fetch_my_playlists(youtube):
+    # ALL network I/O happens before any DB write in each iteration: a dirty
+    # ORM object + any SELECT autoflushes and takes the SQLite write lock, so
+    # fetching pages mid-transaction would hold that lock for the whole
+    # playlist and starve the web app.
+    playlist_payloads = list(yt.fetch_my_playlists(youtube))
+    for item in playlist_payloads:
         playlist_id = item["id"]
         snippet = item.get("snippet", {})
+        items = list(yt.fetch_playlist_items(youtube, playlist_id))
+
         playlist = session.scalar(
             select(Playlist).where(Playlist.playlist_id == playlist_id)
         )
@@ -148,7 +157,7 @@ def sync_my_playlists(session: Session, youtube) -> tuple[int, int]:
                 select(PlaylistItem).where(PlaylistItem.playlist_id == playlist_id)
             )
         }
-        for pi_item in yt.fetch_playlist_items(youtube, playlist_id):
+        for pi_item in items:
             video = _upsert_video_from_playlist_item(session, pi_item)
             if video is None:
                 continue
@@ -240,6 +249,9 @@ def sync_channel_uploads(
                 new_count += 1
             if published and (newest_published is None or published > newest_published):
                 newest_published = published
+        # commit per page so the write lock is released before the next
+        # network fetch
+        session.commit()
         if stop:
             break
 

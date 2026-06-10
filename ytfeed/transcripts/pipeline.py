@@ -1,4 +1,10 @@
-"""3-tier transcription orchestration: NotebookLM -> youtube-transcript-api -> placeholder."""
+"""3-tier transcription orchestration: NotebookLM -> youtube-transcript-api -> placeholder.
+
+Work is processed in batches of config.notebooklm.batch_size (50 = one
+notebook on the free tier). Each batch runs all three tiers and is committed
+to the DB before the next batch starts, so the queue page shows progress in
+waves instead of going dark for the whole run.
+"""
 
 from __future__ import annotations
 
@@ -41,39 +47,122 @@ def _published_str(video: Video) -> str | None:
     return video.published_at.strftime("%Y-%m-%dT%H:%M:%SZ") if video.published_at else None
 
 
-def run_transcription_pipeline(
+def recover_stale_processing(session: Session) -> int:
+    """Reset items stuck in 'processing' (e.g. after a server restart killed a run)."""
+    stale = list(
+        session.scalars(
+            select(TranscriptionQueueItem).where(
+                TranscriptionQueueItem.status == "processing"
+            )
+        )
+    )
+    for item in stale:
+        item.status = "pending"
+        video = session.scalar(select(Video).where(Video.video_id == item.video_id))
+        if video is not None and video.transcript_status == "in_progress":
+            video.transcript_status = "queued"
+    if stale:
+        session.commit()
+        logger.info("recovered %d stale processing queue items", len(stale))
+    return len(stale)
+
+
+def _finalize_item(
     session: Session,
     config: Config,
-    *,
-    video_ids: list[str] | None = None,
-    limit: int | None = None,
-) -> dict[str, TranscriptResult]:
-    """Process pending queue items through the 3-tier pipeline. Returns per-video results."""
-    items = _select_queue_items(session, video_ids, limit)
-    if not items:
-        return {}
+    item: TranscriptionQueueItem,
+    video: Video,
+    result: TranscriptResult | None,
+) -> None:
+    """Write the transcript/placeholder file and update DB rows for one video."""
+    rag_dir = Path(config.paths.rag_output_dir)
+    description = video.description or None
 
-    videos: dict[str, Video] = {}
-    for item in items:
-        video = session.scalar(select(Video).where(Video.video_id == item.video_id))
-        if video is None:
-            item.status = "failed"
-            item.error_message = "video not in DB"
-            continue
-        videos[item.video_id] = video
+    if result and result.success:
+        # enrich description from yt-dlp when sync only had a stub
+        if not description:
+            from ytfeed.metadata import ytdlp_client
+
+            meta = ytdlp_client.fetch_video_metadata(video.video_id)
+            if meta:
+                description = meta.get("description") or None
+                if meta.get("duration") and not video.duration_seconds:
+                    video.duration_seconds = int(meta["duration"])
+
+        path = write_transcript_file(
+            rag_dir,
+            video_id=video.video_id,
+            title=video.title,
+            channel=video.channel_title,
+            published=_published_str(video),
+            transcript=result.text or "",
+            source=result.source or "unknown",
+            description=description,
+        )
+        video.transcript_status = "done"
+        video.transcript_source = result.source
+        video.transcript_path = str(path)
+        item.status = "done"
+        item.error_message = None
+    else:
+        error = result.error if result else "no result"
+        path = placeholder.write_placeholder_file(
+            rag_dir,
+            video_id=video.video_id,
+            title=video.title,
+            channel=video.channel_title,
+            published=_published_str(video),
+            error=error,
+            description=description,
+        )
+        video.transcript_status = "placeholder"
+        video.transcript_source = "placeholder"
+        video.transcript_path = str(path)
+        item.status = "done"
+        item.error_message = error
+
+    if config.download.download_audio:
+        from ytfeed.metadata import ytdlp_client
+
+        audio_path = ytdlp_client.download_audio(
+            video.video_id, Path(config.paths.audio_output_dir)
+        )
+        if audio_path:
+            video.audio_status = "done"
+            video.audio_path = str(audio_path)
+        else:
+            video.audio_status = "failed"
+
+    item.completed_at = _now()
+    session.commit()
+
+
+def _process_batch(
+    session: Session,
+    config: Config,
+    batch_items: list[TranscriptionQueueItem],
+    videos: dict[str, Video],
+) -> dict[str, TranscriptResult]:
+    """Run all three tiers for one batch of queue items and commit results."""
+    # mark just this batch as processing so the queue page reflects reality
+    for item in batch_items:
         item.status = "processing"
         item.started_at = _now()
         item.attempt_count += 1
-        video.transcript_status = "in_progress"
+        videos[item.video_id].transcript_status = "in_progress"
     session.commit()
 
     refs = [
-        VideoRef(video_id=v.video_id, title=v.title, channel_title=v.channel_title)
-        for v in videos.values()
+        VideoRef(
+            video_id=item.video_id,
+            title=videos[item.video_id].title,
+            channel_title=videos[item.video_id].channel_title,
+        )
+        for item in batch_items
     ]
     results: dict[str, TranscriptResult] = {}
 
-    # tier 1: NotebookLM batch
+    # tier 1: NotebookLM (one throwaway notebook for this batch)
     if config.notebooklm.enabled and refs:
         from ytfeed.transcripts import notebooklm_provider
 
@@ -101,71 +190,48 @@ def run_transcription_pipeline(
             result.error = f"notebooklm: {tier1_error}; youtube_api: {result.error}"
         results[ref.video_id] = result
 
-    # write files + update DB per-video
-    rag_dir = Path(config.paths.rag_output_dir)
+    # tier 3 fallback + file writing + DB updates, committed per video
+    for item in batch_items:
+        _finalize_item(session, config, item, videos[item.video_id], results.get(item.video_id))
+
+    return results
+
+
+def run_transcription_pipeline(
+    session: Session,
+    config: Config,
+    *,
+    video_ids: list[str] | None = None,
+    limit: int | None = None,
+) -> dict[str, TranscriptResult]:
+    """Process pending queue items in batches. Returns per-video results."""
+    items = _select_queue_items(session, video_ids, limit)
+    if not items:
+        return {}
+
+    videos: dict[str, Video] = {}
+    workable: list[TranscriptionQueueItem] = []
     for item in items:
-        video = videos.get(item.video_id)
+        video = session.scalar(select(Video).where(Video.video_id == item.video_id))
         if video is None:
+            item.status = "failed"
+            item.error_message = "video not in DB"
             continue
-        result = results.get(item.video_id)
+        videos[item.video_id] = video
+        workable.append(item)
+    session.commit()
 
-        description = video.description or None
-        if result and result.success:
-            # enrich description from yt-dlp when sync only had a stub
-            if not description:
-                from ytfeed.metadata import ytdlp_client
-
-                meta = ytdlp_client.fetch_video_metadata(video.video_id)
-                if meta:
-                    description = meta.get("description") or None
-                    if meta.get("duration") and not video.duration_seconds:
-                        video.duration_seconds = int(meta["duration"])
-
-            path = write_transcript_file(
-                rag_dir,
-                video_id=video.video_id,
-                title=video.title,
-                channel=video.channel_title,
-                published=_published_str(video),
-                transcript=result.text or "",
-                source=result.source or "unknown",
-                description=description,
-            )
-            video.transcript_status = "done"
-            video.transcript_source = result.source
-            video.transcript_path = str(path)
-            item.status = "done"
-            item.error_message = None
-        else:
-            error = result.error if result else "no result"
-            path = placeholder.write_placeholder_file(
-                rag_dir,
-                video_id=video.video_id,
-                title=video.title,
-                channel=video.channel_title,
-                published=_published_str(video),
-                error=error,
-                description=description,
-            )
-            video.transcript_status = "placeholder"
-            video.transcript_source = "placeholder"
-            video.transcript_path = str(path)
-            item.status = "done"
-            item.error_message = error
-
-        if config.download.download_audio:
-            from ytfeed.metadata import ytdlp_client
-
-            audio_path = ytdlp_client.download_audio(
-                video.video_id, Path(config.paths.audio_output_dir)
-            )
-            if audio_path:
-                video.audio_status = "done"
-                video.audio_path = str(audio_path)
-            else:
-                video.audio_status = "failed"
-
-        item.completed_at = _now()
-        session.commit()
+    batch_size = max(1, config.notebooklm.batch_size)
+    results: dict[str, TranscriptResult] = {}
+    total_batches = (len(workable) + batch_size - 1) // batch_size
+    for i in range(0, len(workable), batch_size):
+        batch = workable[i : i + batch_size]
+        logger.info(
+            "transcription batch %d/%d (%d videos)",
+            i // batch_size + 1,
+            total_batches,
+            len(batch),
+        )
+        results.update(_process_batch(session, config, batch, videos))
 
     return results
