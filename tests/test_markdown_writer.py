@@ -27,7 +27,7 @@ class WriterTests(unittest.TestCase):
     def setUp(self):
         self.dir = Path(tempfile.mkdtemp())
 
-    def test_transcript_file_has_frontmatter_and_sections(self):
+    def test_transcript_file_is_frontmatter_title_and_transcript_only(self):
         path = write_transcript_file(
             self.dir,
             video_id="abc123",
@@ -36,13 +36,14 @@ class WriterTests(unittest.TestCase):
             published="2026-01-01T00:00:00Z",
             transcript="hello world",
             source="youtube_api",
-            description="a description",
         )
         text = path.read_text()
         self.assertTrue(text.startswith("---\nvideo_id: abc123"))
-        self.assertIn("## Description", text)
-        self.assertIn("## Transcript", text)
+        self.assertIn("# My Video", text)
         self.assertIn("hello world", text)
+        # metadata/description live in the DB, not the vault file
+        self.assertNotIn("## Description", text)
+        self.assertNotIn("**Channel**", text)
         self.assertEqual(path.name, "My Video - My Channel.md")
 
     def test_success_removes_placeholder(self):

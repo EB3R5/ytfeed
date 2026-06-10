@@ -49,8 +49,10 @@ def write_transcript_file(
     published: str | None,
     transcript: str,
     source: str,
-    description: str | None = None,
 ) -> Path:
+    """Transcript-only vault file: frontmatter identifies the video, the body
+    is the transcript. All other metadata (description, status, etc.) lives in
+    the ytfeed DB, not the vault."""
     url = f"https://www.youtube.com/watch?v={video_id}"
     path = Path(output_dir) / build_filename(title, channel)
     parts = [
@@ -59,16 +61,9 @@ def write_transcript_file(
         ),
         f"# {title}",
         "",
-        f"**Channel**: {channel}",
-        f"**Published**: {published or 'unknown'}",
-        f"**Video ID**: {video_id}",
-        "",
-        f"**Video URL**: {url}",
+        transcript.strip(),
         "",
     ]
-    if description:
-        parts += ["## Description", "", description.strip(), ""]
-    parts += ["## Transcript", "", transcript.strip(), ""]
 
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text("\n".join(parts), encoding="utf-8")

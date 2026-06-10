@@ -15,7 +15,6 @@ def write_placeholder_file(
     channel: str,
     published: str | None,
     error: str | None = None,
-    description: str | None = None,
 ) -> Path:
     url = f"https://www.youtube.com/watch?v={video_id}"
     path = Path(output_dir) / build_filename(title, channel, placeholder=True)
@@ -29,15 +28,7 @@ def write_placeholder_file(
         ),
         f"# {title} (TRANSCRIPTION UNAVAILABLE)",
         "",
-        f"**Channel**: {channel}",
-        f"**Published**: {published or 'unknown'}",
-        f"**Video ID**: {video_id}",
-        "",
-        f"**Video URL**: {url}",
-        "",
     ]
-    if description:
-        parts += ["## Description", "", description.strip(), ""]
     parts += [
         "## Transcription Status",
         "",

@@ -76,16 +76,16 @@ def _finalize_item(
 ) -> None:
     """Write the transcript/placeholder file and update DB rows for one video."""
     rag_dir = Path(config.paths.rag_output_dir)
-    description = video.description or None
 
     if result and result.success:
-        # enrich description from yt-dlp when sync only had a stub
-        if not description:
+        # enrich the DB description from yt-dlp when sync only had a stub;
+        # the vault file stays transcript-only
+        if not video.description:
             from ytfeed.metadata import ytdlp_client
 
             meta = ytdlp_client.fetch_video_metadata(video.video_id)
             if meta:
-                description = meta.get("description") or None
+                video.description = meta.get("description") or ""
                 if meta.get("duration") and not video.duration_seconds:
                     video.duration_seconds = int(meta["duration"])
 
@@ -97,7 +97,6 @@ def _finalize_item(
             published=_published_str(video),
             transcript=result.text or "",
             source=result.source or "unknown",
-            description=description,
         )
         video.transcript_status = "done"
         video.transcript_source = result.source
@@ -113,7 +112,6 @@ def _finalize_item(
             channel=video.channel_title,
             published=_published_str(video),
             error=error,
-            description=description,
         )
         video.transcript_status = "placeholder"
         video.transcript_source = "placeholder"
