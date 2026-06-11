@@ -104,6 +104,17 @@ def sync_subscriptions(session: Session, youtube) -> int:
         channel.subscribed_at = _parse_dt(snippet.get("publishedAt")) or channel.subscribed_at
         channel.is_active = True
         count += 1
+
+    # channels no longer in the subscription list: deactivate so they stop
+    # consuming upload-sync quota (data is kept; resubscribing reactivates)
+    stale = session.scalars(
+        select(Channel).where(
+            Channel.is_active.is_(True), Channel.channel_id.not_in(seen_ids)
+        )
+    )
+    for channel in stale:
+        channel.is_active = False
+        logger.info("deactivated unsubscribed channel: %s", channel.title)
     session.commit()
 
     # resolve uploads playlist ids for channels missing them
