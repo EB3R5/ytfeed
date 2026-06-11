@@ -6,7 +6,8 @@
       <p><span class="badge badge-failed">last sync incomplete</span> {{ last_run.error_message }}</p>
       {% else %}
       <p>Last sync ({{ last_run.kind }}) finished {{ last_run.finished_at.strftime('%Y-%m-%d %H:%M') }} —
-        {{ last_run.channels_synced }} channels, {{ last_run.videos_upserted }} videos upserted.</p>
+        {{ last_run.channels_synced }} channels, {{ last_run.videos_upserted }} videos upserted
+        · ~{{ last_run.api_calls }} API quota units of 10,000/day.</p>
       {% endif %}
     {% else %}
       <p>
@@ -24,7 +25,7 @@
       {% else %}
       <div class="progress progress-indeterminate"><div class="progress-fill"></div></div>
       {% endif %}
-      <p class="hint">started {{ last_run.started_at.strftime('%H:%M:%S') }} UTC · runs in a background thread — safe to leave this page</p>
+      <p class="hint">started {{ last_run.started_at.strftime('%H:%M:%S') }} UTC · ~{{ last_run.api_calls }} API units used · runs in a background thread — safe to leave this page</p>
     {% endif %}
   {% else %}
   <p class="empty">No syncs yet.</p>

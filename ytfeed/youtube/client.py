@@ -2,8 +2,24 @@
 
 from __future__ import annotations
 
+import threading
 from collections.abc import Iterator
 from typing import Any
+
+# per-process API request counter — each Data API request costs >= 1 quota
+# unit, so this is a lower-bound estimate of quota burn
+_counter_lock = threading.Lock()
+_api_calls = 0
+
+
+def count_call() -> None:
+    global _api_calls
+    with _counter_lock:
+        _api_calls += 1
+
+
+def get_api_calls() -> int:
+    return _api_calls
 
 
 def paginate(request_factory, **kwargs) -> Iterator[dict[str, Any]]:
@@ -17,6 +33,7 @@ def paginate(request_factory, **kwargs) -> Iterator[dict[str, Any]]:
         params = dict(kwargs)
         if page_token:
             params["pageToken"] = page_token
+        count_call()
         response = request_factory(**params).execute()
         yield from response.get("items", [])
         page_token = response.get("nextPageToken")
@@ -53,6 +70,7 @@ def fetch_playlist_items_paged(youtube, playlist_id: str) -> Iterator[list[dict[
         }
         if page_token:
             params["pageToken"] = page_token
+        count_call()
         response = youtube.playlistItems().list(**params).execute()
         yield response.get("items", [])
         page_token = response.get("nextPageToken")
@@ -70,6 +88,7 @@ def fetch_channels_content_details(youtube, channel_ids: list[str]) -> dict[str,
     result: dict[str, str] = {}
     for i in range(0, len(channel_ids), 50):
         batch = channel_ids[i : i + 50]
+        count_call()
         response = (
             youtube.channels()
             .list(part="contentDetails", id=",".join(batch), maxResults=50)

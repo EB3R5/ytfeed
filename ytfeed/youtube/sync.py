@@ -142,6 +142,7 @@ def _progress(session: Session, run: SyncRun | None, phase: str, current: int, t
     run.progress_current = current
     run.progress_total = total
     run.progress_detail = detail[:255]
+    run.api_calls = yt.get_api_calls() - getattr(run, "_api_calls_at_start", 0)
     session.commit()
 
 
@@ -338,6 +339,7 @@ def sync_all(
             progress_cb(msg)
 
     run = SyncRun(kind="full" if not force_full else "full-force")
+    run._api_calls_at_start = yt.get_api_calls()  # type: ignore[attr-defined]
     session.add(run)
     session.commit()
 
@@ -351,8 +353,14 @@ def sync_all(
         _, videos_from_playlists = sync_my_playlists(session, youtube, run)
         run.videos_upserted += videos_from_playlists
 
+        # never-synced channels first: quota-limited runs make forward
+        # progress instead of re-walking the same head every time
         channels = list(
-            session.scalars(select(Channel).where(Channel.is_active.is_(True)))
+            session.scalars(
+                select(Channel)
+                .where(Channel.is_active.is_(True))
+                .order_by(Channel.last_synced_at.asc().nullsfirst())
+            )
         )
         failed_channels = 0
         for i, channel in enumerate(channels, 1):
@@ -375,6 +383,7 @@ def sync_all(
         if failed_channels:
             run.error_message = f"{failed_channels} channel(s) failed; see logs"
         run.phase = "done"
+        run.api_calls = yt.get_api_calls() - getattr(run, "_api_calls_at_start", 0)
         run.finished_at = utcnow().replace(tzinfo=None)
         session.commit()
         report(
@@ -388,6 +397,7 @@ def sync_all(
             if _is_quota_error(exc)
             else str(exc)
         )
+        run.api_calls = yt.get_api_calls() - getattr(run, "_api_calls_at_start", 0)
         run.finished_at = utcnow().replace(tzinfo=None)
         session.commit()
         raise

@@ -145,3 +145,4 @@ class SyncRun(Base):
     progress_current: Mapped[int] = mapped_column(Integer, default=0)
     progress_total: Mapped[int] = mapped_column(Integer, default=0)
     progress_detail: Mapped[str | None] = mapped_column(String(255))
+    api_calls: Mapped[int] = mapped_column(Integer, default=0)  # ≈ quota units spent
