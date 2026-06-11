@@ -3,13 +3,28 @@
   {% if last_run %}
     {% if last_run.finished_at %}
       {% if last_run.error_message %}
-      <p class="badge badge-failed">Last sync failed: {{ last_run.error_message }}</p>
+      <p><span class="badge badge-failed">last sync incomplete</span> {{ last_run.error_message }}</p>
       {% else %}
       <p>Last sync ({{ last_run.kind }}) finished {{ last_run.finished_at.strftime('%Y-%m-%d %H:%M') }} —
         {{ last_run.channels_synced }} channels, {{ last_run.videos_upserted }} videos upserted.</p>
       {% endif %}
     {% else %}
-    <p class="badge badge-in_progress">Sync running… started {{ last_run.started_at.strftime('%H:%M:%S') }}</p>
+      <p>
+        <span class="badge badge-in_progress">sync running</span>
+        phase: <strong>{{ last_run.phase or 'starting' }}</strong>
+        {% if last_run.progress_total %}
+          — {{ last_run.progress_current }}/{{ last_run.progress_total }}
+        {% endif %}
+        {% if last_run.progress_detail %}· {{ last_run.progress_detail }}{% endif %}
+      </p>
+      {% if last_run.progress_total %}
+      <div class="progress">
+        <div class="progress-fill" style="width: {{ (100 * last_run.progress_current / last_run.progress_total) | round(1) }}%"></div>
+      </div>
+      {% else %}
+      <div class="progress progress-indeterminate"><div class="progress-fill"></div></div>
+      {% endif %}
+      <p class="hint">started {{ last_run.started_at.strftime('%H:%M:%S') }} UTC · runs in a background thread — safe to leave this page</p>
     {% endif %}
   {% else %}
   <p class="empty">No syncs yet.</p>

@@ -50,6 +50,9 @@ class Playlist(Base):
     description: Mapped[str] = mapped_column(Text, default="")
     thumbnail_url: Mapped[str | None] = mapped_column(String(512))
     item_count: Mapped[int] = mapped_column(Integer, default=0)
+    # raw item count (incl. duplicates) seen on the last full item walk;
+    # when YouTube's item_count matches this, the walk is skipped (quota)
+    synced_item_count: Mapped[int | None] = mapped_column(Integer)
     last_synced_at: Mapped[datetime | None] = mapped_column(DateTime)
 
 
@@ -137,3 +140,8 @@ class SyncRun(Base):
     channels_synced: Mapped[int] = mapped_column(Integer, default=0)
     videos_upserted: Mapped[int] = mapped_column(Integer, default=0)
     error_message: Mapped[str | None] = mapped_column(Text)
+    # live progress, polled by the settings page
+    phase: Mapped[str | None] = mapped_column(String(32))  # subscriptions|playlists|channels
+    progress_current: Mapped[int] = mapped_column(Integer, default=0)
+    progress_total: Mapped[int] = mapped_column(Integer, default=0)
+    progress_detail: Mapped[str | None] = mapped_column(String(255))
