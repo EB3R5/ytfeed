@@ -2,7 +2,12 @@
 {% block title %}{{ playlist.title }} — ytfeed{% endblock %}
 {% block content %}
 <h1>{{ playlist.title }}</h1>
-<p class="meta">{{ videos|length }} videos</p>
+<p class="meta">{{ videos|length }} videos synced
+  {% if playlist.item_count and videos|length < playlist.item_count %}· YouTube reports {{ playlist.item_count }} — sync to close the gap{% endif %}
+</p>
+<form method="post" action="/playlists/{{ playlist.playlist_id }}/sync" class="inline">
+  <button type="submit" class="btn">Sync this playlist</button>
+</form>
 
 <form class="filters"
       hx-get="/playlists/{{ playlist.playlist_id }}"

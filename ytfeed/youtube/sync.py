@@ -164,73 +164,78 @@ def sync_my_playlists(
     playlist_payloads = list(yt.fetch_my_playlists(youtube))
     total = len(playlist_payloads)
     for idx, item in enumerate(playlist_payloads, 1):
-        playlist_id = item["id"]
-        snippet = item.get("snippet", {})
-        title = snippet.get("title", "")
-        yt_item_count = item.get("contentDetails", {}).get("itemCount", 0)
+        title = item.get("snippet", {}).get("title", "")
         _progress(session, run, "playlists", idx, total, title)
-
         try:
-            playlist = session.scalar(
-                select(Playlist).where(Playlist.playlist_id == playlist_id)
-            )
-            needs_walk = (
-                playlist is None or playlist.synced_item_count != yt_item_count
-            )
-            items = (
-                list(yt.fetch_playlist_items(youtube, playlist_id))
-                if needs_walk
-                else []
-            )
-
-            if playlist is None:
-                playlist = Playlist(playlist_id=playlist_id)
-                session.add(playlist)
-            playlist.title = title or playlist.title or ""
-            playlist.description = snippet.get("description", playlist.description or "")
-            playlist.thumbnail_url = _best_thumbnail(snippet) or playlist.thumbnail_url
-            playlist.item_count = yt_item_count
-            playlist.last_synced_at = utcnow().replace(tzinfo=None)
+            videos_upserted += _sync_playlist_payload(session, youtube, item)
             playlists_synced += 1
-
-            if not needs_walk:
-                session.commit()
-                continue
-
-            existing = {
-                pi.video_id: pi
-                for pi in session.scalars(
-                    select(PlaylistItem).where(PlaylistItem.playlist_id == playlist_id)
-                )
-            }
-            seen_ids: set[str] = set()
-            for pi_item in items:
-                video = _upsert_video_from_playlist_item(session, pi_item)
-                if video is None:
-                    continue
-                videos_upserted += 1
-                seen_ids.add(video.video_id)
-                snippet_pi = pi_item.get("snippet", {})
-                pi = existing.get(video.video_id)
-                if pi is None:
-                    # YouTube playlists can contain the same video twice; keep one row
-                    pi = PlaylistItem(playlist_id=playlist_id, video_id=video.video_id)
-                    session.add(pi)
-                    existing[video.video_id] = pi
-                pi.position = snippet_pi.get("position", 0)
-                pi.added_at = _parse_dt(snippet_pi.get("publishedAt"))
-            # drop rows for videos removed from the playlist
-            for vid, pi in existing.items():
-                if vid not in seen_ids:
-                    session.delete(pi)
-            playlist.synced_item_count = len(items)
-            session.commit()
         except Exception as exc:  # one bad playlist must not kill the run
             session.rollback()
             logger.warning("playlist sync failed for %s: %s", title, exc)
             if _is_quota_error(exc):
                 raise
     return playlists_synced, videos_upserted
+
+
+def _sync_playlist_payload(
+    session: Session, youtube, item: dict, *, force: bool = False
+) -> int:
+    """Upsert one playlist (+ items if changed or force) from a playlists().list payload."""
+    playlist_id = item["id"]
+    snippet = item.get("snippet", {})
+    title = snippet.get("title", "")
+    yt_item_count = item.get("contentDetails", {}).get("itemCount", 0)
+
+    playlist = session.scalar(
+        select(Playlist).where(Playlist.playlist_id == playlist_id)
+    )
+    needs_walk = force or playlist is None or playlist.synced_item_count != yt_item_count
+    # network before any DB write — see sync_my_playlists
+    items = list(yt.fetch_playlist_items(youtube, playlist_id)) if needs_walk else []
+
+    if playlist is None:
+        playlist = Playlist(playlist_id=playlist_id)
+        session.add(playlist)
+    playlist.title = title or playlist.title or ""
+    playlist.description = snippet.get("description", playlist.description or "")
+    playlist.thumbnail_url = _best_thumbnail(snippet) or playlist.thumbnail_url
+    playlist.item_count = yt_item_count
+    playlist.last_synced_at = utcnow().replace(tzinfo=None)
+
+    if not needs_walk:
+        session.commit()
+        return 0
+
+    videos_upserted = 0
+    existing = {
+        pi.video_id: pi
+        for pi in session.scalars(
+            select(PlaylistItem).where(PlaylistItem.playlist_id == playlist_id)
+        )
+    }
+    seen_ids: set[str] = set()
+    for pi_item in items:
+        video = _upsert_video_from_playlist_item(session, pi_item)
+        if video is None:
+            continue
+        videos_upserted += 1
+        seen_ids.add(video.video_id)
+        snippet_pi = pi_item.get("snippet", {})
+        pi = existing.get(video.video_id)
+        if pi is None:
+            # YouTube playlists can contain the same video twice; keep one row
+            pi = PlaylistItem(playlist_id=playlist_id, video_id=video.video_id)
+            session.add(pi)
+            existing[video.video_id] = pi
+        pi.position = snippet_pi.get("position", 0)
+        pi.added_at = _parse_dt(snippet_pi.get("publishedAt"))
+    # drop rows for videos removed from the playlist
+    for vid, pi in existing.items():
+        if vid not in seen_ids:
+            session.delete(pi)
+    playlist.synced_item_count = len(items)
+    session.commit()
+    return videos_upserted
 
 
 def _is_quota_error(exc: Exception) -> bool:
@@ -321,6 +326,57 @@ def sync_channel_uploads(
     channel.last_video_published_at = newest_published
     session.commit()
     return new_count
+
+
+def run_partial_sync(
+    session: Session,
+    youtube,
+    kind: str,
+    *,
+    playlist_id: str | None = None,
+) -> SyncRun:
+    """Audited scoped sync: kind = 'subscriptions' | 'playlists' | 'playlist'."""
+    run = SyncRun(kind=kind)
+    run._api_calls_at_start = yt.get_api_calls()  # type: ignore[attr-defined]
+    session.add(run)
+    session.commit()
+    try:
+        if kind == "subscriptions":
+            _progress(session, run, "subscriptions", 0, 0, "fetching subscriptions")
+            run.channels_synced = sync_subscriptions(session, youtube)
+        elif kind == "playlists":
+            _, run.videos_upserted = sync_my_playlists(session, youtube, run)
+        elif kind == "playlist":
+            if not playlist_id:
+                raise ValueError("playlist_id required for kind='playlist'")
+            payloads = yt.fetch_playlists_by_ids(youtube, [playlist_id])
+            if not payloads:
+                raise ValueError(f"playlist {playlist_id} not found on YouTube")
+            title = payloads[0].get("snippet", {}).get("title", playlist_id)
+            _progress(session, run, "playlist", 1, 1, title)
+            # explicit priority sync: force the item walk even if unchanged
+            run.videos_upserted = _sync_playlist_payload(
+                session, youtube, payloads[0], force=True
+            )
+        else:
+            raise ValueError(f"unknown sync kind: {kind}")
+        run.phase = "done"
+        run.api_calls = yt.get_api_calls() - getattr(run, "_api_calls_at_start", 0)
+        run.finished_at = utcnow().replace(tzinfo=None)
+        session.commit()
+    except Exception as exc:
+        session.rollback()
+        run.error_message = (
+            "YouTube API daily quota exceeded — resets at midnight Pacific. "
+            "Progress is saved; run sync again tomorrow."
+            if _is_quota_error(exc)
+            else str(exc)
+        )
+        run.api_calls = yt.get_api_calls() - getattr(run, "_api_calls_at_start", 0)
+        run.finished_at = utcnow().replace(tzinfo=None)
+        session.commit()
+        raise
+    return run
 
 
 def sync_all(

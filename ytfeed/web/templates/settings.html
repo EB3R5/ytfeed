@@ -5,9 +5,17 @@
 
 <section>
   <h2>Sync</h2>
-  <form method="post" action="/settings/sync" class="inline">
-    <button type="submit" class="btn btn-primary">Sync now</button>
-  </form>
+  <div class="queue-bar">
+    <form method="post" action="/settings/sync" class="inline">
+      <button type="submit" class="btn btn-primary">Sync everything</button>
+    </form>
+    <form method="post" action="/settings/sync/subscriptions" class="inline">
+      <button type="submit" class="btn">Subscriptions only</button>
+    </form>
+    <form method="post" action="/settings/sync/playlists" class="inline">
+      <button type="submit" class="btn">Playlists only</button>
+    </form>
+  </div>
   {% include "partials/sync_status.html" %}
 </section>
 

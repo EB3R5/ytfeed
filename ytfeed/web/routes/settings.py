@@ -55,16 +55,39 @@ def settings_page(request: Request, db: Session = Depends(get_db)):
     return templates.TemplateResponse(request, "settings.html", context)
 
 
-def _run_sync_bg() -> None:
+def _run_sync_bg(kind: str = "full", playlist_id: str | None = None) -> None:
     from ytfeed.db.session import get_session_factory
     from ytfeed.youtube.auth import get_youtube_client
-    from ytfeed.youtube.sync import sync_all
+    from ytfeed.youtube.sync import run_partial_sync, sync_all
 
     config = get_config()
     youtube = get_youtube_client(config)
     factory = get_session_factory(config)
     with factory() as session:
-        sync_all(session, youtube, config)
+        if kind == "full":
+            sync_all(session, youtube, config)
+        else:
+            run_partial_sync(session, youtube, kind, playlist_id=playlist_id)
+
+
+def sync_is_running(db: Session) -> bool:
+    return (
+        db.scalar(
+            select(SyncRun)
+            .where(SyncRun.finished_at.is_(None))
+            .order_by(SyncRun.started_at.desc())
+            .limit(1)
+        )
+        is not None
+    )
+
+
+def start_sync(db: Session, background_tasks: BackgroundTasks, kind: str, playlist_id: str | None = None) -> bool:
+    """Queue a sync unless one is already running. Returns True if started."""
+    if sync_is_running(db):
+        return False
+    background_tasks.add_task(_run_sync_bg, kind, playlist_id)
+    return True
 
 
 @router.post("/settings/sync")
@@ -73,13 +96,25 @@ def trigger_sync(
     background_tasks: BackgroundTasks,
     db: Session = Depends(get_db),
 ):
-    # don't stack a second sync on top of one that's still running
-    running = db.scalar(
-        select(SyncRun)
-        .where(SyncRun.finished_at.is_(None))
-        .order_by(SyncRun.started_at.desc())
-        .limit(1)
-    )
-    if running is None:
-        background_tasks.add_task(_run_sync_bg)
+    start_sync(db, background_tasks, "full")
+    return RedirectResponse("/settings", status_code=303)
+
+
+@router.post("/settings/sync/subscriptions")
+def trigger_subscriptions_sync(
+    request: Request,
+    background_tasks: BackgroundTasks,
+    db: Session = Depends(get_db),
+):
+    start_sync(db, background_tasks, "subscriptions")
+    return RedirectResponse("/settings", status_code=303)
+
+
+@router.post("/settings/sync/playlists")
+def trigger_playlists_sync(
+    request: Request,
+    background_tasks: BackgroundTasks,
+    db: Session = Depends(get_db),
+):
+    start_sync(db, background_tasks, "playlists")
     return RedirectResponse("/settings", status_code=303)
