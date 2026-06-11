@@ -34,6 +34,23 @@ Requirements outside this repo:
 .venv/bin/python -m ytfeed transcribe --limit 5
 ```
 
+## Launching
+
+`scripts/ytfeed-launch` starts the server if needed (never duplicates it) and
+opens the browser. Wire it up once:
+
+```bash
+# global command — `ytfeed` from any directory
+ln -sf "$(pwd)/scripts/ytfeed-launch" /opt/homebrew/bin/ytfeed   # macOS/Homebrew
+# (Linux: link into ~/.local/bin and swap `open` for `xdg-open` in the script)
+
+# macOS double-clickable app (drag ~/Applications/ytfeed.app to the Dock)
+osacompile -o ~/Applications/ytfeed.app \
+  -e 'do shell script "'"$(pwd)"'/scripts/ytfeed-launch"'
+```
+
+The server log lands in `data/server.log`. Port override: `YTFEED_PORT=8080 ytfeed`.
+
 ## Web UI
 
 - **Recents** — newest videos from ★-monitored channels; the channel picker
