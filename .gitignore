@@ -8,4 +8,4 @@ secrets/
 data/
 !data/.gitkeep
 .DS_Store
-graphify-out/
+graphify-out/cache/
