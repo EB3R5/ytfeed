@@ -1,16 +1,16 @@
 # Graph Report - ytfeed  (2026-06-12)
 
 ## Corpus Check
-- 36 files · ~14,488 words
+- 37 files · ~14,954 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 403 nodes · 1320 edges · 30 communities
+- 404 nodes · 1321 edges · 28 communities
 - Extraction: 75% EXTRACTED · 25% INFERRED · 0% AMBIGUOUS · INFERRED: 332 edges (avg confidence: 0.67)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `b23e6660`
+- Built from commit: `ad185a98`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -35,8 +35,6 @@
 - [[_COMMUNITY_Community 25|Community 25]]
 - [[_COMMUNITY_Community 26|Community 26]]
 - [[_COMMUNITY_Community 27|Community 27]]
-- [[_COMMUNITY_Community 28|Community 28]]
-- [[_COMMUNITY_Community 29|Community 29]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `_()` - 104 edges
@@ -53,32 +51,32 @@
 ## Surprising Connections (you probably didn't know these)
 - `ArgumentParser` --uses--> `Channel`  [INFERRED]
   ytfeed/cli.py → ytfeed/db/models.py
-- `Credentials` --uses--> `Config`  [INFERRED]
-  ytfeed/youtube/auth.py → ytfeed/config.py
-- `Resource` --uses--> `Config`  [INFERRED]
-  ytfeed/youtube/auth.py → ytfeed/config.py
 - `Config` --uses--> `Config`  [INFERRED]
   ytfeed/web/dependencies.py → ytfeed/config.py
 - `Session` --uses--> `Config`  [INFERRED]
   ytfeed/web/dependencies.py → ytfeed/config.py
+- `Request` --uses--> `Video`  [INFERRED]
+  ytfeed/web/routes/storage.py → ytfeed/db/models.py
+- `Session` --uses--> `Video`  [INFERRED]
+  ytfeed/web/routes/storage.py → ytfeed/db/models.py
 
 ## Import Cycles
 - 1-file cycle: `ytfeed/youtube/sync.py -> ytfeed/youtube/sync.py`
 - 1-file cycle: `ytfeed/db/models.py -> ytfeed/db/models.py`
 
-## Communities (30 total, 0 thin omitted)
+## Communities (28 total, 0 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.08
-Nodes (75): Channel, Base, Channel, ChannelUpload, Playlist, PlaylistItem, SQLAlchemy 2.0 models for ytfeed., SyncRun (+67 more)
+Cohesion: 0.10
+Nodes (33): Channel, _run_channel_sync(), SyncRun, _append_log(), _best_thumbnail(), _progress(), Upsert playlists + playlist_items + videos. Returns (playlists, videos_upserted), Upsert one playlist (+ items if changed or force) from a playlists().list payloa (+25 more)
 
 ### Community 1 - "Community 1"
-Cohesion: 0.21
-Nodes (16): ArgumentParser, get_engine(), get_session_factory(), init_db(), Engine/session factory and schema creation., Namespace, _run_pipeline_bg(), build_parser() (+8 more)
+Cohesion: 0.06
+Nodes (55): ArgumentParser, get_engine(), get_session_factory(), init_db(), Engine/session factory and schema creation., Namespace, clear_queue(), enqueue() (+47 more)
 
 ### Community 2 - "Community 2"
-Cohesion: 0.13
-Nodes (33): TranscriptionQueueItem, NotebookLMClient, TranscriptionQueueItem, Shared types for the transcript pipeline., Minimal video info the providers need., TranscriptResult, VideoRef, _process_chunk() (+25 more)
+Cohesion: 0.12
+Nodes (35): TranscriptionQueueItem, NotebookLMClient, TranscriptionQueueItem, Shared types for the transcript pipeline., Minimal video info the providers need., TranscriptResult, VideoRef, _process_chunk() (+27 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.22
@@ -113,8 +111,8 @@ Cohesion: 0.36
 Nodes (13): A(), B(), e(), Fe(), ie(), ke(), kt(), me() (+5 more)
 
 ### Community 11 - "Community 11"
-Cohesion: 0.22
-Nodes (8): Engineering notes, Launching, Setup, Tests, Transcript pipeline (3 tiers), Usage, Web UI, ytfeed
+Cohesion: 0.20
+Nodes (9): Engineering notes, Launching, Schema, Setup, Tests, Transcript pipeline (3 tiers), Usage, Web UI (+1 more)
 
 ### Community 12 - "Community 12"
 Cohesion: 0.39
@@ -129,43 +127,35 @@ Cohesion: 0.43
 Nodes (7): et(), nt(), qe(), Rt(), se(), tt(), y()
 
 ### Community 23 - "Community 23"
-Cohesion: 0.34
-Nodes (13): _mask(), Settings page: config summary, DB stats, manual sync., Queue a sync unless one is already running. Returns True if started., settings_page(), start_sync(), stop_sync(), sync_is_running(), trigger_playlists_sync() (+5 more)
+Cohesion: 0.33
+Nodes (14): SyncRun, _mask(), Settings page: config summary, DB stats, manual sync., Queue a sync unless one is already running. Returns True if started., settings_page(), start_sync(), stop_sync(), sync_is_running() (+6 more)
 
 ### Community 24 - "Community 24"
-Cohesion: 0.31
-Nodes (10): clear_queue(), enqueue(), queue_view(), Transcription queue: enqueue, view, run, retry., Empty the queue page: cancel pending items, hide finished ones.      Rows stay i, retry_item(), run_queue(), BackgroundTasks (+2 more)
+Cohesion: 0.24
+Nodes (17): Channel, ChannelUpload, Video, backfill_channel(), channel_page(), Subscriptions list and per-channel drill-down pages., refresh_channel(), subscriptions() (+9 more)
 
 ### Community 25 - "Community 25"
-Cohesion: 0.25
-Nodes (10): _dir_size(), _file_sizes(), human_size(), Storage stats: how much disk ytfeed uses locally., (count_existing, total_bytes, count_missing) for a list of file paths., (file_count, total_bytes) for a directory tree; (0, 0) if absent., storage_page(), Path (+2 more)
+Cohesion: 0.24
+Nodes (16): Playlist, PlaylistItem, Exception, playlist_page(), playlists(), Playlists list and per-playlist video pages., sync_one_playlist(), _is_quota_error() (+8 more)
 
 ### Community 26 - "Community 26"
-Cohesion: 0.24
-Nodes (9): Credentials, Resource, _run_channel_sync(), _run_sync_bg(), get_credentials(), get_youtube_client(), OAuth2 InstalledAppFlow for the YouTube Data API (readonly)., Config (+1 more)
+Cohesion: 0.23
+Nodes (13): Credentials, Base, DeclarativeBase, Engine, Resource, sessionmaker, get_credentials(), get_youtube_client() (+5 more)
 
 ### Community 27 - "Community 27"
-Cohesion: 0.31
-Nodes (8): Reset items stuck in 'processing' (e.g. after a server restart killed a run)., recover_stale_processing(), FastAPI app: Recents | Subscriptions | Playlists | Queue | Settings., Pick up deferred queue items (e.g. IP-block retries) once they're due., _retry_monitor(), _startup(), get_config(), Config
-
-### Community 28 - "Community 28"
-Cohesion: 0.25
-Nodes (7): DownloadConfig, NotebookLMConfig, PathsConfig, Path, Load config.toml (falling back to config.example.toml) into a Config object., _resolve(), SyncConfig
-
-### Community 29 - "Community 29"
-Cohesion: 0.33
-Nodes (5): asset_v(), get_db(), Shared FastAPI dependencies: config, DB session, templates., File mtime as a cache-busting version for static asset URLs., Session
+Cohesion: 0.67
+Nodes (3): SQLAlchemy 2.0 models for ytfeed., utcnow(), datetime
 
 ## Knowledge Gaps
-- **29 isolated node(s):** `PathsConfig`, `SyncConfig`, `NotebookLMConfig`, `DownloadConfig`, `Any` (+24 more)
+- **30 isolated node(s):** `PathsConfig`, `SyncConfig`, `NotebookLMConfig`, `DownloadConfig`, `Any` (+25 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Video` connect `Community 0` to `Community 2`, `Community 12`, `Community 23`, `Community 24`, `Community 25`?**
-  _High betweenness centrality (0.113) - this node is a cross-community bridge._
-- **Why does `Config` connect `Community 0` to `Community 1`, `Community 2`, `Community 26`, `Community 27`, `Community 28`, `Community 29`?**
+- **Why does `Video` connect `Community 24` to `Community 0`, `Community 1`, `Community 2`, `Community 12`, `Community 23`, `Community 25`, `Community 26`, `Community 27`?**
+  _High betweenness centrality (0.112) - this node is a cross-community bridge._
+- **Why does `Config` connect `Community 26` to `Community 0`, `Community 1`, `Community 2`, `Community 24`, `Community 25`?**
   _High betweenness centrality (0.054) - this node is a cross-community bridge._
 - **Why does `write_transcript_file()` connect `Community 4` to `Community 2`?**
   _High betweenness centrality (0.045) - this node is a cross-community bridge._

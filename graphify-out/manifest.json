@@ -175,8 +175,8 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1781203714.2695403,
-    "ast_hash": "4babe770066993be9d574ef150b4c375",
+    "mtime": 1781284481.8998067,
+    "ast_hash": "d5b1ba5a471c05d568ce111da4f431a9",
     "semantic_hash": ""
   },
   "requirements.txt": {
@@ -257,6 +257,11 @@
   "ytfeed/web/templates/subscriptions.html": {
     "mtime": 1781205630.7882545,
     "ast_hash": "7f5bcfcb92b28397244716d9c6ba4fe2",
+    "semantic_hash": ""
+  },
+  "scripts/update-erd": {
+    "mtime": 1781284435.2983866,
+    "ast_hash": "1194d7d7078de4ec717d448555cbac48",
     "semantic_hash": ""
   }
 }

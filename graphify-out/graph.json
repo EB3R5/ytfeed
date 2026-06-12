@@ -198,7 +198,7 @@
       "source_file": "ytfeed/config.py",
       "source_location": "L1",
       "id": "ytfeed_config",
-      "community": 28,
+      "community": 1,
       "norm_label": "config.py"
     },
     {
@@ -207,7 +207,7 @@
       "source_file": "ytfeed/config.py",
       "source_location": "L13",
       "id": "ytfeed_config_pathsconfig",
-      "community": 28,
+      "community": 1,
       "norm_label": "pathsconfig"
     },
     {
@@ -216,7 +216,7 @@
       "source_file": "ytfeed/config.py",
       "source_location": "L24",
       "id": "ytfeed_config_syncconfig",
-      "community": 28,
+      "community": 1,
       "norm_label": "syncconfig"
     },
     {
@@ -225,7 +225,7 @@
       "source_file": "ytfeed/config.py",
       "source_location": "L29",
       "id": "ytfeed_config_notebooklmconfig",
-      "community": 28,
+      "community": 1,
       "norm_label": "notebooklmconfig"
     },
     {
@@ -234,7 +234,7 @@
       "source_file": "ytfeed/config.py",
       "source_location": "L37",
       "id": "ytfeed_config_downloadconfig",
-      "community": 28,
+      "community": 1,
       "norm_label": "downloadconfig"
     },
     {
@@ -243,7 +243,7 @@
       "source_file": "ytfeed/config.py",
       "source_location": "L42",
       "id": "ytfeed_config_config",
-      "community": 0,
+      "community": 26,
       "norm_label": "config"
     },
     {
@@ -252,7 +252,7 @@
       "source_file": "ytfeed/config.py",
       "source_location": "L50",
       "id": "ytfeed_config_resolve",
-      "community": 28,
+      "community": 1,
       "norm_label": "_resolve()"
     },
     {
@@ -261,7 +261,7 @@
       "source_file": "ytfeed/config.py",
       "source_location": "L50",
       "id": "ytfeed_config_py_path",
-      "community": 28,
+      "community": 1,
       "norm_label": "path"
     },
     {
@@ -279,7 +279,7 @@
       "source_file": "ytfeed/config.py",
       "source_location": "L1",
       "id": "ytfeed_config_rationale_1",
-      "community": 28,
+      "community": 1,
       "norm_label": "load config.toml (falling back to config.example.toml) into a config object."
     },
     {
@@ -297,7 +297,7 @@
       "source_file": "ytfeed/db/models.py",
       "source_location": "L1",
       "id": "db_models",
-      "community": 0,
+      "community": 27,
       "norm_label": "models.py"
     },
     {
@@ -306,7 +306,7 @@
       "source_file": "ytfeed/db/models.py",
       "source_location": "L20",
       "id": "db_models_utcnow",
-      "community": 0,
+      "community": 27,
       "norm_label": "utcnow()"
     },
     {
@@ -315,7 +315,7 @@
       "source_file": "ytfeed/db/models.py",
       "source_location": "L20",
       "id": "ytfeed_db_models_py_datetime",
-      "community": 0,
+      "community": 27,
       "norm_label": "datetime"
     },
     {
@@ -324,7 +324,7 @@
       "source_file": "ytfeed/db/models.py",
       "source_location": "L24",
       "id": "db_models_base",
-      "community": 0,
+      "community": 26,
       "norm_label": "base"
     },
     {
@@ -333,7 +333,7 @@
       "source_file": "",
       "source_location": "",
       "id": "declarativebase",
-      "community": 0,
+      "community": 26,
       "norm_label": "declarativebase"
     },
     {
@@ -342,7 +342,7 @@
       "source_file": "ytfeed/db/models.py",
       "source_location": "L28",
       "id": "db_models_channel",
-      "community": 0,
+      "community": 24,
       "norm_label": "channel"
     },
     {
@@ -351,7 +351,7 @@
       "source_file": "ytfeed/db/models.py",
       "source_location": "L44",
       "id": "db_models_playlist",
-      "community": 0,
+      "community": 25,
       "norm_label": "playlist"
     },
     {
@@ -360,7 +360,7 @@
       "source_file": "ytfeed/db/models.py",
       "source_location": "L59",
       "id": "db_models_video",
-      "community": 0,
+      "community": 24,
       "norm_label": "video"
     },
     {
@@ -369,7 +369,7 @@
       "source_file": "ytfeed/db/models.py",
       "source_location": "L85",
       "id": "db_models_video_url",
-      "community": 0,
+      "community": 24,
       "norm_label": ".url()"
     },
     {
@@ -378,7 +378,7 @@
       "source_file": "ytfeed/db/models.py",
       "source_location": "L89",
       "id": "db_models_playlistitem",
-      "community": 0,
+      "community": 25,
       "norm_label": "playlistitem"
     },
     {
@@ -387,7 +387,7 @@
       "source_file": "ytfeed/db/models.py",
       "source_location": "L102",
       "id": "db_models_channelupload",
-      "community": 0,
+      "community": 24,
       "norm_label": "channelupload"
     },
     {
@@ -405,7 +405,7 @@
       "source_file": "ytfeed/db/models.py",
       "source_location": "L133",
       "id": "db_models_syncrun",
-      "community": 0,
+      "community": 23,
       "norm_label": "syncrun"
     },
     {
@@ -414,7 +414,7 @@
       "source_file": "ytfeed/db/models.py",
       "source_location": "L1",
       "id": "db_models_rationale_1",
-      "community": 0,
+      "community": 27,
       "norm_label": "sqlalchemy 2.0 models for ytfeed."
     },
     {
@@ -450,7 +450,7 @@
       "source_file": "ytfeed/db/session.py",
       "source_location": "L18",
       "id": "engine",
-      "community": 0,
+      "community": 26,
       "norm_label": "engine"
     },
     {
@@ -468,7 +468,7 @@
       "source_file": "ytfeed/db/session.py",
       "source_location": "L44",
       "id": "sessionmaker",
-      "community": 0,
+      "community": 26,
       "norm_label": "sessionmaker"
     },
     {
@@ -477,7 +477,7 @@
       "source_file": "ytfeed/db/session.py",
       "source_location": "L44",
       "id": "ytfeed_db_session_py_session",
-      "community": 0,
+      "community": 26,
       "norm_label": "session"
     },
     {
@@ -855,7 +855,7 @@
       "source_file": "ytfeed/transcripts/pipeline.py",
       "source_location": "L66",
       "id": "transcripts_pipeline_recover_stale_processing",
-      "community": 27,
+      "community": 1,
       "norm_label": "recover_stale_processing()"
     },
     {
@@ -936,7 +936,7 @@
       "source_file": "ytfeed/transcripts/pipeline.py",
       "source_location": "L67",
       "id": "transcripts_pipeline_rationale_67",
-      "community": 27,
+      "community": 1,
       "norm_label": "reset items stuck in 'processing' (e.g. after a server restart killed a run)."
     },
     {
@@ -1062,7 +1062,7 @@
       "source_file": "ytfeed/web/app.py",
       "source_location": "L1",
       "id": "web_app",
-      "community": 27,
+      "community": 1,
       "norm_label": "app.py"
     },
     {
@@ -1071,7 +1071,7 @@
       "source_file": "ytfeed/web/app.py",
       "source_location": "L35",
       "id": "web_app_retry_monitor",
-      "community": 27,
+      "community": 2,
       "norm_label": "_retry_monitor()"
     },
     {
@@ -1080,7 +1080,7 @@
       "source_file": "ytfeed/web/app.py",
       "source_location": "L55",
       "id": "web_app_startup",
-      "community": 27,
+      "community": 1,
       "norm_label": "_startup()"
     },
     {
@@ -1089,7 +1089,7 @@
       "source_file": "ytfeed/web/app.py",
       "source_location": "L1",
       "id": "web_app_rationale_1",
-      "community": 27,
+      "community": 1,
       "norm_label": "fastapi app: recents | subscriptions | playlists | queue | settings."
     },
     {
@@ -1098,7 +1098,7 @@
       "source_file": "ytfeed/web/app.py",
       "source_location": "L36",
       "id": "web_app_rationale_36",
-      "community": 27,
+      "community": 2,
       "norm_label": "pick up deferred queue items (e.g. ip-block retries) once they're due."
     },
     {
@@ -1107,7 +1107,7 @@
       "source_file": "ytfeed/web/dependencies.py",
       "source_location": "L1",
       "id": "web_dependencies",
-      "community": 29,
+      "community": 1,
       "norm_label": "dependencies.py"
     },
     {
@@ -1116,7 +1116,7 @@
       "source_file": "ytfeed/web/dependencies.py",
       "source_location": "L21",
       "id": "web_dependencies_asset_v",
-      "community": 29,
+      "community": 1,
       "norm_label": "asset_v()"
     },
     {
@@ -1125,7 +1125,7 @@
       "source_file": "ytfeed/web/dependencies.py",
       "source_location": "L33",
       "id": "web_dependencies_get_config",
-      "community": 27,
+      "community": 1,
       "norm_label": "get_config()"
     },
     {
@@ -1134,7 +1134,7 @@
       "source_file": "ytfeed/web/dependencies.py",
       "source_location": "L33",
       "id": "ytfeed_web_dependencies_py_config",
-      "community": 27,
+      "community": 1,
       "norm_label": "config"
     },
     {
@@ -1143,7 +1143,7 @@
       "source_file": "ytfeed/web/dependencies.py",
       "source_location": "L37",
       "id": "web_dependencies_get_db",
-      "community": 29,
+      "community": 1,
       "norm_label": "get_db()"
     },
     {
@@ -1152,7 +1152,7 @@
       "source_file": "ytfeed/web/dependencies.py",
       "source_location": "L37",
       "id": "ytfeed_web_dependencies_py_session",
-      "community": 29,
+      "community": 1,
       "norm_label": "session"
     },
     {
@@ -1161,7 +1161,7 @@
       "source_file": "ytfeed/web/dependencies.py",
       "source_location": "L1",
       "id": "web_dependencies_rationale_1",
-      "community": 29,
+      "community": 1,
       "norm_label": "shared fastapi dependencies: config, db session, templates."
     },
     {
@@ -1170,7 +1170,7 @@
       "source_file": "ytfeed/web/dependencies.py",
       "source_location": "L22",
       "id": "web_dependencies_rationale_22",
-      "community": 29,
+      "community": 1,
       "norm_label": "file mtime as a cache-busting version for static asset urls."
     },
     {
@@ -1188,7 +1188,7 @@
       "source_file": "ytfeed/web/routes/channel.py",
       "source_location": "L1",
       "id": "routes_channel",
-      "community": 0,
+      "community": 24,
       "norm_label": "channel.py"
     },
     {
@@ -1197,7 +1197,7 @@
       "source_file": "ytfeed/web/routes/channel.py",
       "source_location": "L17",
       "id": "routes_channel_subscriptions",
-      "community": 0,
+      "community": 24,
       "norm_label": "subscriptions()"
     },
     {
@@ -1206,7 +1206,7 @@
       "source_file": "ytfeed/web/routes/channel.py",
       "source_location": "L17",
       "id": "ytfeed_web_routes_channel_py_request",
-      "community": 0,
+      "community": 24,
       "norm_label": "request"
     },
     {
@@ -1215,7 +1215,7 @@
       "source_file": "ytfeed/web/routes/channel.py",
       "source_location": "L17",
       "id": "ytfeed_web_routes_channel_py_session",
-      "community": 0,
+      "community": 24,
       "norm_label": "session"
     },
     {
@@ -1224,7 +1224,7 @@
       "source_file": "ytfeed/web/routes/channel.py",
       "source_location": "L37",
       "id": "routes_channel_channel_page",
-      "community": 0,
+      "community": 24,
       "norm_label": "channel_page()"
     },
     {
@@ -1233,7 +1233,7 @@
       "source_file": "ytfeed/web/routes/channel.py",
       "source_location": "L67",
       "id": "routes_channel_run_channel_sync",
-      "community": 26,
+      "community": 0,
       "norm_label": "_run_channel_sync()"
     },
     {
@@ -1242,7 +1242,7 @@
       "source_file": "ytfeed/web/routes/channel.py",
       "source_location": "L88",
       "id": "routes_channel_refresh_channel",
-      "community": 0,
+      "community": 24,
       "norm_label": "refresh_channel()"
     },
     {
@@ -1251,7 +1251,7 @@
       "source_file": "ytfeed/web/routes/channel.py",
       "source_location": "L88",
       "id": "ytfeed_web_routes_channel_py_backgroundtasks",
-      "community": 0,
+      "community": 24,
       "norm_label": "backgroundtasks"
     },
     {
@@ -1260,7 +1260,7 @@
       "source_file": "ytfeed/web/routes/channel.py",
       "source_location": "L96",
       "id": "routes_channel_backfill_channel",
-      "community": 0,
+      "community": 24,
       "norm_label": "backfill_channel()"
     },
     {
@@ -1269,7 +1269,7 @@
       "source_file": "ytfeed/web/routes/channel.py",
       "source_location": "L1",
       "id": "routes_channel_rationale_1",
-      "community": 0,
+      "community": 24,
       "norm_label": "subscriptions list and per-channel drill-down pages."
     },
     {
@@ -1278,7 +1278,7 @@
       "source_file": "ytfeed/web/routes/playlist.py",
       "source_location": "L1",
       "id": "routes_playlist",
-      "community": 0,
+      "community": 25,
       "norm_label": "playlist.py"
     },
     {
@@ -1287,7 +1287,7 @@
       "source_file": "ytfeed/web/routes/playlist.py",
       "source_location": "L17",
       "id": "routes_playlist_sync_one_playlist",
-      "community": 0,
+      "community": 25,
       "norm_label": "sync_one_playlist()"
     },
     {
@@ -1296,7 +1296,7 @@
       "source_file": "ytfeed/web/routes/playlist.py",
       "source_location": "L17",
       "id": "ytfeed_web_routes_playlist_py_request",
-      "community": 0,
+      "community": 25,
       "norm_label": "request"
     },
     {
@@ -1305,7 +1305,7 @@
       "source_file": "ytfeed/web/routes/playlist.py",
       "source_location": "L17",
       "id": "ytfeed_web_routes_playlist_py_backgroundtasks",
-      "community": 0,
+      "community": 25,
       "norm_label": "backgroundtasks"
     },
     {
@@ -1314,7 +1314,7 @@
       "source_file": "ytfeed/web/routes/playlist.py",
       "source_location": "L17",
       "id": "ytfeed_web_routes_playlist_py_session",
-      "community": 0,
+      "community": 25,
       "norm_label": "session"
     },
     {
@@ -1323,7 +1323,7 @@
       "source_file": "ytfeed/web/routes/playlist.py",
       "source_location": "L32",
       "id": "routes_playlist_playlists",
-      "community": 0,
+      "community": 25,
       "norm_label": "playlists()"
     },
     {
@@ -1332,7 +1332,7 @@
       "source_file": "ytfeed/web/routes/playlist.py",
       "source_location": "L42",
       "id": "routes_playlist_playlist_page",
-      "community": 0,
+      "community": 25,
       "norm_label": "playlist_page()"
     },
     {
@@ -1341,7 +1341,7 @@
       "source_file": "ytfeed/web/routes/playlist.py",
       "source_location": "L1",
       "id": "routes_playlist_rationale_1",
-      "community": 0,
+      "community": 25,
       "norm_label": "playlists list and per-playlist video pages."
     },
     {
@@ -1350,7 +1350,7 @@
       "source_file": "ytfeed/web/routes/queue.py",
       "source_location": "L1",
       "id": "routes_queue",
-      "community": 24,
+      "community": 1,
       "norm_label": "queue.py"
     },
     {
@@ -1359,7 +1359,7 @@
       "source_file": "ytfeed/web/routes/queue.py",
       "source_location": "L21",
       "id": "routes_queue_enqueue",
-      "community": 24,
+      "community": 1,
       "norm_label": "enqueue()"
     },
     {
@@ -1368,7 +1368,7 @@
       "source_file": "ytfeed/web/routes/queue.py",
       "source_location": "L21",
       "id": "ytfeed_web_routes_queue_py_request",
-      "community": 24,
+      "community": 1,
       "norm_label": "request"
     },
     {
@@ -1377,7 +1377,7 @@
       "source_file": "ytfeed/web/routes/queue.py",
       "source_location": "L21",
       "id": "ytfeed_web_routes_queue_py_session",
-      "community": 24,
+      "community": 1,
       "norm_label": "session"
     },
     {
@@ -1386,7 +1386,7 @@
       "source_file": "ytfeed/web/routes/queue.py",
       "source_location": "L56",
       "id": "routes_queue_queue_view",
-      "community": 24,
+      "community": 1,
       "norm_label": "queue_view()"
     },
     {
@@ -1404,7 +1404,7 @@
       "source_file": "ytfeed/web/routes/queue.py",
       "source_location": "L96",
       "id": "routes_queue_run_queue",
-      "community": 24,
+      "community": 1,
       "norm_label": "run_queue()"
     },
     {
@@ -1413,7 +1413,7 @@
       "source_file": "ytfeed/web/routes/queue.py",
       "source_location": "L96",
       "id": "ytfeed_web_routes_queue_py_backgroundtasks",
-      "community": 24,
+      "community": 1,
       "norm_label": "backgroundtasks"
     },
     {
@@ -1422,7 +1422,7 @@
       "source_file": "ytfeed/web/routes/queue.py",
       "source_location": "L102",
       "id": "routes_queue_clear_queue",
-      "community": 24,
+      "community": 1,
       "norm_label": "clear_queue()"
     },
     {
@@ -1431,7 +1431,7 @@
       "source_file": "ytfeed/web/routes/queue.py",
       "source_location": "L128",
       "id": "routes_queue_retry_item",
-      "community": 24,
+      "community": 1,
       "norm_label": "retry_item()"
     },
     {
@@ -1440,7 +1440,7 @@
       "source_file": "ytfeed/web/routes/queue.py",
       "source_location": "L1",
       "id": "routes_queue_rationale_1",
-      "community": 24,
+      "community": 1,
       "norm_label": "transcription queue: enqueue, view, run, retry."
     },
     {
@@ -1449,7 +1449,7 @@
       "source_file": "ytfeed/web/routes/queue.py",
       "source_location": "L103",
       "id": "routes_queue_rationale_103",
-      "community": 24,
+      "community": 1,
       "norm_label": "empty the queue page: cancel pending items, hide finished ones.      rows stay i"
     },
     {
@@ -1485,7 +1485,7 @@
       "source_file": "ytfeed/web/routes/recents.py",
       "source_location": "L18",
       "id": "ytfeed_web_routes_recents_py_video",
-      "community": 0,
+      "community": 24,
       "norm_label": "video"
     },
     {
@@ -1593,7 +1593,7 @@
       "source_file": "ytfeed/web/routes/settings.py",
       "source_location": "L58",
       "id": "routes_settings_run_sync_bg",
-      "community": 26,
+      "community": 1,
       "norm_label": "_run_sync_bg()"
     },
     {
@@ -1683,7 +1683,7 @@
       "source_file": "ytfeed/web/routes/storage.py",
       "source_location": "L1",
       "id": "routes_storage",
-      "community": 25,
+      "community": 1,
       "norm_label": "storage.py"
     },
     {
@@ -1692,7 +1692,7 @@
       "source_file": "ytfeed/web/routes/storage.py",
       "source_location": "L20",
       "id": "routes_storage_human_size",
-      "community": 25,
+      "community": 1,
       "norm_label": "human_size()"
     },
     {
@@ -1701,7 +1701,7 @@
       "source_file": "ytfeed/web/routes/storage.py",
       "source_location": "L29",
       "id": "routes_storage_file_sizes",
-      "community": 25,
+      "community": 1,
       "norm_label": "_file_sizes()"
     },
     {
@@ -1710,7 +1710,7 @@
       "source_file": "ytfeed/web/routes/storage.py",
       "source_location": "L43",
       "id": "routes_storage_dir_size",
-      "community": 25,
+      "community": 1,
       "norm_label": "_dir_size()"
     },
     {
@@ -1719,7 +1719,7 @@
       "source_file": "ytfeed/web/routes/storage.py",
       "source_location": "L43",
       "id": "ytfeed_web_routes_storage_py_path",
-      "community": 25,
+      "community": 1,
       "norm_label": "path"
     },
     {
@@ -1728,7 +1728,7 @@
       "source_file": "ytfeed/web/routes/storage.py",
       "source_location": "L59",
       "id": "routes_storage_storage_page",
-      "community": 25,
+      "community": 1,
       "norm_label": "storage_page()"
     },
     {
@@ -1737,7 +1737,7 @@
       "source_file": "ytfeed/web/routes/storage.py",
       "source_location": "L59",
       "id": "ytfeed_web_routes_storage_py_request",
-      "community": 25,
+      "community": 1,
       "norm_label": "request"
     },
     {
@@ -1746,7 +1746,7 @@
       "source_file": "ytfeed/web/routes/storage.py",
       "source_location": "L59",
       "id": "ytfeed_web_routes_storage_py_session",
-      "community": 25,
+      "community": 1,
       "norm_label": "session"
     },
     {
@@ -1755,7 +1755,7 @@
       "source_file": "ytfeed/web/routes/storage.py",
       "source_location": "L1",
       "id": "routes_storage_rationale_1",
-      "community": 25,
+      "community": 1,
       "norm_label": "storage stats: how much disk ytfeed uses locally."
     },
     {
@@ -1764,7 +1764,7 @@
       "source_file": "ytfeed/web/routes/storage.py",
       "source_location": "L30",
       "id": "routes_storage_rationale_30",
-      "community": 25,
+      "community": 1,
       "norm_label": "(count_existing, total_bytes, count_missing) for a list of file paths."
     },
     {
@@ -1773,7 +1773,7 @@
       "source_file": "ytfeed/web/routes/storage.py",
       "source_location": "L44",
       "id": "routes_storage_rationale_44",
-      "community": 25,
+      "community": 1,
       "norm_label": "(file_count, total_bytes) for a directory tree; (0, 0) if absent."
     },
     {
@@ -2952,7 +2952,7 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L1",
       "id": "youtube_sync",
-      "community": 0,
+      "community": 25,
       "norm_label": "sync.py"
     },
     {
@@ -2961,7 +2961,7 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L26",
       "id": "youtube_sync_parse_dt",
-      "community": 0,
+      "community": 25,
       "norm_label": "_parse_dt()"
     },
     {
@@ -2970,7 +2970,7 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L26",
       "id": "ytfeed_youtube_sync_py_datetime",
-      "community": 0,
+      "community": 25,
       "norm_label": "datetime"
     },
     {
@@ -2988,7 +2988,7 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L45",
       "id": "youtube_sync_upsert_video_from_playlist_item",
-      "community": 0,
+      "community": 24,
       "norm_label": "_upsert_video_from_playlist_item()"
     },
     {
@@ -2997,7 +2997,7 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L45",
       "id": "ytfeed_youtube_sync_py_session",
-      "community": 0,
+      "community": 24,
       "norm_label": "session"
     },
     {
@@ -3006,7 +3006,7 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L45",
       "id": "ytfeed_youtube_sync_py_video",
-      "community": 0,
+      "community": 24,
       "norm_label": "video"
     },
     {
@@ -3033,7 +3033,7 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L158",
       "id": "youtube_sync_synccancelled",
-      "community": 0,
+      "community": 25,
       "norm_label": "synccancelled"
     },
     {
@@ -3042,7 +3042,7 @@
       "source_file": "",
       "source_location": "",
       "id": "exception",
-      "community": 0,
+      "community": 25,
       "norm_label": "exception"
     },
     {
@@ -3087,7 +3087,7 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L319",
       "id": "youtube_sync_is_quota_error",
-      "community": 0,
+      "community": 25,
       "norm_label": "_is_quota_error()"
     },
     {
@@ -3132,7 +3132,7 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L505",
       "id": "ytfeed_youtube_sync_py_config",
-      "community": 0,
+      "community": 24,
       "norm_label": "config"
     },
     {
@@ -3141,7 +3141,7 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L1",
       "id": "youtube_sync_rationale_1",
-      "community": 0,
+      "community": 25,
       "norm_label": "sync engine: subscriptions, playlists, and per-channel uploads with early-stop."
     },
     {
@@ -3150,7 +3150,7 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L46",
       "id": "youtube_sync_rationale_46",
-      "community": 0,
+      "community": 24,
       "norm_label": "upsert a videos row from a playlistitems resource. returns the video, or none if"
     },
     {
@@ -3168,7 +3168,7 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L159",
       "id": "youtube_sync_rationale_159",
-      "community": 0,
+      "community": 25,
       "norm_label": "raised inside the sync worker when the user pressed stop."
     },
     {
@@ -3442,10 +3442,19 @@
       "norm_label": "transcript pipeline (3 tiers)"
     },
     {
-      "label": "Engineering notes",
+      "label": "Schema",
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L81",
+      "id": "readme_schema",
+      "community": 11,
+      "norm_label": "schema"
+    },
+    {
+      "label": "Engineering notes",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L180",
       "id": "readme_engineering_notes",
       "community": 11,
       "norm_label": "engineering notes"
@@ -3454,7 +3463,7 @@
       "label": "Tests",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L91",
+      "source_location": "L190",
       "id": "readme_tests",
       "community": 11,
       "norm_label": "tests"
@@ -16348,9 +16357,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_rationale_29",
-      "target": "youtube_client_paginate",
-      "confidence_score": 1.0
+      "target": "youtube_client_paginate"
     },
     {
       "relation": "references",
@@ -16434,9 +16443,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L77",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_rationale_77",
-      "target": "youtube_client_fetch_playlist_items_paged",
-      "confidence_score": 1.0
+      "target": "youtube_client_fetch_playlist_items_paged"
     },
     {
       "relation": "rationale_for",
@@ -16444,9 +16453,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L113",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_rationale_113",
-      "target": "youtube_client_fetch_playlists_by_ids",
-      "confidence_score": 1.0
+      "target": "youtube_client_fetch_playlists_by_ids"
     },
     {
       "relation": "rationale_for",
@@ -16474,9 +16483,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L128",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_rationale_128",
-      "target": "youtube_client_fetch_channels_content_details",
-      "confidence_score": 1.0
+      "target": "youtube_client_fetch_channels_content_details"
     },
     {
       "relation": "contains",
@@ -17145,9 +17154,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L208",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_sync_rationale_208",
-      "target": "youtube_sync_sync_my_playlists",
-      "confidence_score": 1.0
+      "target": "youtube_sync_sync_my_playlists"
     },
     {
       "relation": "calls",
@@ -17229,9 +17238,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L250",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_sync_rationale_250",
-      "target": "youtube_sync_sync_playlist_payload",
-      "confidence_score": 1.0
+      "target": "youtube_sync_sync_playlist_payload"
     },
     {
       "relation": "calls",
@@ -17302,9 +17311,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L333",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_sync_rationale_333",
-      "target": "youtube_sync_sync_channel_uploads",
-      "confidence_score": 1.0
+      "target": "youtube_sync_sync_channel_uploads"
     },
     {
       "relation": "calls",
@@ -17375,9 +17384,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L428",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_sync_rationale_428",
-      "target": "youtube_sync_run_partial_sync",
-      "confidence_score": 1.0
+      "target": "youtube_sync_run_partial_sync"
     },
     {
       "relation": "rationale_for",
@@ -17415,9 +17424,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L513",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_sync_rationale_513",
-      "target": "youtube_sync_sync_all",
-      "confidence_score": 1.0
+      "target": "youtube_sync_sync_all"
     },
     {
       "relation": "references",
@@ -17634,6 +17643,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
+      "source_location": "L81",
+      "weight": 1.0,
+      "source": "readme_ytfeed",
+      "target": "readme_schema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
       "source_location": "L12",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -17682,5 +17701,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "b23e66601b74d775a5db6f34b09351830e514d8d"
+  "built_at_commit": "ad185a98ca48f847074cf760fbe8fa1ed90b26a4"
 }
