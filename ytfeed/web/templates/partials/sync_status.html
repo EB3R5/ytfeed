@@ -9,15 +9,27 @@
         {{ last_run.channels_synced }} channels, {{ last_run.videos_upserted }} videos upserted
         · ~{{ last_run.api_calls }} API quota units of 10,000/day.</p>
       {% endif %}
+      {% if last_run.log %}
+      <details class="sync-log-details">
+        <summary>View sync log</summary>
+        <pre class="sync-log">{{ last_run.log.strip() }}</pre>
+      </details>
+      {% endif %}
     {% else %}
-      <p>
-        <span class="badge badge-in_progress">sync running</span>
+      <div class="sync-running-row">
+        <span class="badge badge-in_progress">{{ 'stopping…' if last_run.cancel_requested else 'sync running' }}</span>
         phase: <strong>{{ last_run.phase or 'starting' }}</strong>
         {% if last_run.progress_total %}
           — {{ last_run.progress_current }}/{{ last_run.progress_total }}
         {% endif %}
         {% if last_run.progress_detail %}· {{ last_run.progress_detail }}{% endif %}
-      </p>
+        <form method="post" action="/settings/sync/stop" class="inline">
+          <button type="submit" class="btn btn-danger btn-small"
+                  {% if last_run.cancel_requested %}title="Worker not responding? This closes the run record so you can sync again."{% endif %}>
+            {{ 'Force stop' if last_run.cancel_requested else 'Stop sync' }}
+          </button>
+        </form>
+      </div>
       {% if last_run.progress_total %}
       <div class="progress">
         <div class="progress-fill" style="width: {{ (100 * last_run.progress_current / last_run.progress_total) | round(1) }}%"></div>
@@ -26,6 +38,9 @@
       <div class="progress progress-indeterminate"><div class="progress-fill"></div></div>
       {% endif %}
       <p class="hint">started {{ last_run.started_at.strftime('%H:%M:%S') }} UTC · ~{{ last_run.api_calls }} API units used · runs in a background thread — safe to leave this page</p>
+      {% if last_run.log %}
+      <pre class="sync-log">{{ last_run.log.strip().split('\n')[-25:] | join('\n') }}</pre>
+      {% endif %}
     {% endif %}
   {% else %}
   <p class="empty">No syncs yet.</p>

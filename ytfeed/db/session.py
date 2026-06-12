@@ -49,4 +49,27 @@ def get_session_factory(config: Config) -> sessionmaker[Session]:
 
 
 def init_db(config: Config) -> None:
-    Base.metadata.create_all(get_engine(config))
+    engine = get_engine(config)
+    Base.metadata.create_all(engine)
+    # create_all never alters existing tables; add columns introduced after a
+    # table first shipped (poor man's migration — SQLite, additive only)
+    added_columns = {
+        "sync_runs": [
+            ("phase", "VARCHAR(32)"),
+            ("progress_current", "INTEGER NOT NULL DEFAULT 0"),
+            ("progress_total", "INTEGER NOT NULL DEFAULT 0"),
+            ("progress_detail", "VARCHAR(255)"),
+            ("api_calls", "INTEGER NOT NULL DEFAULT 0"),
+            ("log", "TEXT NOT NULL DEFAULT ''"),
+            ("cancel_requested", "BOOLEAN NOT NULL DEFAULT 0"),
+        ]
+    }
+    with engine.connect() as conn:
+        for table, columns in added_columns.items():
+            existing = {
+                row[1] for row in conn.exec_driver_sql(f"PRAGMA table_info({table})")
+            }
+            for name, ddl in columns:
+                if name not in existing:
+                    conn.exec_driver_sql(f"ALTER TABLE {table} ADD COLUMN {name} {ddl}")
+        conn.commit()

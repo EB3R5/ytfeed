@@ -29,6 +29,18 @@
   // the anchor checkbox is gone after htmx swaps in a fresh list
   document.addEventListener("htmx:afterSwap", function () { lastChecked = null; });
 
+  // keep sync log views pinned to the newest line (initial load + every poll swap)
+  function pinSyncLogs() {
+    document.querySelectorAll(".sync-log").forEach(function (el) {
+      el.scrollTop = el.scrollHeight;
+    });
+  }
+  document.addEventListener("htmx:afterSettle", pinSyncLogs);
+  document.addEventListener("DOMContentLoaded", pinSyncLogs);
+  document.addEventListener("toggle", function (e) {
+    if (e.target instanceof HTMLElement && e.target.classList.contains("sync-log-details")) pinSyncLogs();
+  }, true);
+
   // live row filter: <input data-filter-rows="#table-selector"> hides
   // non-matching tbody rows as you type
   document.addEventListener("input", function (e) {

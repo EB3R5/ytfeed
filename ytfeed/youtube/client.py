@@ -2,9 +2,12 @@
 
 from __future__ import annotations
 
+import logging
 import threading
 from collections.abc import Iterator
 from typing import Any
+
+logger = logging.getLogger(__name__)
 
 # per-process API request counter — each Data API request costs >= 1 quota
 # unit, so this is a lower-bound estimate of quota burn
@@ -29,16 +32,27 @@ def paginate(request_factory, **kwargs) -> Iterator[dict[str, Any]]:
     through, with pageToken managed here.
     """
     page_token: str | None = None
+    seen_tokens: set[str] = set()
+    empty_pages = 0
     while True:
         params = dict(kwargs)
         if page_token:
             params["pageToken"] = page_token
         count_call()
         response = request_factory(**params).execute()
-        yield from response.get("items", [])
+        items = response.get("items", [])
+        yield from items
+        empty_pages = empty_pages + 1 if not items else 0
         page_token = response.get("nextPageToken")
         if not page_token:
             return
+        # YouTube sometimes keeps returning a nextPageToken past the real end
+        # (playlists with deleted videos) — without this guard the walk loops
+        # forever and burns quota
+        if page_token in seen_tokens or empty_pages >= 3:
+            logger.warning("pagination loop detected; stopping walk early")
+            return
+        seen_tokens.add(page_token)
 
 
 def fetch_subscriptions(youtube) -> Iterator[dict[str, Any]]:
@@ -62,6 +76,8 @@ def fetch_my_playlists(youtube) -> Iterator[dict[str, Any]]:
 def fetch_playlist_items_paged(youtube, playlist_id: str) -> Iterator[list[dict[str, Any]]]:
     """Yield playlistItems one PAGE at a time (sync needs page granularity for early-stop)."""
     page_token: str | None = None
+    seen_tokens: set[str] = set()
+    empty_pages = 0
     while True:
         params: dict[str, Any] = {
             "part": "snippet,contentDetails",
@@ -72,10 +88,20 @@ def fetch_playlist_items_paged(youtube, playlist_id: str) -> Iterator[list[dict[
             params["pageToken"] = page_token
         count_call()
         response = youtube.playlistItems().list(**params).execute()
-        yield response.get("items", [])
+        items = response.get("items", [])
+        yield items
+        empty_pages = empty_pages + 1 if not items else 0
         page_token = response.get("nextPageToken")
         if not page_token:
             return
+        # see paginate(): guard against YouTube's endless-token bug
+        if page_token in seen_tokens or empty_pages >= 3:
+            logger.warning(
+                "playlist %s: pagination loop detected; stopping walk early",
+                playlist_id,
+            )
+            return
+        seen_tokens.add(page_token)
 
 
 def fetch_playlist_items(youtube, playlist_id: str) -> Iterator[dict[str, Any]]:

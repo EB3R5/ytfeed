@@ -67,21 +67,21 @@ def channel_page(
 def _run_channel_sync(channel_id: str, force_full: bool) -> None:
     from ytfeed.db.session import get_session_factory
     from ytfeed.youtube.auth import get_youtube_client
-    from ytfeed.youtube.sync import sync_channel_uploads
+    from ytfeed.youtube.sync import run_partial_sync
 
     config = get_config()
     youtube = get_youtube_client(config)
     factory = get_session_factory(config)
     with factory() as session:
-        channel = session.scalar(select(Channel).where(Channel.channel_id == channel_id))
-        if channel is not None:
-            sync_channel_uploads(
-                session,
-                youtube,
-                channel,
-                force_full=force_full,
-                initial_backfill=config.sync.initial_backfill,
-            )
+        # audited SyncRun: progress + log show up on the settings page
+        run_partial_sync(
+            session,
+            youtube,
+            "channel",
+            channel_id=channel_id,
+            force_full=force_full,
+            initial_backfill=config.sync.initial_backfill,
+        )
 
 
 @router.post("/channels/{channel_id}/refresh")

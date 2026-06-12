@@ -7,7 +7,7 @@ from fastapi.responses import HTMLResponse, RedirectResponse
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
-from ytfeed.db.models import Channel, Playlist, SyncRun, Video
+from ytfeed.db.models import Channel, Playlist, SyncRun, Video, utcnow
 from ytfeed.web.dependencies import get_config, get_db, templates
 
 router = APIRouter()
@@ -107,6 +107,27 @@ def trigger_subscriptions_sync(
     db: Session = Depends(get_db),
 ):
     start_sync(db, background_tasks, "subscriptions")
+    return RedirectResponse("/settings", status_code=303)
+
+
+@router.post("/settings/sync/stop")
+def stop_sync(request: Request, db: Session = Depends(get_db)):
+    run = db.scalar(
+        select(SyncRun)
+        .where(SyncRun.finished_at.is_(None))
+        .order_by(SyncRun.started_at.desc())
+        .limit(1)
+    )
+    if run is not None:
+        if run.cancel_requested:
+            # second click: the worker isn't picking up the flag, so close the
+            # run record ourselves to unblock the sync buttons
+            run.finished_at = utcnow().replace(tzinfo=None)
+            run.error_message = "force-stopped (worker was not responding)"
+            run.log = (run.log or "") + "force-stopped by user\n"
+        else:
+            run.cancel_requested = True
+        db.commit()
     return RedirectResponse("/settings", status_code=303)
 
 

@@ -137,3 +137,16 @@ section { margin-bottom: 1.5rem; }
   from { margin-left: -30%; }
   to { margin-left: 100%; }
 }
+
+.sync-log {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 6px;
+  color: var(--muted); font-size: 0.75rem; line-height: 1.5;
+  padding: 0.6rem 0.8rem; margin: 0.4rem 0;
+  max-width: 720px; max-height: 320px; overflow-y: auto;
+  white-space: pre-wrap; word-break: break-word;
+}
+.sync-log-details summary { cursor: pointer; color: var(--muted); font-size: 0.85rem; }
+.sync-running-row { margin: 0.6rem 0; }
+.btn-small { padding: 0.15rem 0.6rem; font-size: 0.8rem; margin-left: 0.5rem; }
+.btn-danger { color: var(--accent); border-color: var(--accent); }
+.btn-danger:hover { background: var(--accent-soft); }
