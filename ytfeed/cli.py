@@ -1,4 +1,4 @@
-"""ytfeed CLI: init-db, sync, serve, transcribe."""
+"""ytfeed CLI: init-db, sync, serve, transcribe, describe."""
 
 from __future__ import annotations
 
@@ -89,6 +89,60 @@ def cmd_transcribe(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_describe(args: argparse.Namespace) -> int:
+    """Backfill ## Description sections into existing vault files from the DB
+    (with a yt-dlp fetch for videos whose description sync never got, when
+    --fetch is given). Dry-run unless --apply."""
+    from pathlib import Path
+
+    from sqlalchemy import select
+
+    from ytfeed.db.models import Video
+    from ytfeed.db.session import get_session_factory, init_db
+    from ytfeed.transcripts.markdown_writer import ensure_description_section
+
+    config = load_config(args.config)
+    init_db(config)
+    factory = get_session_factory(config)
+    patched = no_description = missing = already = 0
+    with factory() as session:
+        videos = session.scalars(
+            select(Video).where(Video.transcript_path.is_not(None))
+        )
+        for video in videos:
+            path = Path(video.transcript_path)
+            if not path.exists():
+                missing += 1
+                continue
+            if not video.description and args.fetch:
+                from ytfeed.metadata import ytdlp_client
+
+                meta = ytdlp_client.fetch_video_metadata(video.video_id)
+                if meta and meta.get("description"):
+                    video.description = meta["description"]
+            if not video.description:
+                no_description += 1
+                continue
+            if "\n## Description\n" in path.read_text(encoding="utf-8"):
+                already += 1
+                continue
+            patched += 1
+            if args.apply:
+                ensure_description_section(path, video.description)
+            else:
+                print(f"would add description: {path.name}")
+        if args.apply:
+            session.commit()
+    verb = "Patched" if args.apply else "Would patch"
+    print(
+        f"{verb} {patched} files ({already} already have one,"
+        f" {no_description} have no description, {missing} missing on disk)."
+    )
+    if not args.apply and patched:
+        print("Re-run with --apply to write them.")
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="ytfeed", description="Personal YouTube feed")
     parser.add_argument("--config", default=None, help="Path to config.toml")
@@ -112,6 +166,18 @@ def build_parser() -> argparse.ArgumentParser:
     p_tr.add_argument("--video-id", action="append", help="Specific video ID (repeatable)")
     p_tr.add_argument("--limit", type=int, default=None, help="Max queue items to process")
     p_tr.set_defaults(func=cmd_transcribe)
+
+    p_desc = sub.add_parser(
+        "describe", help="Backfill ## Description sections into existing vault files"
+    )
+    p_desc.add_argument(
+        "--apply", action="store_true", help="Actually patch files (default: dry run)"
+    )
+    p_desc.add_argument(
+        "--fetch", action="store_true",
+        help="Use yt-dlp for videos whose description the sync never captured",
+    )
+    p_desc.set_defaults(func=cmd_describe)
 
     return parser
 

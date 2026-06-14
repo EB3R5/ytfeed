@@ -22,6 +22,7 @@ from ytfeed.config import Config
 from ytfeed.db.models import TranscriptionQueueItem, Video, utcnow
 from ytfeed.transcripts import placeholder, youtube_api_provider
 from ytfeed.transcripts.base import TranscriptResult, VideoRef
+from ytfeed.transcripts.categorize import category_for_video
 from ytfeed.transcripts.markdown_writer import write_transcript_file
 
 logger = logging.getLogger(__name__)
@@ -111,19 +112,21 @@ def _finalize_item(
         return
 
     rag_dir = Path(config.paths.rag_output_dir)
+    category = category_for_video(session, video.video_id)
+
+    # two libraries compile the description: sync fills it from the YouTube
+    # Data API; yt-dlp covers whatever sync missed. It goes in the vault file
+    # too — recipes, links, and chapter notes often live there.
+    if not video.description:
+        from ytfeed.metadata import ytdlp_client
+
+        meta = ytdlp_client.fetch_video_metadata(video.video_id)
+        if meta:
+            video.description = meta.get("description") or ""
+            if meta.get("duration") and not video.duration_seconds:
+                video.duration_seconds = int(meta["duration"])
 
     if result and result.success:
-        # enrich the DB description from yt-dlp when sync only had a stub;
-        # the vault file stays transcript-only
-        if not video.description:
-            from ytfeed.metadata import ytdlp_client
-
-            meta = ytdlp_client.fetch_video_metadata(video.video_id)
-            if meta:
-                video.description = meta.get("description") or ""
-                if meta.get("duration") and not video.duration_seconds:
-                    video.duration_seconds = int(meta["duration"])
-
         path = write_transcript_file(
             rag_dir,
             video_id=video.video_id,
@@ -132,6 +135,8 @@ def _finalize_item(
             published=_published_str(video),
             transcript=result.text or "",
             source=result.source or "unknown",
+            category=category,
+            description=video.description,
         )
         video.transcript_status = "done"
         video.transcript_source = result.source
@@ -147,6 +152,8 @@ def _finalize_item(
             channel=video.channel_title,
             published=_published_str(video),
             error=error,
+            category=category,
+            description=video.description,
         )
         video.transcript_status = "placeholder"
         video.transcript_source = "placeholder"

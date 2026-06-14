@@ -4,10 +4,12 @@ Personal YouTube feed: sync subscriptions/playlists/recent uploads into a local
 SQLite DB, browse/search/filter them in a local web UI, queue videos for
 transcription, and pipe transcripts into an Obsidian RAG vault.
 
-**Storage split**: the Obsidian vault gets transcript-only markdown files
-(frontmatter + title + transcript). Everything else — titles, channels,
-descriptions, publish dates, statuses, queue history, sync audit — lives in
-the SQLite DB.
+**Storage split**: the Obsidian vault gets markdown files with frontmatter,
+the video description (recipes, links, and chapter notes often live there),
+and the transcript. Descriptions are compiled from two sources: sync fills
+them from the YouTube Data API, and yt-dlp covers whatever sync missed at
+transcription time. Everything else — statuses, queue history, sync audit —
+lives in the SQLite DB.
 
 ## Setup
 
@@ -32,6 +34,7 @@ Requirements outside this repo:
 .venv/bin/python -m ytfeed sync --full     # ignore early-stop, walk full history
 .venv/bin/python -m ytfeed serve           # web UI at http://127.0.0.1:8000
 .venv/bin/python -m ytfeed transcribe --limit 5
+.venv/bin/python -m ytfeed describe --apply --fetch  # backfill ## Description sections
 ```
 
 ## Launching
@@ -77,6 +80,39 @@ The server log lands in `data/server.log`. Port override: `YTFEED_PORT=8080 ytfe
 3. **Placeholder** — `*(PLACEHOLDER).md` stub for videos with no captions;
    re-queuing a placeholder/failed video re-enters the pipeline, and a later
    success replaces the stub. Videos already `done` are never re-queued.
+
+## Vault file layout
+
+Each transcript file is flat in `raw/` with frontmatter, the description, and
+the transcript:
+
+```
+---
+video_id: QZWxpB8zGQM
+channel: "Cowboy Kent Rollins"
+published: 2026-04-01T19:30:03Z
+url: https://www.youtube.com/watch?v=QZWxpB8zGQM
+source: notebooklm
+category: "Cooking"
+tags: []
+---
+
+# <title>
+
+## Description
+
+<video description — recipes, links, chapter notes>
+
+## Transcript
+
+<transcript>
+```
+
+`category` is the video's playlist, derived at write time
+(`transcripts/categorize.py`): the most recently added playlist membership
+wins (ties and missing timestamps fall back to the smallest playlist;
+same-named playlists merge). Videos in no playlist get no `category` line.
+The `## Description` section is omitted when the video has no description.
 
 ## Schema
 
