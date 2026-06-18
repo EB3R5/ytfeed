@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ytfeed — Database Schema</title>
+<style>
+  :root { --bg:#0d1117; --panel:#161b22; --border:#30363d; --text:#c9d1d9; --accent:#58a6ff; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text);
+         font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; }
+  header { padding:24px 32px; border-bottom:1px solid var(--border); }
+  h1 { margin:0 0 4px; font-size:22px; }
+  header p { margin:0; color:#8b949e; font-size:13px; }
+  .meta { margin-top:12px; display:flex; flex-wrap:wrap; gap:8px; }
+  .pill { background:var(--panel); border:1px solid var(--border); border-radius:999px;
+          padding:4px 12px; font-size:12px; color:#8b949e; }
+  .pill b { color:var(--accent); }
+  main { padding:24px 32px 64px; }
+  .diagram { background:var(--panel); border:1px solid var(--border); border-radius:10px;
+             padding:16px; overflow:auto; }
+  .mermaid { display:flex; justify-content:center; }
+  footer { padding:0 32px 32px; color:#6e7681; font-size:12px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>ytfeed — SQLite Database Schema</h1>
+  <p>Entity-relationship diagram of <code>data/ytfeed.db</code></p>
+  <div class="meta">
+    <span class="pill">channels <b>1,046</b></span>
+    <span class="pill">playlists <b>185</b></span>
+    <span class="pill">videos <b>14,878</b></span>
+    <span class="pill">playlist_items <b>15,332</b></span>
+    <span class="pill">channel_uploads <b>1,426</b></span>
+    <span class="pill">transcription_queue <b>648</b></span>
+    <span class="pill">sync_runs <b>32</b></span>
+  </div>
+</header>
+
+<main>
+  <div class="diagram">
+    <pre class="mermaid">
+erDiagram
+    channels ||--o{ videos : "owns (channel_id)"
+    channels ||--o{ channel_uploads : "uploads"
+    playlists ||--o{ playlist_items : "contains"
+    videos ||--o{ playlist_items : "appears in"
+    videos ||--o{ channel_uploads : "listed in"
+    videos ||--o{ transcription_queue : "queued for"
+
+    channels {
+        INTEGER id PK
+        VARCHAR channel_id UK
+        VARCHAR title
+        TEXT description
+        VARCHAR thumbnail_url
+        VARCHAR uploads_playlist_id
+        DATETIME subscribed_at
+        DATETIME last_synced_at
+        DATETIME last_video_published_at
+        BOOLEAN is_active
+        BOOLEAN is_monitored
+    }
+
+    playlists {
+        INTEGER id PK
+        VARCHAR playlist_id UK
+        VARCHAR title
+        TEXT description
+        VARCHAR thumbnail_url
+        INTEGER item_count
+        DATETIME last_synced_at
+        INTEGER synced_item_count
+    }
+
+    videos {
+        INTEGER id PK
+        VARCHAR video_id UK
+        VARCHAR channel_id FK
+        VARCHAR channel_title
+        VARCHAR title
+        TEXT description
+        VARCHAR thumbnail_url
+        DATETIME published_at
+        INTEGER duration_seconds
+        TEXT tags
+        VARCHAR source
+        VARCHAR transcript_status
+        VARCHAR transcript_source
+        VARCHAR transcript_path
+        VARCHAR audio_status
+        VARCHAR audio_path
+        VARCHAR notebooklm_notebook_id
+    }
+
+    playlist_items {
+        INTEGER id PK
+        VARCHAR playlist_id FK
+        VARCHAR video_id FK
+        INTEGER position
+        DATETIME added_at
+    }
+
+    channel_uploads {
+        INTEGER id PK
+        VARCHAR channel_id FK
+        VARCHAR video_id FK
+        DATETIME published_at
+    }
+
+    transcription_queue {
+        INTEGER id PK
+        VARCHAR video_id FK
+        VARCHAR status
+        DATETIME requested_at
+        DATETIME started_at
+        DATETIME completed_at
+        TEXT error_message
+        INTEGER attempt_count
+        BOOLEAN is_hidden
+        DATETIME not_before
+    }
+
+    sync_runs {
+        INTEGER id PK
+        DATETIME started_at
+        DATETIME finished_at
+        VARCHAR kind
+        INTEGER channels_synced
+        INTEGER videos_upserted
+        TEXT error_message
+        VARCHAR phase
+        INTEGER progress_current
+        INTEGER progress_total
+        VARCHAR progress_detail
+        INTEGER api_calls
+        TEXT log
+        BOOLEAN cancel_requested
+    }
+    </pre>
+  </div>
+</main>
+
+<footer>
+  sync_runs is a standalone job-tracking table with no foreign-key relationships.
+  Generated from live schema on 2026-06-18.
+</footer>
+
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, theme: 'dark', er: { useMaxWidth: false } });
+</script>
+</body>
+</html>
