@@ -18,9 +18,19 @@ from ytfeed.db.models import (
     Video,
     utcnow,
 )
-from ytfeed.youtube import client as yt
+from ytfeed.youtube.client import YouTubeSource
+from ytfeed.youtube.sync_run import (
+    NULL_REPORTER,
+    Reporter,
+    SyncCancelled,
+    _is_quota_error,
+    audited_run,
+)
 
 logger = logging.getLogger(__name__)
+
+# re-exported for callers that import these from the sync module
+__all__ = ["SyncCancelled", "sync_all", "run_partial_sync", "sync_channel_uploads"]
 
 
 def _parse_dt(value: str | None) -> datetime | None:
@@ -82,22 +92,24 @@ def _upsert_video_from_playlist_item(session: Session, item: dict) -> Video | No
     return video
 
 
-def sync_subscriptions(session: Session, youtube, run: SyncRun | None = None) -> int:
+def sync_subscriptions(
+    session: Session, source: YouTubeSource, reporter: Reporter = NULL_REPORTER
+) -> int:
     """Upsert channels from the user's subscriptions. Returns count synced."""
     count = 0
     seen_ids: list[str] = []
     # network first, writes second — keep the SQLite write lock short
-    _progress(session, run, "subscriptions", 0, 0, "fetching subscriptions from YouTube")
+    reporter.progress("subscriptions", 0, 0, "fetching subscriptions from YouTube")
     subscription_items: list[dict] = []
-    for item in yt.fetch_subscriptions(youtube):
+    for item in source.fetch_subscriptions():
         subscription_items.append(item)
         if len(subscription_items) % 50 == 0:
-            _progress(
-                session, run, "subscriptions", 0, 0,
+            reporter.progress(
+                "subscriptions", 0, 0,
                 f"fetched {len(subscription_items)} subscriptions so far",
             )
-    _progress(
-        session, run, "subscriptions", 0, len(subscription_items),
+    reporter.progress(
+        "subscriptions", 0, len(subscription_items),
         f"updating {len(subscription_items)} channels",
     )
     for item in subscription_items:
@@ -128,8 +140,8 @@ def sync_subscriptions(session: Session, youtube, run: SyncRun | None = None) ->
         channel.is_active = False
         logger.info("deactivated unsubscribed channel: %s", channel.title)
     session.commit()
-    _progress(
-        session, run, "subscriptions", count, len(subscription_items),
+    reporter.progress(
+        "subscriptions", count, len(subscription_items),
         f"saved {count} channels",
     )
 
@@ -142,12 +154,12 @@ def sync_subscriptions(session: Session, youtube, run: SyncRun | None = None) ->
         )
     )
     if missing:
-        _progress(
-            session, run, "subscriptions", count, len(subscription_items),
+        reporter.progress(
+            "subscriptions", count, len(subscription_items),
             f"resolving uploads playlists for {len(missing)} new channels",
         )
-        mapping = yt.fetch_channels_content_details(
-            youtube, [c.channel_id for c in missing]
+        mapping = source.fetch_channels_content_details(
+            [c.channel_id for c in missing]
         )
         for channel in missing:
             channel.uploads_playlist_id = mapping.get(channel.channel_id)
@@ -155,55 +167,8 @@ def sync_subscriptions(session: Session, youtube, run: SyncRun | None = None) ->
     return count
 
 
-class SyncCancelled(Exception):
-    """Raised inside the sync worker when the user pressed Stop."""
-
-
-# keep the run log bounded; trimmed from the oldest lines
-_LOG_MAX_CHARS = 200_000
-
-
-def _append_log(run: SyncRun | None, message: str) -> None:
-    if run is None:
-        return
-    log = run.log or ""
-    stamp = utcnow().strftime("%H:%M:%S")
-    if message == getattr(run, "_last_log_msg", None):
-        # collapse repeats into one escalating "(xN)" line — a fast-climbing
-        # counter is the signature of a retry/pagination loop
-        run._log_repeats = getattr(run, "_log_repeats", 1) + 1  # type: ignore[attr-defined]
-        head, _, _ = log.rstrip("\n").rpartition("\n")
-        log = (head + "\n" if head else "") + f"{stamp} {message} (x{run._log_repeats})\n"
-    else:
-        run._last_log_msg = message  # type: ignore[attr-defined]
-        run._log_repeats = 1  # type: ignore[attr-defined]
-        log += f"{stamp} {message}\n"
-    if len(log) > _LOG_MAX_CHARS:
-        log = log[len(log) - _LOG_MAX_CHARS :]
-        log = log[log.find("\n") + 1 :]
-    run.log = log
-
-
-def _progress(session: Session, run: SyncRun | None, phase: str, current: int, total: int, detail: str) -> None:
-    if run is None:
-        return
-    # the stop button writes via another session, so read the row fresh
-    if session.scalar(
-        select(SyncRun.cancel_requested).where(SyncRun.id == run.id)
-    ):
-        raise SyncCancelled
-    run.phase = phase
-    run.progress_current = current
-    run.progress_total = total
-    run.progress_detail = detail[:255]
-    run.api_calls = yt.get_api_calls() - getattr(run, "_api_calls_at_start", 0)
-    counter = f" {current}/{total}" if total else ""
-    _append_log(run, f"[{phase}{counter}] {detail}")
-    session.commit()
-
-
 def sync_my_playlists(
-    session: Session, youtube, run: SyncRun | None = None
+    session: Session, source: YouTubeSource, reporter: Reporter = NULL_REPORTER
 ) -> tuple[int, int]:
     """Upsert playlists + playlist_items + videos. Returns (playlists, videos_upserted).
 
@@ -217,15 +182,15 @@ def sync_my_playlists(
     # ORM object + any SELECT autoflushes and takes the SQLite write lock, so
     # fetching pages mid-transaction would hold that lock for the whole
     # playlist and starve the web app.
-    _progress(session, run, "playlists", 0, 0, "fetching playlist list from YouTube")
-    playlist_payloads = list(yt.fetch_my_playlists(youtube))
+    reporter.progress("playlists", 0, 0, "fetching playlist list from YouTube")
+    playlist_payloads = list(source.fetch_my_playlists())
     total = len(playlist_payloads)
     for idx, item in enumerate(playlist_payloads, 1):
         title = item.get("snippet", {}).get("title", "")
-        _progress(session, run, "playlists", idx, total, title)
+        reporter.progress("playlists", idx, total, title)
         try:
             videos_upserted += _sync_playlist_payload(
-                session, youtube, item, run=run, progress_pos=(idx, total)
+                session, source, item, reporter=reporter, progress_pos=(idx, total)
             )
             playlists_synced += 1
         except SyncCancelled:
@@ -240,11 +205,11 @@ def sync_my_playlists(
 
 def _sync_playlist_payload(
     session: Session,
-    youtube,
+    source: YouTubeSource,
     item: dict,
     *,
     force: bool = False,
-    run: SyncRun | None = None,
+    reporter: Reporter = NULL_REPORTER,
     progress_pos: tuple[int, int] = (0, 0),
 ) -> int:
     """Upsert one playlist (+ items if changed or force) from a playlists().list payload."""
@@ -260,11 +225,11 @@ def _sync_playlist_payload(
     # network before any DB write — see sync_my_playlists
     items: list[dict] = []
     if needs_walk:
-        for page in yt.fetch_playlist_items_paged(youtube, playlist_id):
+        for page in source.fetch_playlist_items_paged(playlist_id):
             items.extend(page)
             if len(items) < yt_item_count:  # big playlist: show walk progress
-                _progress(
-                    session, run, "playlists", *progress_pos,
+                reporter.progress(
+                    "playlists", *progress_pos,
                     f"{title} — fetched {len(items)}/{yt_item_count} items",
                 )
 
@@ -316,18 +281,14 @@ def _sync_playlist_payload(
     return videos_upserted
 
 
-def _is_quota_error(exc: Exception) -> bool:
-    return "quotaExceeded" in str(exc)
-
-
 def sync_channel_uploads(
     session: Session,
-    youtube,
+    source: YouTubeSource,
     channel: Channel,
     *,
     force_full: bool = False,
     initial_backfill: int = 50,
-    run: SyncRun | None = None,
+    reporter: Reporter = NULL_REPORTER,
     progress_pos: tuple[int, int] = (0, 0),
 ) -> int:
     """Sync a channel's uploads playlist newest-first with early-stop.
@@ -352,11 +313,11 @@ def sync_channel_uploads(
     stop = False
 
     page_num = 0
-    for page in yt.fetch_playlist_items_paged(youtube, channel.uploads_playlist_id):
+    for page in source.fetch_playlist_items_paged(channel.uploads_playlist_id):
         page_num += 1
         if page_num > 1:  # first page is covered by the caller's per-channel update
-            _progress(
-                session, run, "channels", *progress_pos,
+            reporter.progress(
+                "channels", *progress_pos,
                 f"{channel.title} — page {page_num}, {new_count} new videos so far",
             )
         for item in page:
@@ -417,7 +378,7 @@ def sync_channel_uploads(
 
 def run_partial_sync(
     session: Session,
-    youtube,
+    source: YouTubeSource,
     kind: str,
     *,
     playlist_id: str | None = None,
@@ -426,26 +387,23 @@ def run_partial_sync(
     initial_backfill: int = 50,
 ) -> SyncRun:
     """Audited scoped sync: kind = 'subscriptions' | 'playlists' | 'playlist' | 'channel'."""
-    run = SyncRun(kind=kind)
-    run._api_calls_at_start = yt.get_api_calls()  # type: ignore[attr-defined]
-    session.add(run)
-    session.commit()
-    try:
+    with audited_run(session, kind, source) as reporter:
+        run = reporter.run
         if kind == "subscriptions":
-            run.channels_synced = sync_subscriptions(session, youtube, run)
+            run.channels_synced = sync_subscriptions(session, source, reporter)
         elif kind == "playlists":
-            _, run.videos_upserted = sync_my_playlists(session, youtube, run)
+            _, run.videos_upserted = sync_my_playlists(session, source, reporter)
         elif kind == "playlist":
             if not playlist_id:
                 raise ValueError("playlist_id required for kind='playlist'")
-            payloads = yt.fetch_playlists_by_ids(youtube, [playlist_id])
+            payloads = source.fetch_playlists_by_ids([playlist_id])
             if not payloads:
                 raise ValueError(f"playlist {playlist_id} not found on YouTube")
             title = payloads[0].get("snippet", {}).get("title", playlist_id)
-            _progress(session, run, "playlist", 1, 1, title)
+            reporter.progress("playlist", 1, 1, title)
             # explicit priority sync: force the item walk even if unchanged
             run.videos_upserted = _sync_playlist_payload(
-                session, youtube, payloads[0], force=True, run=run, progress_pos=(1, 1)
+                session, source, payloads[0], force=True, reporter=reporter, progress_pos=(1, 1)
             )
         elif kind == "channel":
             if not channel_id:
@@ -455,56 +413,25 @@ def run_partial_sync(
             )
             if channel is None:
                 raise ValueError(f"channel {channel_id} not in database")
-            _progress(session, run, "channels", 1, 1, channel.title)
+            reporter.progress("channels", 1, 1, channel.title)
             run.channels_synced = 1
             run.videos_upserted = sync_channel_uploads(
                 session,
-                youtube,
+                source,
                 channel,
                 force_full=force_full,
                 initial_backfill=initial_backfill,
-                run=run,
+                reporter=reporter,
                 progress_pos=(1, 1),
             )
         else:
             raise ValueError(f"unknown sync kind: {kind}")
-        run.phase = "done"
-        run.api_calls = yt.get_api_calls() - getattr(run, "_api_calls_at_start", 0)
-        run.finished_at = utcnow().replace(tzinfo=None)
-        _append_log(
-            run,
-            f"done — {run.channels_synced} channels, {run.videos_upserted} videos"
-            f" upserted, ~{run.api_calls} API units",
-        )
-        session.commit()
-    except SyncCancelled:
-        session.rollback()
-        run.phase = "cancelled"
-        run.error_message = "stopped by user"
-        run.api_calls = yt.get_api_calls() - getattr(run, "_api_calls_at_start", 0)
-        run.finished_at = utcnow().replace(tzinfo=None)
-        _append_log(run, "stopped by user — progress so far is saved")
-        session.commit()
-        return run
-    except Exception as exc:
-        session.rollback()
-        run.error_message = (
-            "YouTube API daily quota exceeded — resets at midnight Pacific. "
-            "Progress is saved; run sync again tomorrow."
-            if _is_quota_error(exc)
-            else str(exc)
-        )
-        run.api_calls = yt.get_api_calls() - getattr(run, "_api_calls_at_start", 0)
-        run.finished_at = utcnow().replace(tzinfo=None)
-        _append_log(run, f"FAILED: {run.error_message}")
-        session.commit()
-        raise
-    return run
+    return reporter.run
 
 
 def sync_all(
     session: Session,
-    youtube,
+    source: YouTubeSource,
     config: Config,
     *,
     force_full: bool = False,
@@ -517,18 +444,13 @@ def sync_all(
         if progress_cb:
             progress_cb(msg)
 
-    run = SyncRun(kind="full" if not force_full else "full-force")
-    run._api_calls_at_start = yt.get_api_calls()  # type: ignore[attr-defined]
-    session.add(run)
-    session.commit()
-
-    try:
+    with audited_run(session, "full" if not force_full else "full-force", source) as reporter:
+        run = reporter.run
         report("Syncing subscriptions…")
-        channels_synced = sync_subscriptions(session, youtube, run)
-        run.channels_synced = channels_synced
+        run.channels_synced = sync_subscriptions(session, source, reporter)
 
         report("Syncing playlists…")
-        _, videos_from_playlists = sync_my_playlists(session, youtube, run)
+        _, videos_from_playlists = sync_my_playlists(session, source, reporter)
         run.videos_upserted += videos_from_playlists
 
         # never-synced channels first: quota-limited runs make forward
@@ -543,15 +465,15 @@ def sync_all(
         failed_channels = 0
         for i, channel in enumerate(channels, 1):
             report(f"Syncing uploads {i}/{len(channels)}: {channel.title}")
-            _progress(session, run, "channels", i, len(channels), channel.title)
+            reporter.progress("channels", i, len(channels), channel.title)
             try:
                 run.videos_upserted += sync_channel_uploads(
                     session,
-                    youtube,
+                    source,
                     channel,
                     force_full=force_full,
                     initial_backfill=config.sync.initial_backfill,
-                    run=run,
+                    reporter=reporter,
                     progress_pos=(i, len(channels)),
                 )
             except SyncCancelled:
@@ -560,43 +482,17 @@ def sync_all(
                 session.rollback()
                 failed_channels += 1
                 logger.warning("uploads sync failed for %s: %s", channel.title, exc)
-                _append_log(run, f"[channels {i}/{len(channels)}] {channel.title} FAILED: {exc}")
+                reporter.log(f"[channels {i}/{len(channels)}] {channel.title} FAILED: {exc}")
                 if _is_quota_error(exc):
                     raise
         if failed_channels:
             run.error_message = f"{failed_channels} channel(s) failed; see logs"
-        run.phase = "done"
-        run.api_calls = yt.get_api_calls() - getattr(run, "_api_calls_at_start", 0)
-        run.finished_at = utcnow().replace(tzinfo=None)
-        _append_log(
-            run,
-            f"done — {run.channels_synced} channels, {run.videos_upserted} videos"
-            f" upserted, ~{run.api_calls} API units",
-        )
-        session.commit()
+
+    run = reporter.run
+    if run.phase == "cancelled":
+        report("Sync stopped by user.")
+    else:
         report(
             f"Sync complete: {run.channels_synced} channels, {run.videos_upserted} videos upserted."
         )
-    except SyncCancelled:
-        session.rollback()
-        run.phase = "cancelled"
-        run.error_message = "stopped by user"
-        run.api_calls = yt.get_api_calls() - getattr(run, "_api_calls_at_start", 0)
-        run.finished_at = utcnow().replace(tzinfo=None)
-        _append_log(run, "stopped by user — progress so far is saved")
-        session.commit()
-        report("Sync stopped by user.")
-    except Exception as exc:  # record failure in the audit row, then re-raise
-        session.rollback()
-        run.error_message = (
-            "YouTube API daily quota exceeded — resets at midnight Pacific. "
-            "Progress is saved; run sync again tomorrow."
-            if _is_quota_error(exc)
-            else str(exc)
-        )
-        run.api_calls = yt.get_api_calls() - getattr(run, "_api_calls_at_start", 0)
-        run.finished_at = utcnow().replace(tzinfo=None)
-        _append_log(run, f"FAILED: {run.error_message}")
-        session.commit()
-        raise
     return run

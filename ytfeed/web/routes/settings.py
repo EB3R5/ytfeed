@@ -57,17 +57,17 @@ def settings_page(request: Request, db: Session = Depends(get_db)):
 
 def _run_sync_bg(kind: str = "full", playlist_id: str | None = None) -> None:
     from ytfeed.db.session import get_session_factory
-    from ytfeed.youtube.auth import get_youtube_client
+    from ytfeed.youtube.client import build_source
     from ytfeed.youtube.sync import run_partial_sync, sync_all
 
     config = get_config()
-    youtube = get_youtube_client(config)
+    source = build_source(config)
     factory = get_session_factory(config)
     with factory() as session:
         if kind == "full":
-            sync_all(session, youtube, config)
+            sync_all(session, source, config)
         else:
-            run_partial_sync(session, youtube, kind, playlist_id=playlist_id)
+            run_partial_sync(session, source, kind, playlist_id=playlist_id)
 
 
 def sync_is_running(db: Session) -> bool:

@@ -23,12 +23,12 @@ def cmd_sync(args: argparse.Namespace) -> int:
 
     from ytfeed.db.models import Channel
     from ytfeed.db.session import get_session_factory, init_db
-    from ytfeed.youtube.auth import get_youtube_client
+    from ytfeed.youtube.client import build_source
     from ytfeed.youtube.sync import sync_all, sync_channel_uploads
 
     config = load_config(args.config)
     init_db(config)
-    youtube = get_youtube_client(config)
+    source = build_source(config)
     factory = get_session_factory(config)
     with factory() as session:
         if args.channel:
@@ -40,7 +40,7 @@ def cmd_sync(args: argparse.Namespace) -> int:
                 return 1
             count = sync_channel_uploads(
                 session,
-                youtube,
+                source,
                 channel,
                 force_full=args.full,
                 initial_backfill=config.sync.initial_backfill,
@@ -48,7 +48,7 @@ def cmd_sync(args: argparse.Namespace) -> int:
             print(f"{channel.title}: {count} new videos.")
         else:
             run = sync_all(
-                session, youtube, config, force_full=args.full, progress_cb=print
+                session, source, config, force_full=args.full, progress_cb=print
             )
             if run.error_message:
                 return 1

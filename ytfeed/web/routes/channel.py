@@ -66,17 +66,17 @@ def channel_page(
 
 def _run_channel_sync(channel_id: str, force_full: bool) -> None:
     from ytfeed.db.session import get_session_factory
-    from ytfeed.youtube.auth import get_youtube_client
+    from ytfeed.youtube.client import build_source
     from ytfeed.youtube.sync import run_partial_sync
 
     config = get_config()
-    youtube = get_youtube_client(config)
+    source = build_source(config)
     factory = get_session_factory(config)
     with factory() as session:
         # audited SyncRun: progress + log show up on the settings page
         run_partial_sync(
             session,
-            youtube,
+            source,
             "channel",
             channel_id=channel_id,
             force_full=force_full,
