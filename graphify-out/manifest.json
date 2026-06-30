@@ -35,13 +35,13 @@
     "semantic_hash": ""
   },
   "ytfeed/db/models.py": {
-    "mtime": 1781283115.8026116,
-    "ast_hash": "ff54a321fb2ce48b24df09d51909e2ca",
+    "mtime": 1782055374.7615304,
+    "ast_hash": "69bced0662c519604bd05debf5819f80",
     "semantic_hash": ""
   },
   "ytfeed/db/session.py": {
-    "mtime": 1781282804.3876977,
-    "ast_hash": "c3153c41a9853bed7da4ca773d23214f",
+    "mtime": 1782055388.5217834,
+    "ast_hash": "2c9777c4ab4d4ad87cb4153aa33cf821",
     "semantic_hash": ""
   },
   "ytfeed/metadata/__init__.py": {
@@ -95,8 +95,8 @@
     "semantic_hash": ""
   },
   "ytfeed/web/app.py": {
-    "mtime": 1781120791.8985949,
-    "ast_hash": "0608e65862a5799f4ce5ea1724d24340",
+    "mtime": 1782055429.6405358,
+    "ast_hash": "f0b4dbd541f27ea0dc2429076b83c5e9",
     "semantic_hash": ""
   },
   "ytfeed/web/dependencies.py": {
@@ -110,8 +110,8 @@
     "semantic_hash": ""
   },
   "ytfeed/web/routes/channel.py": {
-    "mtime": 1781819538.1914117,
-    "ast_hash": "3a4af2b6bbf8dfa417d807df2163d3e0",
+    "mtime": 1782055456.5268257,
+    "ast_hash": "152fe3fe460d317f5f8784c6334c6593",
     "semantic_hash": ""
   },
   "ytfeed/web/routes/playlist.py": {
@@ -140,8 +140,8 @@
     "semantic_hash": ""
   },
   "ytfeed/web/static/app.js": {
-    "mtime": 1781282210.3268673,
-    "ast_hash": "c974583ce6d1c02b196f6e18afc7e7e6",
+    "mtime": 1782057275.0249832,
+    "ast_hash": "13c250cf9a8968ad0e7b273a9a3d057c",
     "semantic_hash": ""
   },
   "ytfeed/web/static/htmx.min.js": {
@@ -185,13 +185,13 @@
     "semantic_hash": ""
   },
   "ytfeed/web/templates/base.html": {
-    "mtime": 1781205776.9019887,
-    "ast_hash": "f546400b819169a3cea30d0e163a62e0",
+    "mtime": 1782055864.2063792,
+    "ast_hash": "8e5bec12b6f5f626e9606af8c200486e",
     "semantic_hash": ""
   },
   "ytfeed/web/templates/channel.html": {
-    "mtime": 1781056161.5297542,
-    "ast_hash": "3be2c0c9ebb023f1af6cf2c279c2043f",
+    "mtime": 1782055474.6900678,
+    "ast_hash": "4c316141d7accc3c2c0c1ff35bae7ff6",
     "semantic_hash": ""
   },
   "ytfeed/web/templates/partials/flash.html": {
@@ -230,8 +230,8 @@
     "semantic_hash": ""
   },
   "ytfeed/web/templates/playlists.html": {
-    "mtime": 1781205451.4344885,
-    "ast_hash": "16547c57cfed6fb4941e1ef0ebd845a8",
+    "mtime": 1782057281.9550393,
+    "ast_hash": "dc93aac3f0d31d6b499e047232b653bc",
     "semantic_hash": ""
   },
   "ytfeed/web/templates/queue.html": {
@@ -255,8 +255,8 @@
     "semantic_hash": ""
   },
   "ytfeed/web/templates/subscriptions.html": {
-    "mtime": 1781205630.7882545,
-    "ast_hash": "7f5bcfcb92b28397244716d9c6ba4fe2",
+    "mtime": 1782055481.9445171,
+    "ast_hash": "77e95daa032b5af54491a0c1b793a3ce",
     "semantic_hash": ""
   },
   "scripts/update-erd": {
@@ -312,6 +312,31 @@
   "tests/test_sync.py": {
     "mtime": 1781819601.5649683,
     "ast_hash": "6677da729e269939e41101e1bc950016",
+    "semantic_hash": ""
+  },
+  "ytfeed/web/routes/channel_category.py": {
+    "mtime": 1782056142.1645424,
+    "ast_hash": "eb6496aea236509f896bf8ab317e4870",
+    "semantic_hash": ""
+  },
+  "ytfeed/web/templates/channel_categories.html": {
+    "mtime": 1782056131.427086,
+    "ast_hash": "be7d83723ba7ccd1098e1a5a6378daa6",
+    "semantic_hash": ""
+  },
+  "ytfeed/web/templates/partials/channel_category.html": {
+    "mtime": 1782055465.7819602,
+    "ast_hash": "81d65640ee15e7aa757bbe7ab01b80c7",
+    "semantic_hash": ""
+  },
+  "ytfeed/web/templates/partials/channel_notes.html": {
+    "mtime": 1782055469.8401167,
+    "ast_hash": "d961500763273ef39d80dab8238d5ddc",
+    "semantic_hash": ""
+  },
+  "ytfeed/web/static/channel_categories.js": {
+    "mtime": 1782057128.693496,
+    "ast_hash": "d5f0f8f77b4627a7c4adb6381414b229",
     "semantic_hash": ""
   }
 }

@@ -11,7 +11,15 @@ from fastapi.staticfiles import StaticFiles
 
 from ytfeed.db.session import init_db
 from ytfeed.web.dependencies import get_config
-from ytfeed.web.routes import channel, playlist, queue, recents, settings, storage
+from ytfeed.web.routes import (
+    channel,
+    channel_category,
+    playlist,
+    queue,
+    recents,
+    settings,
+    storage,
+)
 
 app = FastAPI(title="ytfeed")
 
@@ -23,6 +31,7 @@ app.mount(
 
 app.include_router(recents.router)
 app.include_router(channel.router)
+app.include_router(channel_category.router)
 app.include_router(playlist.router)
 app.include_router(queue.router)
 app.include_router(settings.router)

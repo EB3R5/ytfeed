@@ -39,6 +39,26 @@ class Channel(Base):
     last_video_published_at: Mapped[datetime | None] = mapped_column(DateTime)
     is_active: Mapped[bool] = mapped_column(Boolean, default=True)
     is_monitored: Mapped[bool] = mapped_column(Boolean, default=False)
+    # channel-level taxonomy (independent of playlist-derived video category)
+    category_id: Mapped[int | None] = mapped_column(
+        ForeignKey("channel_categories.id"), index=True
+    )
+    notes: Mapped[str] = mapped_column(Text, default="")
+
+
+class ChannelCategory(Base):
+    """Group -> Category -> Type taxonomy assigned to subscribed channels.
+
+    Mirrors money-webapp's category model (Group=section, Category=item/name,
+    Type=attribute); channels reference a row by FK rather than denormalizing.
+    """
+
+    __tablename__ = "channel_categories"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    name: Mapped[str] = mapped_column(String(128), unique=True, index=True)  # Category
+    group: Mapped[str] = mapped_column(String(128), default="", index=True)  # Group
+    type: Mapped[str | None] = mapped_column(String(128))  # Type
 
 
 class Playlist(Base):

@@ -54,6 +54,10 @@ def init_db(config: Config) -> None:
     # create_all never alters existing tables; add columns introduced after a
     # table first shipped (poor man's migration — SQLite, additive only)
     added_columns = {
+        "channels": [
+            ("category_id", "INTEGER"),
+            ("notes", "TEXT NOT NULL DEFAULT ''"),
+        ],
         "sync_runs": [
             ("phase", "VARCHAR(32)"),
             ("progress_current", "INTEGER NOT NULL DEFAULT 0"),

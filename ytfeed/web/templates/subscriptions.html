@@ -10,16 +10,19 @@
 </div>
 <table class="channel-table" id="subs-table">
   <thead>
-    <tr><th></th><th>Channel</th><th>Synced videos</th><th>Last synced</th><th></th></tr>
+    <tr><th></th><th>Channel</th><th>Category</th><th>Synced videos</th><th>Last synced</th><th></th></tr>
   </thead>
   <tbody>
-    {% for channel, upload_count in channel_rows %}
+    {% for channel, upload_count, category in channel_rows %}
     <tr>
       <td class="thumb-cell">
         {% if channel.thumbnail_url %}<img src="{{ channel.thumbnail_url }}" alt="" class="avatar" loading="lazy">{% endif %}
       </td>
       <td>
         <a href="/channels/{{ channel.channel_id }}" target="_blank">{{ channel.title }}</a>
+      </td>
+      <td class="category-cell">
+        {% if category %}<span class="tag">{{ category.group }} · {{ category.name }}{% if category.type %} · {{ category.type }}{% endif %}</span>{% endif %}
       </td>
       <td>{{ upload_count }}</td>
       <td>{{ channel.last_synced_at.strftime('%Y-%m-%d %H:%M') if channel.last_synced_at else 'never' }}</td>

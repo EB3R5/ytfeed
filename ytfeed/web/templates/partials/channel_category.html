@@ -1,0 +1,16 @@
+<form class="channel-category" hx-post="/channels/{{ channel.channel_id }}/category"
+      hx-swap="outerHTML" hx-trigger="change from:select">
+  <label>Category</label>
+  <select name="category_id">
+    <option value="" {{ 'selected' if not channel.category_id else '' }}>— none —</option>
+    {% for group, cats in category_groups %}
+    <optgroup label="{{ group }}">
+      {% for cat in cats %}
+      <option value="{{ cat.id }}" {{ 'selected' if channel.category_id == cat.id else '' }}>
+        {{ cat.name }}{% if cat.type %} · {{ cat.type }}{% endif %}
+      </option>
+      {% endfor %}
+    </optgroup>
+    {% endfor %}
+  </select>
+</form>

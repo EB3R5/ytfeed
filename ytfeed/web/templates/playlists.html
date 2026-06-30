@@ -3,7 +3,15 @@
 {% block content %}
 <h1>Playlists</h1>
 {% if playlists %}
-<table class="channel-table">
+<div class="filters">
+  <input type="search" id="playlists-search" placeholder="Search {{ playlists|length }} playlists…"
+         data-filter-rows="#playlists-table" data-filter-count="playlists-count"
+         data-filter-exact="#playlists-exact" autofocus>
+  <label class="cat-search-mode"><input type="checkbox" id="playlists-exact"
+         data-filter-trigger="#playlists-search"> Exact match</label>
+  <span class="hint" id="playlists-count"></span>
+</div>
+<table class="channel-table" id="playlists-table">
   <thead><tr><th></th><th>Playlist</th><th>Items</th><th>Last synced</th><th></th></tr></thead>
   <tbody>
     {% for playlist in playlists %}

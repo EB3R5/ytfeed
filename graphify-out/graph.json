@@ -9,7 +9,7 @@
       "source_file": "tests/test_categorize.py",
       "source_location": "L1",
       "id": "tests_test_categorize",
-      "community": 10,
+      "community": 4,
       "norm_label": "test_categorize.py"
     },
     {
@@ -18,7 +18,7 @@
       "source_file": "tests/test_categorize.py",
       "source_location": "L11",
       "id": "tests_test_categorize_playlist",
-      "community": 10,
+      "community": 4,
       "norm_label": "_playlist()"
     },
     {
@@ -27,7 +27,7 @@
       "source_file": "tests/test_categorize.py",
       "source_location": "L19",
       "id": "tests_test_categorize_categorizetests",
-      "community": 10,
+      "community": 4,
       "norm_label": "categorizetests"
     },
     {
@@ -36,7 +36,7 @@
       "source_file": "tests/test_categorize.py",
       "source_location": "L20",
       "id": "tests_test_categorize_categorizetests_setup",
-      "community": 10,
+      "community": 4,
       "norm_label": ".setup()"
     },
     {
@@ -45,7 +45,7 @@
       "source_file": "tests/test_categorize.py",
       "source_location": "L25",
       "id": "tests_test_categorize_categorizetests_test_no_playlist_means_no_category",
-      "community": 10,
+      "community": 4,
       "norm_label": ".test_no_playlist_means_no_category()"
     },
     {
@@ -54,7 +54,7 @@
       "source_file": "tests/test_categorize.py",
       "source_location": "L28",
       "id": "tests_test_categorize_categorizetests_test_single_playlist_wins",
-      "community": 10,
+      "community": 4,
       "norm_label": ".test_single_playlist_wins()"
     },
     {
@@ -63,7 +63,7 @@
       "source_file": "tests/test_categorize.py",
       "source_location": "L33",
       "id": "tests_test_categorize_categorizetests_test_most_recent_add_wins",
-      "community": 10,
+      "community": 4,
       "norm_label": ".test_most_recent_add_wins()"
     },
     {
@@ -72,7 +72,7 @@
       "source_file": "tests/test_categorize.py",
       "source_location": "L49",
       "id": "tests_test_categorize_categorizetests_test_smallest_playlist_wins_without_timestamps",
-      "community": 10,
+      "community": 4,
       "norm_label": ".test_smallest_playlist_wins_without_timestamps()"
     },
     {
@@ -81,7 +81,7 @@
       "source_file": "tests/test_categorize.py",
       "source_location": "L55",
       "id": "tests_test_categorize_categorizetests_test_timestamped_membership_beats_untimestamped",
-      "community": 10,
+      "community": 4,
       "norm_label": ".test_timestamped_membership_beats_untimestamped()"
     },
     {
@@ -90,7 +90,7 @@
       "source_file": "tests/test_categorize.py",
       "source_location": "L67",
       "id": "tests_test_categorize_categorizetests_test_duplicate_playlist_names_merge",
-      "community": 10,
+      "community": 4,
       "norm_label": ".test_duplicate_playlist_names_merge()"
     },
     {
@@ -99,7 +99,7 @@
       "source_file": "tests/test_categorize.py",
       "source_location": "L76",
       "id": "tests_test_categorize_categorizetests_test_category_is_filesystem_safe",
-      "community": 10,
+      "community": 4,
       "norm_label": ".test_category_is_filesystem_safe()"
     },
     {
@@ -270,7 +270,7 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L14",
       "id": "tests_test_sync_item",
-      "community": 30,
+      "community": 27,
       "norm_label": "_item()"
     },
     {
@@ -279,7 +279,7 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L21",
       "id": "tests_test_sync_fakesource",
-      "community": 30,
+      "community": 27,
       "norm_label": "fakesource"
     },
     {
@@ -288,7 +288,7 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L24",
       "id": "tests_test_sync_fakesource_init",
-      "community": 30,
+      "community": 27,
       "norm_label": ".__init__()"
     },
     {
@@ -297,7 +297,7 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L29",
       "id": "tests_test_sync_fakesource_api_calls",
-      "community": 30,
+      "community": 27,
       "norm_label": ".api_calls()"
     },
     {
@@ -306,7 +306,7 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L32",
       "id": "tests_test_sync_fakesource_fetch_subscriptions",
-      "community": 30,
+      "community": 27,
       "norm_label": ".fetch_subscriptions()"
     },
     {
@@ -315,7 +315,7 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L35",
       "id": "tests_test_sync_fakesource_fetch_my_playlists",
-      "community": 30,
+      "community": 27,
       "norm_label": ".fetch_my_playlists()"
     },
     {
@@ -324,7 +324,7 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L38",
       "id": "tests_test_sync_fakesource_fetch_playlist_items_paged",
-      "community": 30,
+      "community": 27,
       "norm_label": ".fetch_playlist_items_paged()"
     },
     {
@@ -333,7 +333,7 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L43",
       "id": "tests_test_sync_fakesource_fetch_playlists_by_ids",
-      "community": 30,
+      "community": 27,
       "norm_label": ".fetch_playlists_by_ids()"
     },
     {
@@ -342,7 +342,7 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L46",
       "id": "tests_test_sync_fakesource_fetch_channels_content_details",
-      "community": 30,
+      "community": 27,
       "norm_label": ".fetch_channels_content_details()"
     },
     {
@@ -351,7 +351,7 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L50",
       "id": "tests_test_sync_channeluploadstests",
-      "community": 30,
+      "community": 27,
       "norm_label": "channeluploadstests"
     },
     {
@@ -360,7 +360,7 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L51",
       "id": "tests_test_sync_channeluploadstests_setup",
-      "community": 30,
+      "community": 27,
       "norm_label": ".setup()"
     },
     {
@@ -369,7 +369,7 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L58",
       "id": "tests_test_sync_channeluploadstests_channel",
-      "community": 30,
+      "community": 27,
       "norm_label": "._channel()"
     },
     {
@@ -387,7 +387,7 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L64",
       "id": "tests_test_sync_channeluploadstests_test_early_stop_on_known_video",
-      "community": 30,
+      "community": 27,
       "norm_label": ".test_early_stop_on_known_video()"
     },
     {
@@ -396,7 +396,7 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L87",
       "id": "tests_test_sync_channeluploadstests_test_first_sync_respects_backfill_cap",
-      "community": 30,
+      "community": 27,
       "norm_label": ".test_first_sync_respects_backfill_cap()"
     },
     {
@@ -405,7 +405,7 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L99",
       "id": "tests_test_sync_channeluploadstests_test_early_stop_on_published_older_than_last_seen",
-      "community": 30,
+      "community": 27,
       "norm_label": ".test_early_stop_on_published_older_than_last_seen()"
     },
     {
@@ -522,7 +522,7 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L22",
       "id": "tests_test_sync_rationale_22",
-      "community": 30,
+      "community": 27,
       "norm_label": "a canned youtubesource \u2014 no network, no google client to fake."
     },
     {
@@ -711,7 +711,7 @@
       "source_file": "ytfeed/cli.py",
       "source_location": "L21",
       "id": "ytfeed_cli_cmd_sync",
-      "community": 25,
+      "community": 5,
       "norm_label": "cmd_sync()"
     },
     {
@@ -837,7 +837,7 @@
       "source_file": "ytfeed/config.py",
       "source_location": "L42",
       "id": "ytfeed_config_config",
-      "community": 26,
+      "community": 2,
       "norm_label": "config"
     },
     {
@@ -891,7 +891,7 @@
       "source_file": "ytfeed/db/models.py",
       "source_location": "L1",
       "id": "db_models",
-      "community": 0,
+      "community": 10,
       "norm_label": "models.py"
     },
     {
@@ -900,7 +900,7 @@
       "source_file": "ytfeed/db/models.py",
       "source_location": "L20",
       "id": "db_models_utcnow",
-      "community": 0,
+      "community": 10,
       "norm_label": "utcnow()"
     },
     {
@@ -909,7 +909,7 @@
       "source_file": "ytfeed/db/models.py",
       "source_location": "L20",
       "id": "ytfeed_db_models_py_datetime",
-      "community": 0,
+      "community": 10,
       "norm_label": "datetime"
     },
     {
@@ -940,19 +940,28 @@
       "norm_label": "channel"
     },
     {
+      "label": "ChannelCategory",
+      "file_type": "code",
+      "source_file": "ytfeed/db/models.py",
+      "source_location": "L49",
+      "id": "db_models_channelcategory",
+      "community": 24,
+      "norm_label": "channelcategory"
+    },
+    {
       "label": "Playlist",
       "file_type": "code",
       "source_file": "ytfeed/db/models.py",
-      "source_location": "L44",
+      "source_location": "L64",
       "id": "db_models_playlist",
-      "community": 26,
+      "community": 28,
       "norm_label": "playlist"
     },
     {
       "label": "Video",
       "file_type": "code",
       "source_file": "ytfeed/db/models.py",
-      "source_location": "L59",
+      "source_location": "L79",
       "id": "db_models_video",
       "community": 27,
       "norm_label": "video"
@@ -961,7 +970,7 @@
       "label": ".url()",
       "file_type": "code",
       "source_file": "ytfeed/db/models.py",
-      "source_location": "L85",
+      "source_location": "L105",
       "id": "db_models_video_url",
       "community": 27,
       "norm_label": ".url()"
@@ -970,16 +979,16 @@
       "label": "PlaylistItem",
       "file_type": "code",
       "source_file": "ytfeed/db/models.py",
-      "source_location": "L89",
+      "source_location": "L109",
       "id": "db_models_playlistitem",
-      "community": 26,
+      "community": 0,
       "norm_label": "playlistitem"
     },
     {
       "label": "ChannelUpload",
       "file_type": "code",
       "source_file": "ytfeed/db/models.py",
-      "source_location": "L102",
+      "source_location": "L122",
       "id": "db_models_channelupload",
       "community": 27,
       "norm_label": "channelupload"
@@ -988,7 +997,7 @@
       "label": "TranscriptionQueueItem",
       "file_type": "code",
       "source_file": "ytfeed/db/models.py",
-      "source_location": "L115",
+      "source_location": "L135",
       "id": "db_models_transcriptionqueueitem",
       "community": 2,
       "norm_label": "transcriptionqueueitem"
@@ -997,7 +1006,7 @@
       "label": "SyncRun",
       "file_type": "code",
       "source_file": "ytfeed/db/models.py",
-      "source_location": "L133",
+      "source_location": "L153",
       "id": "db_models_syncrun",
       "community": 26,
       "norm_label": "syncrun"
@@ -1008,8 +1017,17 @@
       "source_file": "ytfeed/db/models.py",
       "source_location": "L1",
       "id": "db_models_rationale_1",
-      "community": 0,
+      "community": 10,
       "norm_label": "sqlalchemy 2.0 models for ytfeed."
+    },
+    {
+      "label": "Group -> Category -> Type taxonomy assigned to subscribed channels.      Mirrors",
+      "file_type": "rationale",
+      "source_file": "ytfeed/db/models.py",
+      "source_location": "L50",
+      "id": "db_models_rationale_50",
+      "community": 24,
+      "norm_label": "group -> category -> type taxonomy assigned to subscribed channels.      mirrors"
     },
     {
       "label": "session.py",
@@ -1017,7 +1035,7 @@
       "source_file": "ytfeed/db/session.py",
       "source_location": "L1",
       "id": "db_session",
-      "community": 6,
+      "community": 5,
       "norm_label": "session.py"
     },
     {
@@ -1026,7 +1044,7 @@
       "source_file": "ytfeed/db/session.py",
       "source_location": "L18",
       "id": "db_session_get_engine",
-      "community": 6,
+      "community": 5,
       "norm_label": "get_engine()"
     },
     {
@@ -1035,7 +1053,7 @@
       "source_file": "ytfeed/db/session.py",
       "source_location": "L18",
       "id": "ytfeed_db_session_py_config",
-      "community": 6,
+      "community": 5,
       "norm_label": "config"
     },
     {
@@ -1044,7 +1062,7 @@
       "source_file": "ytfeed/db/session.py",
       "source_location": "L18",
       "id": "engine",
-      "community": 27,
+      "community": 5,
       "norm_label": "engine"
     },
     {
@@ -1053,7 +1071,7 @@
       "source_file": "ytfeed/db/session.py",
       "source_location": "L44",
       "id": "db_session_get_session_factory",
-      "community": 1,
+      "community": 5,
       "norm_label": "get_session_factory()"
     },
     {
@@ -1071,7 +1089,7 @@
       "source_file": "ytfeed/db/session.py",
       "source_location": "L44",
       "id": "ytfeed_db_session_py_session",
-      "community": 27,
+      "community": 5,
       "norm_label": "session"
     },
     {
@@ -1080,7 +1098,7 @@
       "source_file": "ytfeed/db/session.py",
       "source_location": "L51",
       "id": "db_session_init_db",
-      "community": 6,
+      "community": 5,
       "norm_label": "init_db()"
     },
     {
@@ -1089,7 +1107,7 @@
       "source_file": "ytfeed/db/session.py",
       "source_location": "L1",
       "id": "db_session_rationale_1",
-      "community": 6,
+      "community": 5,
       "norm_label": "engine/session factory and schema creation."
     },
     {
@@ -1233,7 +1251,7 @@
       "source_file": "ytfeed/transcripts/categorize.py",
       "source_location": "L1",
       "id": "transcripts_categorize",
-      "community": 26,
+      "community": 4,
       "norm_label": "categorize.py"
     },
     {
@@ -1242,7 +1260,7 @@
       "source_file": "ytfeed/transcripts/categorize.py",
       "source_location": "L22",
       "id": "transcripts_categorize_category_for_video",
-      "community": 10,
+      "community": 4,
       "norm_label": "category_for_video()"
     },
     {
@@ -1251,7 +1269,7 @@
       "source_file": "ytfeed/transcripts/categorize.py",
       "source_location": "L22",
       "id": "ytfeed_transcripts_categorize_py_session",
-      "community": 26,
+      "community": 28,
       "norm_label": "session"
     },
     {
@@ -1260,7 +1278,7 @@
       "source_file": "ytfeed/transcripts/categorize.py",
       "source_location": "L1",
       "id": "transcripts_categorize_rationale_1",
-      "community": 26,
+      "community": 4,
       "norm_label": "derive a vault category for a video from its playlist memberships.  playlist nam"
     },
     {
@@ -1503,7 +1521,7 @@
       "source_file": "ytfeed/transcripts/pipeline.py",
       "source_location": "L67",
       "id": "transcripts_pipeline_recover_stale_processing",
-      "community": 2,
+      "community": 1,
       "norm_label": "recover_stale_processing()"
     },
     {
@@ -1584,7 +1602,7 @@
       "source_file": "ytfeed/transcripts/pipeline.py",
       "source_location": "L68",
       "id": "transcripts_pipeline_rationale_68",
-      "community": 2,
+      "community": 1,
       "norm_label": "reset items stuck in 'processing' (e.g. after a server restart killed a run)."
     },
     {
@@ -1717,7 +1735,7 @@
       "label": "_retry_monitor()",
       "file_type": "code",
       "source_file": "ytfeed/web/app.py",
-      "source_location": "L35",
+      "source_location": "L44",
       "id": "web_app_retry_monitor",
       "community": 1,
       "norm_label": "_retry_monitor()"
@@ -1726,7 +1744,7 @@
       "label": "_startup()",
       "file_type": "code",
       "source_file": "ytfeed/web/app.py",
-      "source_location": "L55",
+      "source_location": "L64",
       "id": "web_app_startup",
       "community": 1,
       "norm_label": "_startup()"
@@ -1744,8 +1762,8 @@
       "label": "Pick up deferred queue items (e.g. IP-block retries) once they're due.",
       "file_type": "rationale",
       "source_file": "ytfeed/web/app.py",
-      "source_location": "L36",
-      "id": "web_app_rationale_36",
+      "source_location": "L45",
+      "id": "web_app_rationale_45",
       "community": 1,
       "norm_label": "pick up deferred queue items (e.g. ip-block retries) once they're due."
     },
@@ -1755,7 +1773,7 @@
       "source_file": "ytfeed/web/dependencies.py",
       "source_location": "L1",
       "id": "web_dependencies",
-      "community": 1,
+      "community": 23,
       "norm_label": "dependencies.py"
     },
     {
@@ -1764,7 +1782,7 @@
       "source_file": "ytfeed/web/dependencies.py",
       "source_location": "L21",
       "id": "web_dependencies_asset_v",
-      "community": 1,
+      "community": 23,
       "norm_label": "asset_v()"
     },
     {
@@ -1773,7 +1791,7 @@
       "source_file": "ytfeed/web/dependencies.py",
       "source_location": "L33",
       "id": "web_dependencies_get_config",
-      "community": 1,
+      "community": 23,
       "norm_label": "get_config()"
     },
     {
@@ -1782,7 +1800,7 @@
       "source_file": "ytfeed/web/dependencies.py",
       "source_location": "L33",
       "id": "ytfeed_web_dependencies_py_config",
-      "community": 1,
+      "community": 23,
       "norm_label": "config"
     },
     {
@@ -1791,7 +1809,7 @@
       "source_file": "ytfeed/web/dependencies.py",
       "source_location": "L37",
       "id": "web_dependencies_get_db",
-      "community": 1,
+      "community": 23,
       "norm_label": "get_db()"
     },
     {
@@ -1800,7 +1818,7 @@
       "source_file": "ytfeed/web/dependencies.py",
       "source_location": "L37",
       "id": "ytfeed_web_dependencies_py_session",
-      "community": 1,
+      "community": 23,
       "norm_label": "session"
     },
     {
@@ -1809,7 +1827,7 @@
       "source_file": "ytfeed/web/dependencies.py",
       "source_location": "L1",
       "id": "web_dependencies_rationale_1",
-      "community": 1,
+      "community": 23,
       "norm_label": "shared fastapi dependencies: config, db session, templates."
     },
     {
@@ -1818,7 +1836,7 @@
       "source_file": "ytfeed/web/dependencies.py",
       "source_location": "L22",
       "id": "web_dependencies_rationale_22",
-      "community": 1,
+      "community": 23,
       "norm_label": "file mtime as a cache-busting version for static asset urls."
     },
     {
@@ -1843,7 +1861,7 @@
       "label": "subscriptions()",
       "file_type": "code",
       "source_file": "ytfeed/web/routes/channel.py",
-      "source_location": "L17",
+      "source_location": "L18",
       "id": "routes_channel_subscriptions",
       "community": 24,
       "norm_label": "subscriptions()"
@@ -1852,7 +1870,7 @@
       "label": "Request",
       "file_type": "code",
       "source_file": "ytfeed/web/routes/channel.py",
-      "source_location": "L17",
+      "source_location": "L18",
       "id": "ytfeed_web_routes_channel_py_request",
       "community": 24,
       "norm_label": "request"
@@ -1861,7 +1879,7 @@
       "label": "Session",
       "file_type": "code",
       "source_file": "ytfeed/web/routes/channel.py",
-      "source_location": "L17",
+      "source_location": "L18",
       "id": "ytfeed_web_routes_channel_py_session",
       "community": 24,
       "norm_label": "session"
@@ -1870,25 +1888,61 @@
       "label": "channel_page()",
       "file_type": "code",
       "source_file": "ytfeed/web/routes/channel.py",
-      "source_location": "L37",
+      "source_location": "L39",
       "id": "routes_channel_channel_page",
       "community": 24,
       "norm_label": "channel_page()"
     },
     {
+      "label": "_category_context()",
+      "file_type": "code",
+      "source_file": "ytfeed/web/routes/channel.py",
+      "source_location": "L70",
+      "id": "routes_channel_category_context",
+      "community": 24,
+      "norm_label": "_category_context()"
+    },
+    {
+      "label": "Channel",
+      "file_type": "code",
+      "source_file": "ytfeed/web/routes/channel.py",
+      "source_location": "L70",
+      "id": "ytfeed_web_routes_channel_py_channel",
+      "community": 24,
+      "norm_label": "channel"
+    },
+    {
+      "label": "set_channel_category()",
+      "file_type": "code",
+      "source_file": "ytfeed/web/routes/channel.py",
+      "source_location": "L79",
+      "id": "routes_channel_set_channel_category",
+      "community": 24,
+      "norm_label": "set_channel_category()"
+    },
+    {
+      "label": "set_channel_notes()",
+      "file_type": "code",
+      "source_file": "ytfeed/web/routes/channel.py",
+      "source_location": "L101",
+      "id": "routes_channel_set_channel_notes",
+      "community": 24,
+      "norm_label": "set_channel_notes()"
+    },
+    {
       "label": "_run_channel_sync()",
       "file_type": "code",
       "source_file": "ytfeed/web/routes/channel.py",
-      "source_location": "L67",
+      "source_location": "L119",
       "id": "routes_channel_run_channel_sync",
-      "community": 24,
+      "community": 5,
       "norm_label": "_run_channel_sync()"
     },
     {
       "label": "refresh_channel()",
       "file_type": "code",
       "source_file": "ytfeed/web/routes/channel.py",
-      "source_location": "L88",
+      "source_location": "L140",
       "id": "routes_channel_refresh_channel",
       "community": 24,
       "norm_label": "refresh_channel()"
@@ -1897,7 +1951,7 @@
       "label": "BackgroundTasks",
       "file_type": "code",
       "source_file": "ytfeed/web/routes/channel.py",
-      "source_location": "L88",
+      "source_location": "L140",
       "id": "ytfeed_web_routes_channel_py_backgroundtasks",
       "community": 24,
       "norm_label": "backgroundtasks"
@@ -1906,7 +1960,7 @@
       "label": "backfill_channel()",
       "file_type": "code",
       "source_file": "ytfeed/web/routes/channel.py",
-      "source_location": "L96",
+      "source_location": "L148",
       "id": "routes_channel_backfill_channel",
       "community": 24,
       "norm_label": "backfill_channel()"
@@ -1919,6 +1973,150 @@
       "id": "routes_channel_rationale_1",
       "community": 24,
       "norm_label": "subscriptions list and per-channel drill-down pages."
+    },
+    {
+      "label": "channel_category.py",
+      "file_type": "code",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L1",
+      "id": "routes_channel_category",
+      "community": 24,
+      "norm_label": "channel_category.py"
+    },
+    {
+      "label": "_grouped()",
+      "file_type": "code",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L25",
+      "id": "routes_channel_category_grouped",
+      "community": 24,
+      "norm_label": "_grouped()"
+    },
+    {
+      "label": "Session",
+      "file_type": "code",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L25",
+      "id": "ytfeed_web_routes_channel_category_py_session",
+      "community": 24,
+      "norm_label": "session"
+    },
+    {
+      "label": "ChannelCategory",
+      "file_type": "code",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L25",
+      "id": "channelcategory",
+      "community": 24,
+      "norm_label": "channelcategory"
+    },
+    {
+      "label": "_usage()",
+      "file_type": "code",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L38",
+      "id": "routes_channel_category_usage",
+      "community": 24,
+      "norm_label": "_usage()"
+    },
+    {
+      "label": "_serialize()",
+      "file_type": "code",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L48",
+      "id": "routes_channel_category_serialize",
+      "community": 24,
+      "norm_label": "_serialize()"
+    },
+    {
+      "label": "channel_categories_page()",
+      "file_type": "code",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L55",
+      "id": "routes_channel_category_channel_categories_page",
+      "community": 24,
+      "norm_label": "channel_categories_page()"
+    },
+    {
+      "label": "Request",
+      "file_type": "code",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L55",
+      "id": "ytfeed_web_routes_channel_category_py_request",
+      "community": 24,
+      "norm_label": "request"
+    },
+    {
+      "label": "api_sections()",
+      "file_type": "code",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L66",
+      "id": "routes_channel_category_api_sections",
+      "community": 24,
+      "norm_label": "api_sections()"
+    },
+    {
+      "label": "api_items()",
+      "file_type": "code",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L77",
+      "id": "routes_channel_category_api_items",
+      "community": 24,
+      "norm_label": "api_items()"
+    },
+    {
+      "label": "api_add()",
+      "file_type": "code",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L88",
+      "id": "routes_channel_category_api_add",
+      "community": 24,
+      "norm_label": "api_add()"
+    },
+    {
+      "label": "api_update()",
+      "file_type": "code",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L107",
+      "id": "routes_channel_category_api_update",
+      "community": 24,
+      "norm_label": "api_update()"
+    },
+    {
+      "label": "api_delete()",
+      "file_type": "code",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L137",
+      "id": "routes_channel_category_api_delete",
+      "community": 24,
+      "norm_label": "api_delete()"
+    },
+    {
+      "label": "Channel category taxonomy (Group -> Category -> Type) management.  Master-detail",
+      "file_type": "rationale",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L1",
+      "id": "routes_channel_category_rationale_1",
+      "community": 24,
+      "norm_label": "channel category taxonomy (group -> category -> type) management.  master-detail"
+    },
+    {
+      "label": "All categories bucketed by group (used by the channel-page picker).",
+      "file_type": "rationale",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L26",
+      "id": "routes_channel_category_rationale_26",
+      "community": 24,
+      "norm_label": "all categories bucketed by group (used by the channel-page picker)."
+    },
+    {
+      "label": "category_id -> number of channels referencing it.",
+      "file_type": "rationale",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L39",
+      "id": "routes_channel_category_rationale_39",
+      "community": 24,
+      "norm_label": "category_id -> number of channels referencing it."
     },
     {
       "label": "playlist.py",
@@ -1953,7 +2151,7 @@
       "source_file": "ytfeed/web/routes/playlist.py",
       "source_location": "L17",
       "id": "ytfeed_web_routes_playlist_py_backgroundtasks",
-      "community": 26,
+      "community": 28,
       "norm_label": "backgroundtasks"
     },
     {
@@ -1998,7 +2196,7 @@
       "source_file": "ytfeed/web/routes/queue.py",
       "source_location": "L1",
       "id": "routes_queue",
-      "community": 5,
+      "community": 2,
       "norm_label": "queue.py"
     },
     {
@@ -2007,7 +2205,7 @@
       "source_file": "ytfeed/web/routes/queue.py",
       "source_location": "L21",
       "id": "routes_queue_enqueue",
-      "community": 5,
+      "community": 2,
       "norm_label": "enqueue()"
     },
     {
@@ -2016,7 +2214,7 @@
       "source_file": "ytfeed/web/routes/queue.py",
       "source_location": "L21",
       "id": "ytfeed_web_routes_queue_py_request",
-      "community": 5,
+      "community": 2,
       "norm_label": "request"
     },
     {
@@ -2025,7 +2223,7 @@
       "source_file": "ytfeed/web/routes/queue.py",
       "source_location": "L21",
       "id": "ytfeed_web_routes_queue_py_session",
-      "community": 5,
+      "community": 2,
       "norm_label": "session"
     },
     {
@@ -2034,7 +2232,7 @@
       "source_file": "ytfeed/web/routes/queue.py",
       "source_location": "L56",
       "id": "routes_queue_queue_view",
-      "community": 5,
+      "community": 2,
       "norm_label": "queue_view()"
     },
     {
@@ -2043,7 +2241,7 @@
       "source_file": "ytfeed/web/routes/queue.py",
       "source_location": "L85",
       "id": "routes_queue_run_pipeline_bg",
-      "community": 1,
+      "community": 2,
       "norm_label": "_run_pipeline_bg()"
     },
     {
@@ -2052,7 +2250,7 @@
       "source_file": "ytfeed/web/routes/queue.py",
       "source_location": "L96",
       "id": "routes_queue_run_queue",
-      "community": 5,
+      "community": 2,
       "norm_label": "run_queue()"
     },
     {
@@ -2061,7 +2259,7 @@
       "source_file": "ytfeed/web/routes/queue.py",
       "source_location": "L96",
       "id": "ytfeed_web_routes_queue_py_backgroundtasks",
-      "community": 5,
+      "community": 2,
       "norm_label": "backgroundtasks"
     },
     {
@@ -2070,7 +2268,7 @@
       "source_file": "ytfeed/web/routes/queue.py",
       "source_location": "L102",
       "id": "routes_queue_clear_queue",
-      "community": 5,
+      "community": 2,
       "norm_label": "clear_queue()"
     },
     {
@@ -2079,7 +2277,7 @@
       "source_file": "ytfeed/web/routes/queue.py",
       "source_location": "L128",
       "id": "routes_queue_retry_item",
-      "community": 5,
+      "community": 2,
       "norm_label": "retry_item()"
     },
     {
@@ -2088,7 +2286,7 @@
       "source_file": "ytfeed/web/routes/queue.py",
       "source_location": "L1",
       "id": "routes_queue_rationale_1",
-      "community": 5,
+      "community": 2,
       "norm_label": "transcription queue: enqueue, view, run, retry."
     },
     {
@@ -2097,7 +2295,7 @@
       "source_file": "ytfeed/web/routes/queue.py",
       "source_location": "L103",
       "id": "routes_queue_rationale_103",
-      "community": 5,
+      "community": 2,
       "norm_label": "empty the queue page: cancel pending items, hide finished ones.      rows stay i"
     },
     {
@@ -2241,7 +2439,7 @@
       "source_file": "ytfeed/web/routes/settings.py",
       "source_location": "L58",
       "id": "routes_settings_run_sync_bg",
-      "community": 25,
+      "community": 0,
       "norm_label": "_run_sync_bg()"
     },
     {
@@ -2441,6 +2639,114 @@
       "id": "static_app_pinsynclogs",
       "community": 18,
       "norm_label": "pinsynclogs()"
+    },
+    {
+      "label": "channel_categories.js",
+      "file_type": "code",
+      "source_file": "ytfeed/web/static/channel_categories.js",
+      "source_location": "L1",
+      "id": "static_channel_categories",
+      "community": 31,
+      "norm_label": "channel_categories.js"
+    },
+    {
+      "label": "DatalistEditor()",
+      "file_type": "code",
+      "source_file": "ytfeed/web/static/channel_categories.js",
+      "source_location": "L25",
+      "id": "static_channel_categories_datalisteditor",
+      "community": 31,
+      "norm_label": "datalisteditor()"
+    },
+    {
+      "label": "columnDefs()",
+      "file_type": "code",
+      "source_file": "ytfeed/web/static/channel_categories.js",
+      "source_location": "L45",
+      "id": "static_channel_categories_columndefs",
+      "community": 31,
+      "norm_label": "columndefs()"
+    },
+    {
+      "label": "buildGrid()",
+      "file_type": "code",
+      "source_file": "ytfeed/web/static/channel_categories.js",
+      "source_location": "L57",
+      "id": "static_channel_categories_buildgrid",
+      "community": 31,
+      "norm_label": "buildgrid()"
+    },
+    {
+      "label": "onEdit()",
+      "file_type": "code",
+      "source_file": "ytfeed/web/static/channel_categories.js",
+      "source_location": "L77",
+      "id": "static_channel_categories_onedit",
+      "community": 31,
+      "norm_label": "onedit()"
+    },
+    {
+      "label": "loadSections()",
+      "file_type": "code",
+      "source_file": "ytfeed/web/static/channel_categories.js",
+      "source_location": "L92",
+      "id": "static_channel_categories_loadsections",
+      "community": 31,
+      "norm_label": "loadsections()"
+    },
+    {
+      "label": "selectSection()",
+      "file_type": "code",
+      "source_file": "ytfeed/web/static/channel_categories.js",
+      "source_location": "L111",
+      "id": "static_channel_categories_selectsection",
+      "community": 31,
+      "norm_label": "selectsection()"
+    },
+    {
+      "label": "refreshGrid()",
+      "file_type": "code",
+      "source_file": "ytfeed/web/static/channel_categories.js",
+      "source_location": "L124",
+      "id": "static_channel_categories_refreshgrid",
+      "community": 31,
+      "norm_label": "refreshgrid()"
+    },
+    {
+      "label": "loadItems()",
+      "file_type": "code",
+      "source_file": "ytfeed/web/static/channel_categories.js",
+      "source_location": "L135",
+      "id": "static_channel_categories_loaditems",
+      "community": 31,
+      "norm_label": "loaditems()"
+    },
+    {
+      "label": "openAdd()",
+      "file_type": "code",
+      "source_file": "ytfeed/web/static/channel_categories.js",
+      "source_location": "L144",
+      "id": "static_channel_categories_openadd",
+      "community": 31,
+      "norm_label": "openadd()"
+    },
+    {
+      "label": "deleteRow()",
+      "file_type": "code",
+      "source_file": "ytfeed/web/static/channel_categories.js",
+      "source_location": "L189",
+      "id": "static_channel_categories_deleterow",
+      "community": 31,
+      "norm_label": "deleterow()"
+    },
+    {
+      "label": "deleteSelected()",
+      "file_type": "code",
+      "source_file": "ytfeed/web/static/channel_categories.js",
+      "source_location": "L206",
+      "id": "static_channel_categories_deleteselected",
+      "community": 31,
+      "norm_label": "deleteselected()"
     },
     {
       "label": "_()",
@@ -3465,7 +3771,7 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L24",
       "id": "youtube_client_youtubesource",
-      "community": 26,
+      "community": 27,
       "norm_label": "youtubesource"
     },
     {
@@ -3474,7 +3780,7 @@
       "source_file": "",
       "source_location": "",
       "id": "protocol",
-      "community": 26,
+      "community": 27,
       "norm_label": "protocol"
     },
     {
@@ -3537,7 +3843,7 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L51",
       "id": "youtube_client_youtubesource_fetch_channels_content_details",
-      "community": 26,
+      "community": 27,
       "norm_label": ".fetch_channels_content_details()"
     },
     {
@@ -3627,7 +3933,7 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L182",
       "id": "youtube_client_build_source",
-      "community": 25,
+      "community": 5,
       "norm_label": "build_source()"
     },
     {
@@ -3636,7 +3942,7 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L182",
       "id": "ytfeed_youtube_client_py_config",
-      "community": 25,
+      "community": 5,
       "norm_label": "config"
     },
     {
@@ -3654,7 +3960,7 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L25",
       "id": "youtube_client_rationale_25",
-      "community": 26,
+      "community": 27,
       "norm_label": "the youtube data api operations the sync engine depends on."
     },
     {
@@ -3708,7 +4014,7 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L54",
       "id": "youtube_client_rationale_54",
-      "community": 26,
+      "community": 27,
       "norm_label": "resolve uploads-playlist ids for channels, batched 50 per request."
     },
     {
@@ -3735,7 +4041,7 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L183",
       "id": "youtube_client_rationale_183",
-      "community": 25,
+      "community": 5,
       "norm_label": "authenticate and wrap the youtube data api in a youtubesource."
     },
     {
@@ -3762,7 +4068,7 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L36",
       "id": "ytfeed_youtube_sync_py_datetime",
-      "community": 26,
+      "community": 0,
       "norm_label": "datetime"
     },
     {
@@ -3789,7 +4095,7 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L55",
       "id": "ytfeed_youtube_sync_py_session",
-      "community": 26,
+      "community": 0,
       "norm_label": "session"
     },
     {
@@ -3798,7 +4104,7 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L55",
       "id": "ytfeed_youtube_sync_py_video",
-      "community": 26,
+      "community": 27,
       "norm_label": "video"
     },
     {
@@ -3834,7 +4140,7 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L170",
       "id": "youtube_sync_sync_my_playlists",
-      "community": 29,
+      "community": 26,
       "norm_label": "sync_my_playlists()"
     },
     {
@@ -3861,7 +4167,7 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L284",
       "id": "ytfeed_youtube_sync_py_channel",
-      "community": 26,
+      "community": 0,
       "norm_label": "channel"
     },
     {
@@ -3888,7 +4194,7 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L432",
       "id": "youtube_sync_sync_all",
-      "community": 29,
+      "community": 26,
       "norm_label": "sync_all()"
     },
     {
@@ -3933,7 +4239,7 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L173",
       "id": "youtube_sync_rationale_173",
-      "community": 29,
+      "community": 26,
       "norm_label": "upsert playlists + playlist_items + videos. returns (playlists, videos_upserted)"
     },
     {
@@ -3969,7 +4275,7 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L440",
       "id": "youtube_sync_rationale_440",
-      "community": 29,
+      "community": 26,
       "norm_label": "run subscriptions -> playlists -> per-channel uploads, audit in sync_runs."
     },
     {
@@ -3996,7 +4302,7 @@
       "source_file": "",
       "source_location": "",
       "id": "exception",
-      "community": 29,
+      "community": 26,
       "norm_label": "exception"
     },
     {
@@ -4005,7 +4311,7 @@
       "source_file": "ytfeed/youtube/sync_run.py",
       "source_location": "L40",
       "id": "youtube_sync_run_is_quota_error",
-      "community": 29,
+      "community": 26,
       "norm_label": "_is_quota_error()"
     },
     {
@@ -4441,6 +4747,60 @@
       "norm_label": "tests"
     },
     {
+      "label": "add_category()",
+      "file_type": "code",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L59",
+      "community": 24,
+      "norm_label": "add_category()",
+      "id": "routes_channel_category_add_category"
+    },
+    {
+      "label": "update_category()",
+      "file_type": "code",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L78",
+      "community": 24,
+      "norm_label": "update_category()",
+      "id": "routes_channel_category_update_category"
+    },
+    {
+      "label": "delete_category()",
+      "file_type": "code",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L107",
+      "community": 24,
+      "norm_label": "delete_category()",
+      "id": "routes_channel_category_delete_category"
+    },
+    {
+      "label": "All categories bucketed by group, both sorted for stable display.",
+      "file_type": "rationale",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L22",
+      "community": 24,
+      "norm_label": "all categories bucketed by group, both sorted for stable display.",
+      "id": "routes_channel_category_rationale_22"
+    },
+    {
+      "label": "category_id -> number of channels referencing it.",
+      "file_type": "rationale",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L35",
+      "community": 24,
+      "norm_label": "category_id -> number of channels referencing it.",
+      "id": "routes_channel_category_rationale_35"
+    },
+    {
+      "label": "Pick up deferred queue items (e.g. IP-block retries) once they're due.",
+      "file_type": "rationale",
+      "source_file": "ytfeed/web/app.py",
+      "source_location": "L36",
+      "community": 1,
+      "norm_label": "pick up deferred queue items (e.g. ip-block retries) once they're due.",
+      "id": "web_app_rationale_36"
+    },
+    {
       "label": "count_call()",
       "file_type": "code",
       "source_file": "ytfeed/youtube/client.py",
@@ -4553,7 +4913,7 @@
       "file_type": "code",
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L282",
-      "community": 26,
+      "community": 0,
       "norm_label": "channel",
       "id": "channel"
     },
@@ -4571,7 +4931,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L171",
-      "community": 29,
+      "community": 26,
       "norm_label": "upsert playlists + playlist_items + videos. returns (playlists, videos_upserted)",
       "id": "youtube_sync_rationale_171"
     },
@@ -4607,7 +4967,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L438",
-      "community": 29,
+      "community": 26,
       "norm_label": "run subscriptions -> playlists -> per-channel uploads, audit in sync_runs.",
       "id": "youtube_sync_rationale_438"
     },
@@ -4634,7 +4994,7 @@
       "file_type": "code",
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L158",
-      "community": 27,
+      "community": 26,
       "norm_label": "synccancelled",
       "id": "youtube_sync_synccancelled"
     },
@@ -4661,7 +5021,7 @@
       "file_type": "code",
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L319",
-      "community": 29,
+      "community": 26,
       "norm_label": "_is_quota_error()",
       "id": "youtube_sync_is_quota_error"
     },
@@ -4688,7 +5048,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L159",
-      "community": 27,
+      "community": 26,
       "norm_label": "raised inside the sync worker when the user pressed stop.",
       "id": "youtube_sync_rationale_159"
     },
@@ -4697,7 +5057,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L208",
-      "community": 29,
+      "community": 26,
       "norm_label": "upsert playlists + playlist_items + videos. returns (playlists, videos_upserted)",
       "id": "youtube_sync_rationale_208"
     },
@@ -4733,7 +5093,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L513",
-      "community": 29,
+      "community": 26,
       "norm_label": "run subscriptions -> playlists -> per-channel uploads, audit in sync_runs.",
       "id": "youtube_sync_rationale_513"
     },
@@ -4904,7 +5264,7 @@
       "file_type": "code",
       "source_file": "ytfeed/transcripts/markdown_writer.py",
       "source_location": "L118",
-      "community": 4,
+      "community": 6,
       "norm_label": "ensure_people_frontmatter()",
       "id": "transcripts_markdown_writer_ensure_people_frontmatter"
     },
@@ -4940,7 +5300,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/transcripts/markdown_writer.py",
       "source_location": "L121",
-      "community": 4,
+      "community": 6,
       "norm_label": "for files written before person tagging existed; empty lists remove a     stale",
       "id": "transcripts_markdown_writer_rationale_121"
     },
@@ -4994,7 +5354,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/transcripts/pipeline.py",
       "source_location": "L86",
-      "community": 2,
+      "community": 1,
       "norm_label": "reset items stuck in 'processing' (e.g. after a server restart killed a run).",
       "id": "transcripts_pipeline_rationale_86"
     },
@@ -5057,7 +5417,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/transcripts/pipeline.py",
       "source_location": "L85",
-      "community": 2,
+      "community": 1,
       "norm_label": "reset items stuck in 'processing' (e.g. after a server restart killed a run).",
       "id": "transcripts_pipeline_rationale_85"
     },
@@ -5129,7 +5489,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/transcripts/pipeline.py",
       "source_location": "L84",
-      "community": 2,
+      "community": 1,
       "norm_label": "reset items stuck in 'processing' (e.g. after a server restart killed a run).",
       "id": "transcripts_pipeline_rationale_84"
     },
@@ -5219,7 +5579,7 @@
       "file_type": "code",
       "source_file": "tests/test_categorize.py",
       "source_location": "L30",
-      "community": 10,
+      "community": 4,
       "norm_label": ".test_smallest_playlist_is_most_specific()",
       "id": "tests_test_categorize_categorizetests_test_smallest_playlist_is_most_specific"
     },
@@ -5228,7 +5588,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/transcripts/categorize.py",
       "source_location": "L19",
-      "community": 10,
+      "community": 4,
       "norm_label": "name of the smallest playlist containing the video (live item counts,     not th",
       "id": "transcripts_categorize_rationale_19"
     },
@@ -5255,7 +5615,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/transcripts/pipeline.py",
       "source_location": "L67",
-      "community": 2,
+      "community": 1,
       "norm_label": "reset items stuck in 'processing' (e.g. after a server restart killed a run).",
       "id": "transcripts_pipeline_rationale_67"
     },
@@ -5336,7 +5696,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L197",
-      "community": 29,
+      "community": 26,
       "norm_label": "upsert playlists + playlist_items + videos. returns (playlists, videos_upserted)",
       "id": "youtube_sync_rationale_197"
     },
@@ -5372,7 +5732,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L499",
-      "community": 29,
+      "community": 26,
       "norm_label": "run subscriptions -> playlists -> per-channel uploads, audit in sync_runs.",
       "id": "youtube_sync_rationale_499"
     },
@@ -5381,7 +5741,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L188",
-      "community": 29,
+      "community": 26,
       "norm_label": "upsert playlists + playlist_items + videos. returns (playlists, videos_upserted)",
       "id": "youtube_sync_rationale_188"
     },
@@ -5417,7 +5777,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L479",
-      "community": 29,
+      "community": 26,
       "norm_label": "run subscriptions -> playlists -> per-channel uploads, audit in sync_runs.",
       "id": "youtube_sync_rationale_479"
     },
@@ -5426,7 +5786,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L152",
-      "community": 29,
+      "community": 26,
       "norm_label": "upsert playlists + playlist_items + videos. returns (playlists, videos_upserted)",
       "id": "youtube_sync_rationale_152"
     },
@@ -5462,7 +5822,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L390",
-      "community": 29,
+      "community": 26,
       "norm_label": "run subscriptions -> playlists -> per-channel uploads, audit in sync_runs.",
       "id": "youtube_sync_rationale_390"
     }
@@ -6276,9 +6636,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync",
-      "target": "db_models_base",
-      "confidence_score": 1.0
+      "target": "db_models_base"
     },
     {
       "relation": "imports",
@@ -6287,9 +6647,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync",
-      "target": "db_models_channel",
-      "confidence_score": 1.0
+      "target": "db_models_channel"
     },
     {
       "relation": "imports",
@@ -6298,9 +6658,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync",
-      "target": "db_models_channelupload",
-      "confidence_score": 1.0
+      "target": "db_models_channelupload"
     },
     {
       "relation": "imports",
@@ -6309,9 +6669,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync",
-      "target": "db_models_video",
-      "confidence_score": 1.0
+      "target": "db_models_video"
     },
     {
       "relation": "contains",
@@ -6319,9 +6679,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L50",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync",
-      "target": "tests_test_sync_channeluploadstests",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_channeluploadstests"
     },
     {
       "relation": "contains",
@@ -6329,9 +6689,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L125",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync",
-      "target": "tests_test_sync_fakelistendpoint",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_fakelistendpoint"
     },
     {
       "relation": "contains",
@@ -6339,9 +6699,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L117",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync",
-      "target": "tests_test_sync_fakerequest",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_fakerequest"
     },
     {
       "relation": "contains",
@@ -6349,9 +6709,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync",
-      "target": "tests_test_sync_fakesource",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_fakesource"
     },
     {
       "relation": "contains",
@@ -6359,9 +6719,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L136",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync",
-      "target": "tests_test_sync_fakeyoutube",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_fakeyoutube"
     },
     {
       "relation": "contains",
@@ -6369,9 +6729,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync",
-      "target": "tests_test_sync_item",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_item"
     },
     {
       "relation": "contains",
@@ -6379,9 +6739,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L144",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync",
-      "target": "tests_test_sync_paginationguardtests",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_paginationguardtests"
     },
     {
       "relation": "imports",
@@ -6390,9 +6750,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync",
-      "target": "youtube_client_googleyoutubesource",
-      "confidence_score": 1.0
+      "target": "youtube_client_googleyoutubesource"
     },
     {
       "relation": "imports",
@@ -6401,9 +6761,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync",
-      "target": "youtube_client_youtubesource",
-      "confidence_score": 1.0
+      "target": "youtube_client_youtubesource"
     },
     {
       "relation": "imports",
@@ -6412,9 +6772,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync",
-      "target": "youtube_sync_sync_channel_uploads",
-      "confidence_score": 1.0
+      "target": "youtube_sync_sync_channel_uploads"
     },
     {
       "relation": "calls",
@@ -6423,9 +6783,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L74",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync_channeluploadstests_test_early_stop_on_known_video",
-      "target": "tests_test_sync_item",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_item"
     },
     {
       "relation": "calls",
@@ -6434,9 +6794,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L105",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync_channeluploadstests_test_early_stop_on_published_older_than_last_seen",
-      "target": "tests_test_sync_item",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_item"
     },
     {
       "relation": "calls",
@@ -6445,9 +6805,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L92",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync_channeluploadstests_test_first_sync_respects_backfill_cap",
-      "target": "tests_test_sync_item",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_item"
     },
     {
       "relation": "calls",
@@ -6456,9 +6816,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L53",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync_channeluploadstests_setup",
-      "target": "tests_test_sync_fakesource",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_fakesource"
     },
     {
       "relation": "calls",
@@ -6467,9 +6827,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L70",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync_channeluploadstests_test_early_stop_on_known_video",
-      "target": "tests_test_sync_fakesource",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_fakesource"
     },
     {
       "relation": "calls",
@@ -6478,9 +6838,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L101",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync_channeluploadstests_test_early_stop_on_published_older_than_last_seen",
-      "target": "tests_test_sync_fakesource",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_fakesource"
     },
     {
       "relation": "calls",
@@ -6489,9 +6849,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L89",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync_channeluploadstests_test_first_sync_respects_backfill_cap",
-      "target": "tests_test_sync_fakesource",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_fakesource"
     },
     {
       "relation": "uses",
@@ -6499,9 +6859,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L9",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_fakesource",
-      "target": "db_models_base",
-      "confidence_score": 0.5
+      "target": "db_models_base"
     },
     {
       "relation": "uses",
@@ -6509,9 +6869,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L9",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_fakesource",
-      "target": "db_models_channel",
-      "confidence_score": 0.5
+      "target": "db_models_channel"
     },
     {
       "relation": "uses",
@@ -6519,9 +6879,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L9",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_fakesource",
-      "target": "db_models_channelupload",
-      "confidence_score": 0.5
+      "target": "db_models_channelupload"
     },
     {
       "relation": "uses",
@@ -6529,9 +6889,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L9",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_fakesource",
-      "target": "db_models_video",
-      "confidence_score": 0.5
+      "target": "db_models_video"
     },
     {
       "relation": "method",
@@ -6539,9 +6899,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync_fakesource",
-      "target": "tests_test_sync_fakesource_api_calls",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_fakesource_api_calls"
     },
     {
       "relation": "method",
@@ -6549,9 +6909,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L46",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync_fakesource",
-      "target": "tests_test_sync_fakesource_fetch_channels_content_details",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_fakesource_fetch_channels_content_details"
     },
     {
       "relation": "method",
@@ -6559,9 +6919,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L35",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync_fakesource",
-      "target": "tests_test_sync_fakesource_fetch_my_playlists",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_fakesource_fetch_my_playlists"
     },
     {
       "relation": "method",
@@ -6569,9 +6929,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync_fakesource",
-      "target": "tests_test_sync_fakesource_fetch_playlist_items_paged",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_fakesource_fetch_playlist_items_paged"
     },
     {
       "relation": "method",
@@ -6579,9 +6939,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L43",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync_fakesource",
-      "target": "tests_test_sync_fakesource_fetch_playlists_by_ids",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_fakesource_fetch_playlists_by_ids"
     },
     {
       "relation": "method",
@@ -6589,9 +6949,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync_fakesource",
-      "target": "tests_test_sync_fakesource_fetch_subscriptions",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_fakesource_fetch_subscriptions"
     },
     {
       "relation": "method",
@@ -6599,9 +6959,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync_fakesource",
-      "target": "tests_test_sync_fakesource_init",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_fakesource_init"
     },
     {
       "relation": "uses",
@@ -6609,9 +6969,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L10",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_fakesource",
-      "target": "youtube_client_googleyoutubesource",
-      "confidence_score": 0.5
+      "target": "youtube_client_googleyoutubesource"
     },
     {
       "relation": "uses",
@@ -6619,9 +6979,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L10",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_fakesource",
-      "target": "youtube_client_youtubesource",
-      "confidence_score": 0.5
+      "target": "youtube_client_youtubesource"
     },
     {
       "relation": "rationale_for",
@@ -6629,9 +6989,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync_rationale_22",
-      "target": "tests_test_sync_fakesource",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_fakesource"
     },
     {
       "relation": "calls",
@@ -6640,9 +7000,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L150",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync_paginationguardtests_test_endless_token_loop_stops_and_counts_calls",
-      "target": "tests_test_sync_fakesource_fetch_playlist_items_paged",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_fakesource_fetch_playlist_items_paged"
     },
     {
       "relation": "uses",
@@ -6650,9 +7010,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L9",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_channeluploadstests",
-      "target": "db_models_base",
-      "confidence_score": 0.5
+      "target": "db_models_base"
     },
     {
       "relation": "uses",
@@ -6660,9 +7020,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L9",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_channeluploadstests",
-      "target": "db_models_channel",
-      "confidence_score": 0.5
+      "target": "db_models_channel"
     },
     {
       "relation": "uses",
@@ -6670,9 +7030,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L9",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_channeluploadstests",
-      "target": "db_models_channelupload",
-      "confidence_score": 0.5
+      "target": "db_models_channelupload"
     },
     {
       "relation": "uses",
@@ -6680,9 +7040,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L9",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_channeluploadstests",
-      "target": "db_models_video",
-      "confidence_score": 0.5
+      "target": "db_models_video"
     },
     {
       "relation": "method",
@@ -6690,9 +7050,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L58",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync_channeluploadstests",
-      "target": "tests_test_sync_channeluploadstests_channel",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_channeluploadstests_channel"
     },
     {
       "relation": "method",
@@ -6700,9 +7060,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L51",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync_channeluploadstests",
-      "target": "tests_test_sync_channeluploadstests_setup",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_channeluploadstests_setup"
     },
     {
       "relation": "method",
@@ -6710,9 +7070,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L64",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync_channeluploadstests",
-      "target": "tests_test_sync_channeluploadstests_test_early_stop_on_known_video",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_channeluploadstests_test_early_stop_on_known_video"
     },
     {
       "relation": "method",
@@ -6720,9 +7080,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L99",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync_channeluploadstests",
-      "target": "tests_test_sync_channeluploadstests_test_early_stop_on_published_older_than_last_seen",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_channeluploadstests_test_early_stop_on_published_older_than_last_seen"
     },
     {
       "relation": "method",
@@ -6730,9 +7090,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L87",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync_channeluploadstests",
-      "target": "tests_test_sync_channeluploadstests_test_first_sync_respects_backfill_cap",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_channeluploadstests_test_first_sync_respects_backfill_cap"
     },
     {
       "relation": "uses",
@@ -6740,9 +7100,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L10",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_channeluploadstests",
-      "target": "youtube_client_googleyoutubesource",
-      "confidence_score": 0.5
+      "target": "youtube_client_googleyoutubesource"
     },
     {
       "relation": "uses",
@@ -6750,9 +7110,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L10",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_channeluploadstests",
-      "target": "youtube_client_youtubesource",
-      "confidence_score": 0.5
+      "target": "youtube_client_youtubesource"
     },
     {
       "relation": "references",
@@ -6761,9 +7121,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L58",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync_channeluploadstests_channel",
-      "target": "tests_test_sync_py_channel",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_py_channel"
     },
     {
       "relation": "calls",
@@ -6772,9 +7132,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L65",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync_channeluploadstests_test_early_stop_on_known_video",
-      "target": "tests_test_sync_channeluploadstests_channel",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_channeluploadstests_channel"
     },
     {
       "relation": "calls",
@@ -6783,9 +7143,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L100",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync_channeluploadstests_test_early_stop_on_published_older_than_last_seen",
-      "target": "tests_test_sync_channeluploadstests_channel",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_channeluploadstests_channel"
     },
     {
       "relation": "calls",
@@ -6794,9 +7154,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L88",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync_channeluploadstests_test_first_sync_respects_backfill_cap",
-      "target": "tests_test_sync_channeluploadstests_channel",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_channeluploadstests_channel"
     },
     {
       "relation": "uses",
@@ -6804,9 +7164,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L9",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_py_channel",
-      "target": "db_models_base",
-      "confidence_score": 0.5
+      "target": "db_models_base"
     },
     {
       "relation": "uses",
@@ -6814,9 +7174,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L9",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_py_channel",
-      "target": "db_models_channel",
-      "confidence_score": 0.5
+      "target": "db_models_channel"
     },
     {
       "relation": "uses",
@@ -6824,9 +7184,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L9",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_py_channel",
-      "target": "db_models_channelupload",
-      "confidence_score": 0.5
+      "target": "db_models_channelupload"
     },
     {
       "relation": "uses",
@@ -6834,9 +7194,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L9",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_py_channel",
-      "target": "db_models_video",
-      "confidence_score": 0.5
+      "target": "db_models_video"
     },
     {
       "relation": "uses",
@@ -6844,9 +7204,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L10",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_py_channel",
-      "target": "youtube_client_googleyoutubesource",
-      "confidence_score": 0.5
+      "target": "youtube_client_googleyoutubesource"
     },
     {
       "relation": "uses",
@@ -6854,9 +7214,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L10",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_py_channel",
-      "target": "youtube_client_youtubesource",
-      "confidence_score": 0.5
+      "target": "youtube_client_youtubesource"
     },
     {
       "relation": "calls",
@@ -6909,9 +7269,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L130",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync_fakelistendpoint_list",
-      "target": "tests_test_sync_fakerequest",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_fakerequest"
     },
     {
       "relation": "uses",
@@ -6919,9 +7279,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L9",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_fakerequest",
-      "target": "db_models_base",
-      "confidence_score": 0.5
+      "target": "db_models_base"
     },
     {
       "relation": "uses",
@@ -6929,9 +7289,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L9",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_fakerequest",
-      "target": "db_models_channel",
-      "confidence_score": 0.5
+      "target": "db_models_channel"
     },
     {
       "relation": "uses",
@@ -6939,9 +7299,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L9",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_fakerequest",
-      "target": "db_models_channelupload",
-      "confidence_score": 0.5
+      "target": "db_models_channelupload"
     },
     {
       "relation": "uses",
@@ -6949,9 +7309,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L9",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_fakerequest",
-      "target": "db_models_video",
-      "confidence_score": 0.5
+      "target": "db_models_video"
     },
     {
       "relation": "method",
@@ -6959,9 +7319,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L121",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync_fakerequest",
-      "target": "tests_test_sync_fakerequest_execute",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_fakerequest_execute"
     },
     {
       "relation": "method",
@@ -6969,9 +7329,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L118",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync_fakerequest",
-      "target": "tests_test_sync_fakerequest_init",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_fakerequest_init"
     },
     {
       "relation": "uses",
@@ -6979,9 +7339,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L10",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_fakerequest",
-      "target": "youtube_client_googleyoutubesource",
-      "confidence_score": 0.5
+      "target": "youtube_client_googleyoutubesource"
     },
     {
       "relation": "uses",
@@ -6989,9 +7349,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L10",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_fakerequest",
-      "target": "youtube_client_youtubesource",
-      "confidence_score": 0.5
+      "target": "youtube_client_youtubesource"
     },
     {
       "relation": "uses",
@@ -6999,9 +7359,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L9",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_fakelistendpoint",
-      "target": "db_models_base",
-      "confidence_score": 0.5
+      "target": "db_models_base"
     },
     {
       "relation": "uses",
@@ -7009,9 +7369,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L9",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_fakelistendpoint",
-      "target": "db_models_channel",
-      "confidence_score": 0.5
+      "target": "db_models_channel"
     },
     {
       "relation": "uses",
@@ -7019,9 +7379,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L9",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_fakelistendpoint",
-      "target": "db_models_channelupload",
-      "confidence_score": 0.5
+      "target": "db_models_channelupload"
     },
     {
       "relation": "uses",
@@ -7029,9 +7389,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L9",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_fakelistendpoint",
-      "target": "db_models_video",
-      "confidence_score": 0.5
+      "target": "db_models_video"
     },
     {
       "relation": "method",
@@ -7039,9 +7399,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L126",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync_fakelistendpoint",
-      "target": "tests_test_sync_fakelistendpoint_init",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_fakelistendpoint_init"
     },
     {
       "relation": "method",
@@ -7049,9 +7409,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L130",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync_fakelistendpoint",
-      "target": "tests_test_sync_fakelistendpoint_list",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_fakelistendpoint_list"
     },
     {
       "relation": "uses",
@@ -7059,9 +7419,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L10",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_fakelistendpoint",
-      "target": "youtube_client_googleyoutubesource",
-      "confidence_score": 0.5
+      "target": "youtube_client_googleyoutubesource"
     },
     {
       "relation": "uses",
@@ -7069,9 +7429,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L10",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_fakelistendpoint",
-      "target": "youtube_client_youtubesource",
-      "confidence_score": 0.5
+      "target": "youtube_client_youtubesource"
     },
     {
       "relation": "calls",
@@ -7080,9 +7440,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L138",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync_fakeyoutube_init",
-      "target": "tests_test_sync_fakelistendpoint",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_fakelistendpoint"
     },
     {
       "relation": "references",
@@ -7091,9 +7451,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L140",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync_fakeyoutube_playlistitems",
-      "target": "tests_test_sync_fakelistendpoint",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_fakelistendpoint"
     },
     {
       "relation": "references",
@@ -7102,9 +7462,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L130",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync_fakelistendpoint_list",
-      "target": "tests_test_sync_py_any",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_py_any"
     },
     {
       "relation": "uses",
@@ -7112,9 +7472,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L9",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_py_any",
-      "target": "db_models_base",
-      "confidence_score": 0.5
+      "target": "db_models_base"
     },
     {
       "relation": "uses",
@@ -7122,9 +7482,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L9",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_py_any",
-      "target": "db_models_channel",
-      "confidence_score": 0.5
+      "target": "db_models_channel"
     },
     {
       "relation": "uses",
@@ -7132,9 +7492,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L9",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_py_any",
-      "target": "db_models_channelupload",
-      "confidence_score": 0.5
+      "target": "db_models_channelupload"
     },
     {
       "relation": "uses",
@@ -7142,9 +7502,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L9",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_py_any",
-      "target": "db_models_video",
-      "confidence_score": 0.5
+      "target": "db_models_video"
     },
     {
       "relation": "uses",
@@ -7152,9 +7512,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L10",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_py_any",
-      "target": "youtube_client_googleyoutubesource",
-      "confidence_score": 0.5
+      "target": "youtube_client_googleyoutubesource"
     },
     {
       "relation": "uses",
@@ -7162,9 +7522,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L10",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_py_any",
-      "target": "youtube_client_youtubesource",
-      "confidence_score": 0.5
+      "target": "youtube_client_youtubesource"
     },
     {
       "relation": "uses",
@@ -7172,9 +7532,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L9",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_fakeyoutube",
-      "target": "db_models_base",
-      "confidence_score": 0.5
+      "target": "db_models_base"
     },
     {
       "relation": "uses",
@@ -7182,9 +7542,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L9",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_fakeyoutube",
-      "target": "db_models_channel",
-      "confidence_score": 0.5
+      "target": "db_models_channel"
     },
     {
       "relation": "uses",
@@ -7192,9 +7552,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L9",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_fakeyoutube",
-      "target": "db_models_channelupload",
-      "confidence_score": 0.5
+      "target": "db_models_channelupload"
     },
     {
       "relation": "uses",
@@ -7202,9 +7562,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L9",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_fakeyoutube",
-      "target": "db_models_video",
-      "confidence_score": 0.5
+      "target": "db_models_video"
     },
     {
       "relation": "method",
@@ -7212,9 +7572,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L137",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync_fakeyoutube",
-      "target": "tests_test_sync_fakeyoutube_init",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_fakeyoutube_init"
     },
     {
       "relation": "method",
@@ -7222,9 +7582,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L140",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync_fakeyoutube",
-      "target": "tests_test_sync_fakeyoutube_playlistitems",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_fakeyoutube_playlistitems"
     },
     {
       "relation": "uses",
@@ -7232,9 +7592,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L10",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_fakeyoutube",
-      "target": "youtube_client_googleyoutubesource",
-      "confidence_score": 0.5
+      "target": "youtube_client_googleyoutubesource"
     },
     {
       "relation": "uses",
@@ -7242,9 +7602,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L10",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_fakeyoutube",
-      "target": "youtube_client_youtubesource",
-      "confidence_score": 0.5
+      "target": "youtube_client_youtubesource"
     },
     {
       "relation": "calls",
@@ -7253,9 +7613,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L149",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync_paginationguardtests_test_endless_token_loop_stops_and_counts_calls",
-      "target": "tests_test_sync_fakeyoutube",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_fakeyoutube"
     },
     {
       "relation": "uses",
@@ -7263,9 +7623,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L9",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_paginationguardtests",
-      "target": "db_models_base",
-      "confidence_score": 0.5
+      "target": "db_models_base"
     },
     {
       "relation": "uses",
@@ -7273,9 +7633,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L9",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_paginationguardtests",
-      "target": "db_models_channel",
-      "confidence_score": 0.5
+      "target": "db_models_channel"
     },
     {
       "relation": "uses",
@@ -7283,9 +7643,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L9",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_paginationguardtests",
-      "target": "db_models_channelupload",
-      "confidence_score": 0.5
+      "target": "db_models_channelupload"
     },
     {
       "relation": "uses",
@@ -7293,9 +7653,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L9",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_paginationguardtests",
-      "target": "db_models_video",
-      "confidence_score": 0.5
+      "target": "db_models_video"
     },
     {
       "relation": "method",
@@ -7303,9 +7663,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L145",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_sync_paginationguardtests",
-      "target": "tests_test_sync_paginationguardtests_test_endless_token_loop_stops_and_counts_calls",
-      "confidence_score": 1.0
+      "target": "tests_test_sync_paginationguardtests_test_endless_token_loop_stops_and_counts_calls"
     },
     {
       "relation": "uses",
@@ -7313,9 +7673,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L10",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_paginationguardtests",
-      "target": "youtube_client_googleyoutubesource",
-      "confidence_score": 0.5
+      "target": "youtube_client_googleyoutubesource"
     },
     {
       "relation": "uses",
@@ -7323,9 +7683,9 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L10",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "tests_test_sync_paginationguardtests",
-      "target": "youtube_client_youtubesource",
-      "confidence_score": 0.5
+      "target": "youtube_client_youtubesource"
     },
     {
       "relation": "calls",
@@ -7892,9 +8252,9 @@
       "source_file": "ytfeed/cli.py",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ytfeed_cli",
-      "target": "youtube_client_build_source",
-      "confidence_score": 1.0
+      "target": "youtube_client_build_source"
     },
     {
       "relation": "imports",
@@ -8199,9 +8559,9 @@
       "source_file": "ytfeed/cli.py",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ytfeed_cli_cmd_sync",
-      "target": "youtube_client_build_source",
-      "confidence_score": 1.0
+      "target": "youtube_client_build_source"
     },
     {
       "relation": "calls",
@@ -8458,9 +8818,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client",
-      "target": "ytfeed_config",
-      "confidence_score": 1.0
+      "target": "ytfeed_config"
     },
     {
       "relation": "imports_from",
@@ -8704,9 +9064,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client",
-      "target": "ytfeed_config_config",
-      "confidence_score": 1.0
+      "target": "ytfeed_config_config"
     },
     {
       "relation": "uses",
@@ -8714,9 +9074,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L18",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "youtube_client_googleyoutubesource",
-      "target": "ytfeed_config_config",
-      "confidence_score": 0.5
+      "target": "ytfeed_config_config"
     },
     {
       "relation": "uses",
@@ -8724,9 +9084,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L18",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "youtube_client_youtubesource",
-      "target": "ytfeed_config_config",
-      "confidence_score": 0.5
+      "target": "ytfeed_config_config"
     },
     {
       "relation": "imports",
@@ -8876,9 +9236,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L18",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ytfeed_youtube_client_py_any",
-      "target": "ytfeed_config_config",
-      "confidence_score": 0.5
+      "target": "ytfeed_config_config"
     },
     {
       "relation": "uses",
@@ -8886,9 +9246,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L18",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ytfeed_youtube_client_py_config",
-      "target": "ytfeed_config_config",
-      "confidence_score": 0.5
+      "target": "ytfeed_config_config"
     },
     {
       "relation": "uses",
@@ -8896,9 +9256,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L11",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ytfeed_youtube_sync_py_channel",
-      "target": "ytfeed_config_config",
-      "confidence_score": 0.5
+      "target": "ytfeed_config_config"
     },
     {
       "relation": "uses",
@@ -8956,9 +9316,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L11",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ytfeed_youtube_sync_py_youtubesource",
-      "target": "ytfeed_config_config",
-      "confidence_score": 0.5
+      "target": "ytfeed_config_config"
     },
     {
       "relation": "calls",
@@ -9056,6 +9416,16 @@
       "confidence_score": 1.0,
       "source": "db_models",
       "target": "db_models_channel"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/db/models.py",
+      "source_location": "L49",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "db_models",
+      "target": "db_models_channelcategory"
     },
     {
       "relation": "contains",
@@ -9337,6 +9707,16 @@
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "ytfeed/db/models.py",
+      "source_location": "L49",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "db_models_channelcategory",
+      "target": "db_models_base"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/db/models.py",
       "source_location": "L102",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -9457,6 +9837,16 @@
     {
       "relation": "uses",
       "confidence": "INFERRED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L15",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "channelcategory",
+      "target": "db_models_channel"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L12",
       "weight": 0.8,
@@ -9483,6 +9873,17 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "routes_channel",
+      "target": "db_models_channel"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category",
       "target": "db_models_channel"
     },
     {
@@ -9552,11 +9953,41 @@
     {
       "relation": "uses",
       "confidence": "INFERRED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L15",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "ytfeed_web_routes_channel_category_py_request",
+      "target": "db_models_channel"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L15",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "ytfeed_web_routes_channel_category_py_session",
+      "target": "db_models_channel"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
       "source_file": "ytfeed/web/routes/channel.py",
       "source_location": "L10",
       "weight": 0.8,
       "confidence_score": 0.5,
       "source": "ytfeed_web_routes_channel_py_backgroundtasks",
+      "target": "db_models_channel"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "ytfeed/web/routes/channel.py",
+      "source_location": "L10",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "ytfeed_web_routes_channel_py_channel",
       "target": "db_models_channel"
     },
     {
@@ -9645,9 +10076,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L12",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ytfeed_youtube_sync_py_channel",
-      "target": "db_models_channel",
-      "confidence_score": 0.5
+      "target": "db_models_channel"
     },
     {
       "relation": "uses",
@@ -9705,9 +10136,111 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L12",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ytfeed_youtube_sync_py_youtubesource",
-      "target": "db_models_channel",
-      "confidence_score": 0.5
+      "target": "db_models_channel"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L15",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "channelcategory",
+      "target": "db_models_channelcategory"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/db/models.py",
+      "source_location": "L50",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "db_models_rationale_50",
+      "target": "db_models_channelcategory"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel",
+      "target": "db_models_channelcategory"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category",
+      "target": "db_models_channelcategory"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L15",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "ytfeed_web_routes_channel_category_py_request",
+      "target": "db_models_channelcategory"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L15",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "ytfeed_web_routes_channel_category_py_session",
+      "target": "db_models_channelcategory"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "ytfeed/web/routes/channel.py",
+      "source_location": "L10",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "ytfeed_web_routes_channel_py_backgroundtasks",
+      "target": "db_models_channelcategory"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "ytfeed/web/routes/channel.py",
+      "source_location": "L10",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "ytfeed_web_routes_channel_py_channel",
+      "target": "db_models_channelcategory"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "ytfeed/web/routes/channel.py",
+      "source_location": "L10",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "ytfeed_web_routes_channel_py_request",
+      "target": "db_models_channelcategory"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "ytfeed/web/routes/channel.py",
+      "source_location": "L10",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "ytfeed_web_routes_channel_py_session",
+      "target": "db_models_channelcategory"
     },
     {
       "relation": "uses",
@@ -9890,9 +10423,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L12",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ytfeed_youtube_sync_py_channel",
-      "target": "db_models_playlist",
-      "confidence_score": 0.5
+      "target": "db_models_playlist"
     },
     {
       "relation": "uses",
@@ -9950,9 +10483,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L12",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ytfeed_youtube_sync_py_youtubesource",
-      "target": "db_models_playlist",
-      "confidence_score": 0.5
+      "target": "db_models_playlist"
     },
     {
       "relation": "uses",
@@ -10190,6 +10723,16 @@
       "source_location": "L10",
       "weight": 0.8,
       "confidence_score": 0.5,
+      "source": "ytfeed_web_routes_channel_py_channel",
+      "target": "db_models_video"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "ytfeed/web/routes/channel.py",
+      "source_location": "L10",
+      "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ytfeed_web_routes_channel_py_request",
       "target": "db_models_video"
     },
@@ -10359,9 +10902,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L12",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ytfeed_youtube_sync_py_channel",
-      "target": "db_models_video",
-      "confidence_score": 0.5
+      "target": "db_models_video"
     },
     {
       "relation": "uses",
@@ -10419,9 +10962,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L12",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ytfeed_youtube_sync_py_youtubesource",
-      "target": "db_models_video",
-      "confidence_score": 0.5
+      "target": "db_models_video"
     },
     {
       "relation": "uses",
@@ -10563,9 +11106,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L12",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ytfeed_youtube_sync_py_channel",
-      "target": "db_models_playlistitem",
-      "confidence_score": 0.5
+      "target": "db_models_playlistitem"
     },
     {
       "relation": "uses",
@@ -10623,9 +11166,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L12",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ytfeed_youtube_sync_py_youtubesource",
-      "target": "db_models_playlistitem",
-      "confidence_score": 0.5
+      "target": "db_models_playlistitem"
     },
     {
       "relation": "uses",
@@ -10727,6 +11270,16 @@
       "source_location": "L10",
       "weight": 0.8,
       "confidence_score": 0.5,
+      "source": "ytfeed_web_routes_channel_py_channel",
+      "target": "db_models_channelupload"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "ytfeed/web/routes/channel.py",
+      "source_location": "L10",
+      "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ytfeed_web_routes_channel_py_request",
       "target": "db_models_channelupload"
     },
@@ -10746,9 +11299,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L12",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ytfeed_youtube_sync_py_channel",
-      "target": "db_models_channelupload",
-      "confidence_score": 0.5
+      "target": "db_models_channelupload"
     },
     {
       "relation": "uses",
@@ -10806,9 +11359,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L12",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ytfeed_youtube_sync_py_youtubesource",
-      "target": "db_models_channelupload",
-      "confidence_score": 0.5
+      "target": "db_models_channelupload"
     },
     {
       "relation": "imports",
@@ -11093,9 +11646,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L12",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ytfeed_youtube_sync_py_channel",
-      "target": "db_models_syncrun",
-      "confidence_score": 0.5
+      "target": "db_models_syncrun"
     },
     {
       "relation": "uses",
@@ -11153,9 +11706,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L12",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ytfeed_youtube_sync_py_youtubesource",
-      "target": "db_models_syncrun",
-      "confidence_score": 0.5
+      "target": "db_models_syncrun"
     },
     {
       "relation": "uses",
@@ -11183,9 +11736,9 @@
       "source_file": "ytfeed/youtube/sync_run.py",
       "source_location": "L22",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ytfeed_youtube_sync_run_py_youtubesource",
-      "target": "db_models_syncrun",
-      "confidence_score": 0.5
+      "target": "db_models_syncrun"
     },
     {
       "relation": "contains",
@@ -13622,6 +14175,17 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "web_app",
+      "target": "routes_channel_category"
+    },
+    {
+      "relation": "imports_from",
+      "context": "submodule_import",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/app.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "web_app",
       "target": "routes_playlist"
     },
     {
@@ -13717,6 +14281,16 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "web_app_rationale_36",
+      "target": "web_app_retry_monitor"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/app.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "web_app_rationale_45",
       "target": "web_app_retry_monitor"
     },
     {
@@ -13927,6 +14501,17 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category",
+      "target": "web_dependencies_get_db"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "ytfeed/web/routes/playlist.py",
       "source_location": "L11",
       "weight": 1.0,
@@ -14003,6 +14588,27 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "ytfeed/web/routes/channel.py",
+      "source_location": "L70",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel",
+      "target": "routes_channel_category_context"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel",
+      "target": "routes_channel_category_grouped"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel.py",
       "source_location": "L37",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -14033,6 +14639,26 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "ytfeed/web/routes/channel.py",
+      "source_location": "L79",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel",
+      "target": "routes_channel_set_channel_category"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel.py",
+      "source_location": "L101",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel",
+      "target": "routes_channel_set_channel_notes"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel.py",
       "source_location": "L17",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -14057,9 +14683,9 @@
       "source_file": "ytfeed/web/routes/channel.py",
       "source_location": "L69",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "routes_channel",
-      "target": "youtube_client_build_source",
-      "confidence_score": 1.0
+      "target": "youtube_client_build_source"
     },
     {
       "relation": "imports",
@@ -14131,6 +14757,17 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "ytfeed/web/routes/channel.py",
+      "source_location": "L70",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category_context",
+      "target": "ytfeed_web_routes_channel_py_request"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel.py",
       "source_location": "L37",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -14153,11 +14790,110 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "ytfeed/web/routes/channel.py",
+      "source_location": "L79",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_set_channel_category",
+      "target": "ytfeed_web_routes_channel_py_request"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel.py",
+      "source_location": "L101",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_set_channel_notes",
+      "target": "ytfeed_web_routes_channel_py_request"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel.py",
+      "source_location": "L70",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category_context",
+      "target": "ytfeed_web_routes_channel_py_session"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel.py",
       "source_location": "L37",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "routes_channel_channel_page",
       "target": "ytfeed_web_routes_channel_py_session"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel.py",
+      "source_location": "L79",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_set_channel_category",
+      "target": "ytfeed_web_routes_channel_py_session"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel.py",
+      "source_location": "L101",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_set_channel_notes",
+      "target": "ytfeed_web_routes_channel_py_session"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ytfeed/web/routes/channel.py",
+      "source_location": "L63",
+      "weight": 1.0,
+      "source": "routes_channel_channel_page",
+      "target": "routes_channel_category_grouped"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel.py",
+      "source_location": "L74",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category_context",
+      "target": "routes_channel_category_grouped"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel.py",
+      "source_location": "L70",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category_context",
+      "target": "ytfeed_web_routes_channel_py_channel"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel.py",
+      "source_location": "L95",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_set_channel_category",
+      "target": "routes_channel_category_context"
     },
     {
       "relation": "calls",
@@ -14177,9 +14913,9 @@
       "source_file": "ytfeed/web/routes/channel.py",
       "source_location": "L73",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "routes_channel_run_channel_sync",
-      "target": "youtube_client_build_source",
-      "confidence_score": 1.0
+      "target": "youtube_client_build_source"
     },
     {
       "relation": "calls",
@@ -14224,6 +14960,484 @@
       "confidence_score": 1.0,
       "source": "routes_channel_backfill_channel",
       "target": "ytfeed_web_routes_channel_py_backgroundtasks"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L59",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category",
+      "target": "routes_channel_category_add_category"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L90",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category",
+      "target": "routes_channel_category_api_add"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L139",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category",
+      "target": "routes_channel_category_api_delete"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L77",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category",
+      "target": "routes_channel_category_api_items"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L66",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category",
+      "target": "routes_channel_category_api_sections"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L109",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category",
+      "target": "routes_channel_category_api_update"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category",
+      "target": "routes_channel_category_channel_categories_page"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L107",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category",
+      "target": "routes_channel_category_delete_category"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category",
+      "target": "routes_channel_category_grouped"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category",
+      "target": "routes_channel_category_serialize"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L78",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category",
+      "target": "routes_channel_category_update_category"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category",
+      "target": "routes_channel_category_usage"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category_rationale_1",
+      "target": "routes_channel_category"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L52",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category_channel_categories_page",
+      "target": "routes_channel_category_grouped"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category_grouped",
+      "target": "channelcategory"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category_grouped",
+      "target": "ytfeed_web_routes_channel_category_py_session"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category_rationale_22",
+      "target": "routes_channel_category_grouped"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category_rationale_26",
+      "target": "routes_channel_category_grouped"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L59",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category_add_category",
+      "target": "ytfeed_web_routes_channel_category_py_session"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L90",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category_api_add",
+      "target": "ytfeed_web_routes_channel_category_py_session"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L139",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category_api_delete",
+      "target": "ytfeed_web_routes_channel_category_py_session"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L77",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category_api_items",
+      "target": "ytfeed_web_routes_channel_category_py_session"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L66",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category_api_sections",
+      "target": "ytfeed_web_routes_channel_category_py_session"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L109",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category_api_update",
+      "target": "ytfeed_web_routes_channel_category_py_session"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category_channel_categories_page",
+      "target": "ytfeed_web_routes_channel_category_py_session"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L107",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category_delete_category",
+      "target": "ytfeed_web_routes_channel_category_py_session"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L78",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category_update_category",
+      "target": "ytfeed_web_routes_channel_category_py_session"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category_usage",
+      "target": "ytfeed_web_routes_channel_category_py_session"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L72",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category_add_category",
+      "target": "channelcategory"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L98",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category_api_add",
+      "target": "channelcategory"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category_serialize",
+      "target": "channelcategory"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L144",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category_api_delete",
+      "target": "routes_channel_category_usage"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L135",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category_api_update",
+      "target": "routes_channel_category_usage"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L53",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category_channel_categories_page",
+      "target": "routes_channel_category_usage"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L116",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category_delete_category",
+      "target": "routes_channel_category_usage"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category_rationale_35",
+      "target": "routes_channel_category_usage"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category_rationale_39",
+      "target": "routes_channel_category_usage"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L86",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category_api_items",
+      "target": "routes_channel_category_serialize"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category_channel_categories_page",
+      "target": "ytfeed_web_routes_channel_category_py_request"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L59",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category_add_category",
+      "target": "ytfeed_web_routes_channel_category_py_request"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L90",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category_api_add",
+      "target": "ytfeed_web_routes_channel_category_py_request"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L139",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category_api_delete",
+      "target": "ytfeed_web_routes_channel_category_py_request"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L109",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category_api_update",
+      "target": "ytfeed_web_routes_channel_category_py_request"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L107",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category_delete_category",
+      "target": "ytfeed_web_routes_channel_category_py_request"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/routes/channel_category.py",
+      "source_location": "L78",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_channel_category_update_category",
+      "target": "ytfeed_web_routes_channel_category_py_request"
     },
     {
       "relation": "contains",
@@ -14821,9 +16035,9 @@
       "source_file": "ytfeed/web/routes/settings.py",
       "source_location": "L60",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "routes_settings",
-      "target": "youtube_client_build_source",
-      "confidence_score": 1.0
+      "target": "youtube_client_build_source"
     },
     {
       "relation": "imports",
@@ -15018,9 +16232,9 @@
       "source_file": "ytfeed/web/routes/settings.py",
       "source_location": "L64",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "routes_settings_run_sync_bg",
-      "target": "youtube_client_build_source",
-      "confidence_score": 1.0
+      "target": "youtube_client_build_source"
     },
     {
       "relation": "calls",
@@ -15298,6 +16512,160 @@
       "confidence_score": 1.0,
       "source": "static_app",
       "target": "static_app_pinsynclogs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/static/channel_categories.js",
+      "source_location": "L54",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_channel_categories",
+      "target": "static_channel_categories_buildgrid"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/static/channel_categories.js",
+      "source_location": "L42",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_channel_categories",
+      "target": "static_channel_categories_columndefs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/static/channel_categories.js",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_channel_categories",
+      "target": "static_channel_categories_datalisteditor"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/static/channel_categories.js",
+      "source_location": "L163",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_channel_categories",
+      "target": "static_channel_categories_deleterow"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/static/channel_categories.js",
+      "source_location": "L180",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_channel_categories",
+      "target": "static_channel_categories_deleteselected"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/static/channel_categories.js",
+      "source_location": "L109",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_channel_categories",
+      "target": "static_channel_categories_loaditems"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/static/channel_categories.js",
+      "source_location": "L81",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_channel_categories",
+      "target": "static_channel_categories_loadsections"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/static/channel_categories.js",
+      "source_location": "L66",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_channel_categories",
+      "target": "static_channel_categories_onedit"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/static/channel_categories.js",
+      "source_location": "L118",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_channel_categories",
+      "target": "static_channel_categories_openadd"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/static/channel_categories.js",
+      "source_location": "L124",
+      "weight": 1.0,
+      "source": "static_channel_categories",
+      "target": "static_channel_categories_refreshgrid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/static/channel_categories.js",
+      "source_location": "L100",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_channel_categories",
+      "target": "static_channel_categories_selectsection"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/static/channel_categories.js",
+      "source_location": "L56",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_channel_categories_buildgrid",
+      "target": "static_channel_categories_columndefs"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/static/channel_categories.js",
+      "source_location": "L106",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_channel_categories_selectsection",
+      "target": "static_channel_categories_loaditems"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/static/channel_categories.js",
+      "source_location": "L120",
+      "weight": 1.0,
+      "source": "static_channel_categories_selectsection",
+      "target": "static_channel_categories_refreshgrid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/static/channel_categories.js",
+      "source_location": "L127",
+      "weight": 1.0,
+      "source": "static_channel_categories_refreshgrid",
+      "target": "static_channel_categories_loaditems",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -21691,9 +23059,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L184",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client",
-      "target": "youtube_auth_get_youtube_client",
-      "confidence_score": 1.0
+      "target": "youtube_auth_get_youtube_client"
     },
     {
       "relation": "calls",
@@ -21702,9 +23070,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L186",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_build_source",
-      "target": "youtube_auth_get_youtube_client",
-      "confidence_score": 1.0
+      "target": "youtube_auth_get_youtube_client"
     },
     {
       "relation": "contains",
@@ -21712,9 +23080,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L182",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client",
-      "target": "youtube_client_build_source",
-      "confidence_score": 1.0
+      "target": "youtube_client_build_source"
     },
     {
       "relation": "contains",
@@ -21802,9 +23170,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L57",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client",
-      "target": "youtube_client_googleyoutubesource",
-      "confidence_score": 1.0
+      "target": "youtube_client_googleyoutubesource"
     },
     {
       "relation": "contains",
@@ -21822,9 +23190,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client",
-      "target": "youtube_client_youtubesource",
-      "confidence_score": 1.0
+      "target": "youtube_client_youtubesource"
     },
     {
       "relation": "rationale_for",
@@ -21864,9 +23232,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L21",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "reporter",
-      "target": "youtube_client_youtubesource",
-      "confidence_score": 0.5
+      "target": "youtube_client_youtubesource"
     },
     {
       "relation": "references",
@@ -21875,9 +23243,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L182",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_build_source",
-      "target": "youtube_client_youtubesource",
-      "confidence_score": 1.0
+      "target": "youtube_client_youtubesource"
     },
     {
       "relation": "rationale_for",
@@ -21885,9 +23253,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_rationale_25",
-      "target": "youtube_client_youtubesource",
-      "confidence_score": 1.0
+      "target": "youtube_client_youtubesource"
     },
     {
       "relation": "inherits",
@@ -21895,9 +23263,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_youtubesource",
-      "target": "protocol",
-      "confidence_score": 1.0
+      "target": "protocol"
     },
     {
       "relation": "method",
@@ -21905,9 +23273,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_youtubesource",
-      "target": "youtube_client_youtubesource_api_calls",
-      "confidence_score": 1.0
+      "target": "youtube_client_youtubesource_api_calls"
     },
     {
       "relation": "method",
@@ -21915,9 +23283,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L51",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_youtubesource",
-      "target": "youtube_client_youtubesource_fetch_channels_content_details",
-      "confidence_score": 1.0
+      "target": "youtube_client_youtubesource_fetch_channels_content_details"
     },
     {
       "relation": "method",
@@ -21925,9 +23293,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L37",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_youtubesource",
-      "target": "youtube_client_youtubesource_fetch_my_playlists",
-      "confidence_score": 1.0
+      "target": "youtube_client_youtubesource_fetch_my_playlists"
     },
     {
       "relation": "method",
@@ -21935,9 +23303,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L40",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_youtubesource",
-      "target": "youtube_client_youtubesource_fetch_playlist_items_paged",
-      "confidence_score": 1.0
+      "target": "youtube_client_youtubesource_fetch_playlist_items_paged"
     },
     {
       "relation": "method",
@@ -21945,9 +23313,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L46",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_youtubesource",
-      "target": "youtube_client_youtubesource_fetch_playlists_by_ids",
-      "confidence_score": 1.0
+      "target": "youtube_client_youtubesource_fetch_playlists_by_ids"
     },
     {
       "relation": "method",
@@ -21955,9 +23323,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_youtubesource",
-      "target": "youtube_client_youtubesource_fetch_subscriptions",
-      "confidence_score": 1.0
+      "target": "youtube_client_youtubesource_fetch_subscriptions"
     },
     {
       "relation": "imports",
@@ -21966,9 +23334,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_sync",
-      "target": "youtube_client_youtubesource",
-      "confidence_score": 1.0
+      "target": "youtube_client_youtubesource"
     },
     {
       "relation": "imports",
@@ -21977,9 +23345,9 @@
       "source_file": "ytfeed/youtube/sync_run.py",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_sync_run",
-      "target": "youtube_client_youtubesource",
-      "confidence_score": 1.0
+      "target": "youtube_client_youtubesource"
     },
     {
       "relation": "uses",
@@ -21987,9 +23355,9 @@
       "source_file": "ytfeed/youtube/sync_run.py",
       "source_location": "L23",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "youtube_sync_run_reporter",
-      "target": "youtube_client_youtubesource",
-      "confidence_score": 0.5
+      "target": "youtube_client_youtubesource"
     },
     {
       "relation": "uses",
@@ -21997,9 +23365,9 @@
       "source_file": "ytfeed/youtube/sync_run.py",
       "source_location": "L23",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "youtube_sync_run_runreporter",
-      "target": "youtube_client_youtubesource",
-      "confidence_score": 0.5
+      "target": "youtube_client_youtubesource"
     },
     {
       "relation": "uses",
@@ -22007,9 +23375,9 @@
       "source_file": "ytfeed/youtube/sync_run.py",
       "source_location": "L23",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "youtube_sync_run_synccancelled",
-      "target": "youtube_client_youtubesource",
-      "confidence_score": 0.5
+      "target": "youtube_client_youtubesource"
     },
     {
       "relation": "uses",
@@ -22017,9 +23385,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L21",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ytfeed_youtube_sync_py_channel",
-      "target": "youtube_client_youtubesource",
-      "confidence_score": 0.5
+      "target": "youtube_client_youtubesource"
     },
     {
       "relation": "uses",
@@ -22027,9 +23395,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L21",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ytfeed_youtube_sync_py_config",
-      "target": "youtube_client_youtubesource",
-      "confidence_score": 0.5
+      "target": "youtube_client_youtubesource"
     },
     {
       "relation": "uses",
@@ -22037,9 +23405,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L21",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ytfeed_youtube_sync_py_datetime",
-      "target": "youtube_client_youtubesource",
-      "confidence_score": 0.5
+      "target": "youtube_client_youtubesource"
     },
     {
       "relation": "uses",
@@ -22047,9 +23415,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L21",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ytfeed_youtube_sync_py_session",
-      "target": "youtube_client_youtubesource",
-      "confidence_score": 0.5
+      "target": "youtube_client_youtubesource"
     },
     {
       "relation": "uses",
@@ -22057,9 +23425,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L21",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ytfeed_youtube_sync_py_syncrun",
-      "target": "youtube_client_youtubesource",
-      "confidence_score": 0.5
+      "target": "youtube_client_youtubesource"
     },
     {
       "relation": "uses",
@@ -22067,9 +23435,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L21",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ytfeed_youtube_sync_py_video",
-      "target": "youtube_client_youtubesource",
-      "confidence_score": 0.5
+      "target": "youtube_client_youtubesource"
     },
     {
       "relation": "uses",
@@ -22077,9 +23445,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L21",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ytfeed_youtube_sync_py_youtubesource",
-      "target": "youtube_client_youtubesource",
-      "confidence_score": 0.5
+      "target": "youtube_client_youtubesource"
     },
     {
       "relation": "uses",
@@ -22087,9 +23455,9 @@
       "source_file": "ytfeed/youtube/sync_run.py",
       "source_location": "L23",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ytfeed_youtube_sync_run_py_session",
-      "target": "youtube_client_youtubesource",
-      "confidence_score": 0.5
+      "target": "youtube_client_youtubesource"
     },
     {
       "relation": "uses",
@@ -22097,9 +23465,9 @@
       "source_file": "ytfeed/youtube/sync_run.py",
       "source_location": "L23",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ytfeed_youtube_sync_run_py_syncrun",
-      "target": "youtube_client_youtubesource",
-      "confidence_score": 0.5
+      "target": "youtube_client_youtubesource"
     },
     {
       "relation": "uses",
@@ -22107,9 +23475,9 @@
       "source_file": "ytfeed/youtube/sync_run.py",
       "source_location": "L23",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ytfeed_youtube_sync_run_py_youtubesource",
-      "target": "youtube_client_youtubesource",
-      "confidence_score": 0.5
+      "target": "youtube_client_youtubesource"
     },
     {
       "relation": "rationale_for",
@@ -22117,9 +23485,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_rationale_29",
-      "target": "youtube_client_youtubesource_api_calls",
-      "confidence_score": 1.0
+      "target": "youtube_client_youtubesource_api_calls"
     },
     {
       "relation": "rationale_for",
@@ -22127,9 +23495,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L35",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_rationale_35",
-      "target": "youtube_client_youtubesource_fetch_subscriptions",
-      "confidence_score": 1.0
+      "target": "youtube_client_youtubesource_fetch_subscriptions"
     },
     {
       "relation": "references",
@@ -22138,9 +23506,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_youtubesource_fetch_subscriptions",
-      "target": "ytfeed_youtube_client_py_any",
-      "confidence_score": 1.0
+      "target": "ytfeed_youtube_client_py_any"
     },
     {
       "relation": "references",
@@ -22204,9 +23572,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L105",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_googleyoutubesource_fetch_my_playlists",
-      "target": "ytfeed_youtube_client_py_any",
-      "confidence_score": 1.0
+      "target": "ytfeed_youtube_client_py_any"
     },
     {
       "relation": "references",
@@ -22215,9 +23583,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L113",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_googleyoutubesource_fetch_playlist_items_paged",
-      "target": "ytfeed_youtube_client_py_any",
-      "confidence_score": 1.0
+      "target": "ytfeed_youtube_client_py_any"
     },
     {
       "relation": "references",
@@ -22226,9 +23594,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L144",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_googleyoutubesource_fetch_playlists_by_ids",
-      "target": "ytfeed_youtube_client_py_any",
-      "confidence_score": 1.0
+      "target": "ytfeed_youtube_client_py_any"
     },
     {
       "relation": "references",
@@ -22237,9 +23605,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L97",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_googleyoutubesource_fetch_subscriptions",
-      "target": "ytfeed_youtube_client_py_any",
-      "confidence_score": 1.0
+      "target": "ytfeed_youtube_client_py_any"
     },
     {
       "relation": "references",
@@ -22248,9 +23616,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L60",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_googleyoutubesource_init",
-      "target": "ytfeed_youtube_client_py_any",
-      "confidence_score": 1.0
+      "target": "ytfeed_youtube_client_py_any"
     },
     {
       "relation": "references",
@@ -22259,9 +23627,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L68",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_googleyoutubesource_paginate",
-      "target": "ytfeed_youtube_client_py_any",
-      "confidence_score": 1.0
+      "target": "ytfeed_youtube_client_py_any"
     },
     {
       "relation": "references",
@@ -22281,9 +23649,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L37",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_youtubesource_fetch_my_playlists",
-      "target": "ytfeed_youtube_client_py_any",
-      "confidence_score": 1.0
+      "target": "ytfeed_youtube_client_py_any"
     },
     {
       "relation": "references",
@@ -22292,9 +23660,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L40",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_youtubesource_fetch_playlist_items_paged",
-      "target": "ytfeed_youtube_client_py_any",
-      "confidence_score": 1.0
+      "target": "ytfeed_youtube_client_py_any"
     },
     {
       "relation": "references",
@@ -22303,9 +23671,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L46",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_youtubesource_fetch_playlists_by_ids",
-      "target": "ytfeed_youtube_client_py_any",
-      "confidence_score": 1.0
+      "target": "ytfeed_youtube_client_py_any"
     },
     {
       "relation": "rationale_for",
@@ -22313,9 +23681,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_rationale_38",
-      "target": "youtube_client_youtubesource_fetch_my_playlists",
-      "confidence_score": 1.0
+      "target": "youtube_client_youtubesource_fetch_my_playlists"
     },
     {
       "relation": "rationale_for",
@@ -22323,9 +23691,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L43",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_rationale_43",
-      "target": "youtube_client_youtubesource_fetch_playlist_items_paged",
-      "confidence_score": 1.0
+      "target": "youtube_client_youtubesource_fetch_playlist_items_paged"
     },
     {
       "relation": "rationale_for",
@@ -22333,9 +23701,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L49",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_rationale_49",
-      "target": "youtube_client_youtubesource_fetch_playlists_by_ids",
-      "confidence_score": 1.0
+      "target": "youtube_client_youtubesource_fetch_playlists_by_ids"
     },
     {
       "relation": "rationale_for",
@@ -22343,9 +23711,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L54",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_rationale_54",
-      "target": "youtube_client_youtubesource_fetch_channels_content_details",
-      "confidence_score": 1.0
+      "target": "youtube_client_youtubesource_fetch_channels_content_details"
     },
     {
       "relation": "calls",
@@ -22354,9 +23722,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L186",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_build_source",
-      "target": "youtube_client_googleyoutubesource",
-      "confidence_score": 1.0
+      "target": "youtube_client_googleyoutubesource"
     },
     {
       "relation": "method",
@@ -22364,9 +23732,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L65",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_googleyoutubesource",
-      "target": "youtube_client_googleyoutubesource_api_calls",
-      "confidence_score": 1.0
+      "target": "youtube_client_googleyoutubesource_api_calls"
     },
     {
       "relation": "method",
@@ -22374,9 +23742,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L159",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_googleyoutubesource",
-      "target": "youtube_client_googleyoutubesource_fetch_channels_content_details",
-      "confidence_score": 1.0
+      "target": "youtube_client_googleyoutubesource_fetch_channels_content_details"
     },
     {
       "relation": "method",
@@ -22384,9 +23752,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L105",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_googleyoutubesource",
-      "target": "youtube_client_googleyoutubesource_fetch_my_playlists",
-      "confidence_score": 1.0
+      "target": "youtube_client_googleyoutubesource_fetch_my_playlists"
     },
     {
       "relation": "method",
@@ -22394,9 +23762,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L113",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_googleyoutubesource",
-      "target": "youtube_client_googleyoutubesource_fetch_playlist_items_paged",
-      "confidence_score": 1.0
+      "target": "youtube_client_googleyoutubesource_fetch_playlist_items_paged"
     },
     {
       "relation": "method",
@@ -22404,9 +23772,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L144",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_googleyoutubesource",
-      "target": "youtube_client_googleyoutubesource_fetch_playlists_by_ids",
-      "confidence_score": 1.0
+      "target": "youtube_client_googleyoutubesource_fetch_playlists_by_ids"
     },
     {
       "relation": "method",
@@ -22414,9 +23782,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L97",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_googleyoutubesource",
-      "target": "youtube_client_googleyoutubesource_fetch_subscriptions",
-      "confidence_score": 1.0
+      "target": "youtube_client_googleyoutubesource_fetch_subscriptions"
     },
     {
       "relation": "method",
@@ -22424,9 +23792,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L60",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_googleyoutubesource",
-      "target": "youtube_client_googleyoutubesource_init",
-      "confidence_score": 1.0
+      "target": "youtube_client_googleyoutubesource_init"
     },
     {
       "relation": "method",
@@ -22434,9 +23802,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L68",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_googleyoutubesource",
-      "target": "youtube_client_googleyoutubesource_paginate",
-      "confidence_score": 1.0
+      "target": "youtube_client_googleyoutubesource_paginate"
     },
     {
       "relation": "rationale_for",
@@ -22444,9 +23812,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L58",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_rationale_58",
-      "target": "youtube_client_googleyoutubesource",
-      "confidence_score": 1.0
+      "target": "youtube_client_googleyoutubesource"
     },
     {
       "relation": "calls",
@@ -22455,9 +23823,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L106",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_googleyoutubesource_fetch_my_playlists",
-      "target": "youtube_client_googleyoutubesource_paginate",
-      "confidence_score": 1.0
+      "target": "youtube_client_googleyoutubesource_paginate"
     },
     {
       "relation": "calls",
@@ -22466,9 +23834,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L98",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_googleyoutubesource_fetch_subscriptions",
-      "target": "youtube_client_googleyoutubesource_paginate",
-      "confidence_score": 1.0
+      "target": "youtube_client_googleyoutubesource_paginate"
     },
     {
       "relation": "rationale_for",
@@ -22476,9 +23844,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L69",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_rationale_69",
-      "target": "youtube_client_googleyoutubesource_paginate",
-      "confidence_score": 1.0
+      "target": "youtube_client_googleyoutubesource_paginate"
     },
     {
       "relation": "references",
@@ -22487,9 +23855,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L182",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_build_source",
-      "target": "ytfeed_youtube_client_py_config",
-      "confidence_score": 1.0
+      "target": "ytfeed_youtube_client_py_config"
     },
     {
       "relation": "rationale_for",
@@ -22497,9 +23865,9 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L183",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_client_rationale_183",
-      "target": "youtube_client_build_source",
-      "confidence_score": 1.0
+      "target": "youtube_client_build_source"
     },
     {
       "relation": "rationale_for",
@@ -23021,9 +24389,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L98",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_sync_rationale_98",
-      "target": "youtube_sync_sync_subscriptions",
-      "confidence_score": 1.0
+      "target": "youtube_sync_sync_subscriptions"
     },
     {
       "relation": "calls",
@@ -23098,9 +24466,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L123",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_sync_sync_subscriptions",
-      "target": "ytfeed_youtube_sync_py_channel",
-      "confidence_score": 1.0
+      "target": "ytfeed_youtube_sync_py_channel"
     },
     {
       "relation": "references",
@@ -23109,9 +24477,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L95",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_sync_sync_subscriptions",
-      "target": "ytfeed_youtube_sync_py_youtubesource",
-      "confidence_score": 1.0
+      "target": "ytfeed_youtube_sync_py_youtubesource"
     },
     {
       "relation": "references",
@@ -23120,9 +24488,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L379",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_sync_run_partial_sync",
-      "target": "ytfeed_youtube_sync_py_youtubesource",
-      "confidence_score": 1.0
+      "target": "ytfeed_youtube_sync_py_youtubesource"
     },
     {
       "relation": "references",
@@ -23131,9 +24499,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L432",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_sync_sync_all",
-      "target": "ytfeed_youtube_sync_py_youtubesource",
-      "confidence_score": 1.0
+      "target": "ytfeed_youtube_sync_py_youtubesource"
     },
     {
       "relation": "references",
@@ -23142,9 +24510,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L284",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_sync_sync_channel_uploads",
-      "target": "ytfeed_youtube_sync_py_youtubesource",
-      "confidence_score": 1.0
+      "target": "ytfeed_youtube_sync_py_youtubesource"
     },
     {
       "relation": "references",
@@ -23153,9 +24521,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L170",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_sync_sync_my_playlists",
-      "target": "ytfeed_youtube_sync_py_youtubesource",
-      "confidence_score": 1.0
+      "target": "ytfeed_youtube_sync_py_youtubesource"
     },
     {
       "relation": "references",
@@ -23164,9 +24532,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L206",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_sync_sync_playlist_payload",
-      "target": "ytfeed_youtube_sync_py_youtubesource",
-      "confidence_score": 1.0
+      "target": "ytfeed_youtube_sync_py_youtubesource"
     },
     {
       "relation": "uses",
@@ -23174,9 +24542,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L22",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ytfeed_youtube_sync_py_youtubesource",
-      "target": "youtube_sync_run_reporter",
-      "confidence_score": 0.5
+      "target": "youtube_sync_run_reporter"
     },
     {
       "relation": "uses",
@@ -23184,9 +24552,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L22",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ytfeed_youtube_sync_py_youtubesource",
-      "target": "youtube_sync_run_synccancelled",
-      "confidence_score": 0.5
+      "target": "youtube_sync_run_synccancelled"
     },
     {
       "relation": "uses",
@@ -23267,9 +24635,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L173",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_sync_rationale_173",
-      "target": "youtube_sync_sync_my_playlists",
-      "confidence_score": 1.0
+      "target": "youtube_sync_sync_my_playlists"
     },
     {
       "relation": "rationale_for",
@@ -23404,9 +24772,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L215",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_sync_rationale_215",
-      "target": "youtube_sync_sync_playlist_payload",
-      "confidence_score": 1.0
+      "target": "youtube_sync_sync_playlist_payload"
     },
     {
       "relation": "rationale_for",
@@ -23497,9 +24865,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L294",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_sync_rationale_294",
-      "target": "youtube_sync_sync_channel_uploads",
-      "confidence_score": 1.0
+      "target": "youtube_sync_sync_channel_uploads"
     },
     {
       "relation": "rationale_for",
@@ -23593,9 +24961,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L284",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_sync_sync_channel_uploads",
-      "target": "ytfeed_youtube_sync_py_channel",
-      "confidence_score": 1.0
+      "target": "ytfeed_youtube_sync_py_channel"
     },
     {
       "relation": "uses",
@@ -23603,9 +24971,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L22",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ytfeed_youtube_sync_py_channel",
-      "target": "youtube_sync_run_reporter",
-      "confidence_score": 0.5
+      "target": "youtube_sync_run_reporter"
     },
     {
       "relation": "uses",
@@ -23613,9 +24981,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L22",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ytfeed_youtube_sync_py_channel",
-      "target": "youtube_sync_run_synccancelled",
-      "confidence_score": 0.5
+      "target": "youtube_sync_run_synccancelled"
     },
     {
       "relation": "rationale_for",
@@ -23643,9 +25011,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L389",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_sync_rationale_389",
-      "target": "youtube_sync_run_partial_sync",
-      "confidence_score": 1.0
+      "target": "youtube_sync_run_partial_sync"
     },
     {
       "relation": "rationale_for",
@@ -23800,9 +25168,9 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L440",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_sync_rationale_440",
-      "target": "youtube_sync_sync_all",
-      "confidence_score": 1.0
+      "target": "youtube_sync_sync_all"
     },
     {
       "relation": "rationale_for",
@@ -24224,9 +25592,9 @@
       "source_file": "ytfeed/youtube/sync_run.py",
       "source_location": "L66",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_sync_run_runreporter_init",
-      "target": "ytfeed_youtube_sync_run_py_youtubesource",
-      "confidence_score": 1.0
+      "target": "ytfeed_youtube_sync_run_py_youtubesource"
     },
     {
       "relation": "references",
@@ -24268,9 +25636,9 @@
       "source_file": "ytfeed/youtube/sync_run.py",
       "source_location": "L126",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_sync_run_audited_run",
-      "target": "ytfeed_youtube_sync_run_py_youtubesource",
-      "confidence_score": 1.0
+      "target": "ytfeed_youtube_sync_run_py_youtubesource"
     },
     {
       "relation": "calls",
@@ -24343,9 +25711,9 @@
       "source_file": "ytfeed/youtube/sync_run.py",
       "source_location": "L129",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "youtube_sync_run_rationale_129",
-      "target": "youtube_sync_run_audited_run",
-      "confidence_score": 1.0
+      "target": "youtube_sync_run_audited_run"
     },
     {
       "relation": "contains",
@@ -25071,5 +26439,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "8d398062824b62cc7a8204de143d8bd4cf1a1abb"
+  "built_at_commit": "ee797511fa4ae19f8eff7a90ab28172059c63ffd"
 }

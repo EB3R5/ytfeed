@@ -2,13 +2,14 @@
 
 from __future__ import annotations
 
-from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException, Request
+from fastapi import APIRouter, BackgroundTasks, Depends, Form, HTTPException, Request
 from fastapi.responses import HTMLResponse, RedirectResponse
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
-from ytfeed.db.models import Channel, ChannelUpload, Video
+from ytfeed.db.models import Channel, ChannelCategory, ChannelUpload, Video
 from ytfeed.web.dependencies import get_config, get_db, templates
+from ytfeed.web.routes.channel_category import _grouped
 
 router = APIRouter()
 
@@ -16,8 +17,9 @@ router = APIRouter()
 @router.get("/subscriptions", response_class=HTMLResponse)
 def subscriptions(request: Request, db: Session = Depends(get_db)):
     rows = db.execute(
-        select(Channel, func.count(ChannelUpload.id))
+        select(Channel, func.count(ChannelUpload.id), ChannelCategory)
         .outerjoin(ChannelUpload, ChannelUpload.channel_id == Channel.channel_id)
+        .outerjoin(ChannelCategory, ChannelCategory.id == Channel.category_id)
         .where(Channel.is_active.is_(True))
         .group_by(Channel.id)
         .order_by(Channel.title)
@@ -58,10 +60,60 @@ def channel_page(
         "channel": channel,
         "videos": videos,
         "q": q or "",
+        "category_groups": _grouped(db),
     }
     if request.headers.get("HX-Request"):
         return templates.TemplateResponse(request, "partials/video_list.html", context)
     return templates.TemplateResponse(request, "channel.html", context)
+
+
+def _category_context(db: Session, channel: Channel, request: Request) -> dict:
+    return {
+        "request": request,
+        "channel": channel,
+        "category_groups": _grouped(db),
+    }
+
+
+@router.post("/channels/{channel_id}/category")
+def set_channel_category(
+    channel_id: str,
+    request: Request,
+    category_id: str = Form(""),
+    db: Session = Depends(get_db),
+):
+    channel = db.scalar(select(Channel).where(Channel.channel_id == channel_id))
+    if channel is None:
+        raise HTTPException(404, "Channel not found")
+    cid = int(category_id) if category_id.strip() else None
+    if cid is not None and db.get(ChannelCategory, cid) is None:
+        raise HTTPException(404, "Category not found")
+    channel.category_id = cid
+    db.commit()
+    if request.headers.get("HX-Request"):
+        return templates.TemplateResponse(
+            request, "partials/channel_category.html", _category_context(db, channel, request)
+        )
+    return RedirectResponse(f"/channels/{channel_id}", status_code=303)
+
+
+@router.post("/channels/{channel_id}/notes")
+def set_channel_notes(
+    channel_id: str,
+    request: Request,
+    notes: str = Form(""),
+    db: Session = Depends(get_db),
+):
+    channel = db.scalar(select(Channel).where(Channel.channel_id == channel_id))
+    if channel is None:
+        raise HTTPException(404, "Channel not found")
+    channel.notes = notes
+    db.commit()
+    if request.headers.get("HX-Request"):
+        return templates.TemplateResponse(
+            request, "partials/channel_notes.html", {"request": request, "channel": channel}
+        )
+    return RedirectResponse(f"/channels/{channel_id}", status_code=303)
 
 
 def _run_channel_sync(channel_id: str, force_full: bool) -> None:
