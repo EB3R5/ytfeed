@@ -19,10 +19,12 @@ dependencies = [
     "yt-dlp",
     "youtube-transcript-api",
     "notebooklm-py",
+    "pywebview",
 ]
 
 [project.scripts]
 ytfeed = "ytfeed.cli:main"
+ytfeed-app = "ytfeed.desktop:main"
 
 [tool.setuptools.packages.find]
 include = ["ytfeed*"]

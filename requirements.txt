@@ -9,3 +9,4 @@ google-auth
 yt-dlp
 youtube-transcript-api
 notebooklm-py
+pywebview
