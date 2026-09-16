@@ -9,7 +9,7 @@
       "source_file": "tests/test_categorize.py",
       "source_location": "L1",
       "id": "tests_test_categorize",
-      "community": 4,
+      "community": 5,
       "norm_label": "test_categorize.py"
     },
     {
@@ -18,7 +18,7 @@
       "source_file": "tests/test_categorize.py",
       "source_location": "L11",
       "id": "tests_test_categorize_playlist",
-      "community": 4,
+      "community": 5,
       "norm_label": "_playlist()"
     },
     {
@@ -27,7 +27,7 @@
       "source_file": "tests/test_categorize.py",
       "source_location": "L19",
       "id": "tests_test_categorize_categorizetests",
-      "community": 4,
+      "community": 5,
       "norm_label": "categorizetests"
     },
     {
@@ -36,7 +36,7 @@
       "source_file": "tests/test_categorize.py",
       "source_location": "L20",
       "id": "tests_test_categorize_categorizetests_setup",
-      "community": 4,
+      "community": 5,
       "norm_label": ".setup()"
     },
     {
@@ -45,7 +45,7 @@
       "source_file": "tests/test_categorize.py",
       "source_location": "L25",
       "id": "tests_test_categorize_categorizetests_test_no_playlist_means_no_category",
-      "community": 4,
+      "community": 5,
       "norm_label": ".test_no_playlist_means_no_category()"
     },
     {
@@ -54,7 +54,7 @@
       "source_file": "tests/test_categorize.py",
       "source_location": "L28",
       "id": "tests_test_categorize_categorizetests_test_single_playlist_wins",
-      "community": 4,
+      "community": 5,
       "norm_label": ".test_single_playlist_wins()"
     },
     {
@@ -63,7 +63,7 @@
       "source_file": "tests/test_categorize.py",
       "source_location": "L33",
       "id": "tests_test_categorize_categorizetests_test_most_recent_add_wins",
-      "community": 4,
+      "community": 5,
       "norm_label": ".test_most_recent_add_wins()"
     },
     {
@@ -72,7 +72,7 @@
       "source_file": "tests/test_categorize.py",
       "source_location": "L49",
       "id": "tests_test_categorize_categorizetests_test_smallest_playlist_wins_without_timestamps",
-      "community": 4,
+      "community": 5,
       "norm_label": ".test_smallest_playlist_wins_without_timestamps()"
     },
     {
@@ -81,7 +81,7 @@
       "source_file": "tests/test_categorize.py",
       "source_location": "L55",
       "id": "tests_test_categorize_categorizetests_test_timestamped_membership_beats_untimestamped",
-      "community": 4,
+      "community": 5,
       "norm_label": ".test_timestamped_membership_beats_untimestamped()"
     },
     {
@@ -90,7 +90,7 @@
       "source_file": "tests/test_categorize.py",
       "source_location": "L67",
       "id": "tests_test_categorize_categorizetests_test_duplicate_playlist_names_merge",
-      "community": 4,
+      "community": 5,
       "norm_label": ".test_duplicate_playlist_names_merge()"
     },
     {
@@ -99,7 +99,7 @@
       "source_file": "tests/test_categorize.py",
       "source_location": "L76",
       "id": "tests_test_categorize_categorizetests_test_category_is_filesystem_safe",
-      "community": 4,
+      "community": 5,
       "norm_label": ".test_category_is_filesystem_safe()"
     },
     {
@@ -117,7 +117,7 @@
       "source_file": "tests/test_markdown_writer.py",
       "source_location": "L14",
       "id": "tests_test_markdown_writer_sanitizetests",
-      "community": 4,
+      "community": 5,
       "norm_label": "sanitizetests"
     },
     {
@@ -126,7 +126,7 @@
       "source_file": "tests/test_markdown_writer.py",
       "source_location": "L15",
       "id": "tests_test_markdown_writer_sanitizetests_test_strips_path_separators",
-      "community": 4,
+      "community": 5,
       "norm_label": ".test_strips_path_separators()"
     },
     {
@@ -135,7 +135,7 @@
       "source_file": "tests/test_markdown_writer.py",
       "source_location": "L18",
       "id": "tests_test_markdown_writer_sanitizetests_test_collapses_whitespace_and_trailing_dot",
-      "community": 4,
+      "community": 5,
       "norm_label": ".test_collapses_whitespace_and_trailing_dot()"
     },
     {
@@ -144,7 +144,7 @@
       "source_file": "tests/test_markdown_writer.py",
       "source_location": "L21",
       "id": "tests_test_markdown_writer_sanitizetests_test_placeholder_suffix",
-      "community": 4,
+      "community": 5,
       "norm_label": ".test_placeholder_suffix()"
     },
     {
@@ -270,7 +270,7 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L14",
       "id": "tests_test_sync_item",
-      "community": 27,
+      "community": 1,
       "norm_label": "_item()"
     },
     {
@@ -279,7 +279,7 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L21",
       "id": "tests_test_sync_fakesource",
-      "community": 27,
+      "community": 1,
       "norm_label": "fakesource"
     },
     {
@@ -288,7 +288,7 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L24",
       "id": "tests_test_sync_fakesource_init",
-      "community": 27,
+      "community": 1,
       "norm_label": ".__init__()"
     },
     {
@@ -297,7 +297,7 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L29",
       "id": "tests_test_sync_fakesource_api_calls",
-      "community": 27,
+      "community": 1,
       "norm_label": ".api_calls()"
     },
     {
@@ -306,7 +306,7 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L32",
       "id": "tests_test_sync_fakesource_fetch_subscriptions",
-      "community": 27,
+      "community": 1,
       "norm_label": ".fetch_subscriptions()"
     },
     {
@@ -315,7 +315,7 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L35",
       "id": "tests_test_sync_fakesource_fetch_my_playlists",
-      "community": 27,
+      "community": 1,
       "norm_label": ".fetch_my_playlists()"
     },
     {
@@ -324,7 +324,7 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L38",
       "id": "tests_test_sync_fakesource_fetch_playlist_items_paged",
-      "community": 27,
+      "community": 1,
       "norm_label": ".fetch_playlist_items_paged()"
     },
     {
@@ -333,7 +333,7 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L43",
       "id": "tests_test_sync_fakesource_fetch_playlists_by_ids",
-      "community": 27,
+      "community": 1,
       "norm_label": ".fetch_playlists_by_ids()"
     },
     {
@@ -342,7 +342,7 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L46",
       "id": "tests_test_sync_fakesource_fetch_channels_content_details",
-      "community": 27,
+      "community": 1,
       "norm_label": ".fetch_channels_content_details()"
     },
     {
@@ -351,7 +351,7 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L50",
       "id": "tests_test_sync_channeluploadstests",
-      "community": 27,
+      "community": 1,
       "norm_label": "channeluploadstests"
     },
     {
@@ -360,7 +360,7 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L51",
       "id": "tests_test_sync_channeluploadstests_setup",
-      "community": 27,
+      "community": 1,
       "norm_label": ".setup()"
     },
     {
@@ -369,7 +369,7 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L58",
       "id": "tests_test_sync_channeluploadstests_channel",
-      "community": 27,
+      "community": 1,
       "norm_label": "._channel()"
     },
     {
@@ -387,7 +387,7 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L64",
       "id": "tests_test_sync_channeluploadstests_test_early_stop_on_known_video",
-      "community": 27,
+      "community": 1,
       "norm_label": ".test_early_stop_on_known_video()"
     },
     {
@@ -396,7 +396,7 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L87",
       "id": "tests_test_sync_channeluploadstests_test_first_sync_respects_backfill_cap",
-      "community": 27,
+      "community": 1,
       "norm_label": ".test_first_sync_respects_backfill_cap()"
     },
     {
@@ -405,7 +405,7 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L99",
       "id": "tests_test_sync_channeluploadstests_test_early_stop_on_published_older_than_last_seen",
-      "community": 27,
+      "community": 1,
       "norm_label": ".test_early_stop_on_published_older_than_last_seen()"
     },
     {
@@ -522,7 +522,7 @@
       "source_file": "tests/test_sync.py",
       "source_location": "L22",
       "id": "tests_test_sync_rationale_22",
-      "community": 27,
+      "community": 1,
       "norm_label": "a canned youtubesource \u2014 no network, no google client to fake."
     },
     {
@@ -675,7 +675,7 @@
       "source_file": "ytfeed/__main__.py",
       "source_location": "L1",
       "id": "ytfeed_main",
-      "community": 6,
+      "community": 23,
       "norm_label": "__main__.py"
     },
     {
@@ -684,7 +684,7 @@
       "source_file": "ytfeed/cli.py",
       "source_location": "L1",
       "id": "ytfeed_cli",
-      "community": 6,
+      "community": 23,
       "norm_label": "cli.py"
     },
     {
@@ -693,7 +693,7 @@
       "source_file": "ytfeed/cli.py",
       "source_location": "L12",
       "id": "ytfeed_cli_cmd_init_db",
-      "community": 6,
+      "community": 23,
       "norm_label": "cmd_init_db()"
     },
     {
@@ -702,7 +702,7 @@
       "source_file": "ytfeed/cli.py",
       "source_location": "L12",
       "id": "namespace",
-      "community": 6,
+      "community": 23,
       "norm_label": "namespace"
     },
     {
@@ -711,7 +711,7 @@
       "source_file": "ytfeed/cli.py",
       "source_location": "L21",
       "id": "ytfeed_cli_cmd_sync",
-      "community": 5,
+      "community": 23,
       "norm_label": "cmd_sync()"
     },
     {
@@ -720,7 +720,7 @@
       "source_file": "ytfeed/cli.py",
       "source_location": "L58",
       "id": "ytfeed_cli_cmd_serve",
-      "community": 6,
+      "community": 23,
       "norm_label": "cmd_serve()"
     },
     {
@@ -729,7 +729,7 @@
       "source_file": "ytfeed/cli.py",
       "source_location": "L70",
       "id": "ytfeed_cli_cmd_transcribe",
-      "community": 6,
+      "community": 23,
       "norm_label": "cmd_transcribe()"
     },
     {
@@ -738,7 +738,7 @@
       "source_file": "ytfeed/cli.py",
       "source_location": "L92",
       "id": "ytfeed_cli_cmd_describe",
-      "community": 6,
+      "community": 23,
       "norm_label": "cmd_describe()"
     },
     {
@@ -747,7 +747,7 @@
       "source_file": "ytfeed/cli.py",
       "source_location": "L146",
       "id": "ytfeed_cli_build_parser",
-      "community": 6,
+      "community": 23,
       "norm_label": "build_parser()"
     },
     {
@@ -765,7 +765,7 @@
       "source_file": "ytfeed/cli.py",
       "source_location": "L185",
       "id": "ytfeed_cli_main",
-      "community": 6,
+      "community": 23,
       "norm_label": "main()"
     },
     {
@@ -774,7 +774,7 @@
       "source_file": "ytfeed/cli.py",
       "source_location": "L1",
       "id": "ytfeed_cli_rationale_1",
-      "community": 6,
+      "community": 23,
       "norm_label": "ytfeed cli: init-db, sync, serve, transcribe, describe."
     },
     {
@@ -783,7 +783,7 @@
       "source_file": "ytfeed/cli.py",
       "source_location": "L93",
       "id": "ytfeed_cli_rationale_93",
-      "community": 6,
+      "community": 23,
       "norm_label": "backfill ## description sections into existing vault files from the db     (with"
     },
     {
@@ -792,7 +792,7 @@
       "source_file": "ytfeed/config.py",
       "source_location": "L1",
       "id": "ytfeed_config",
-      "community": 14,
+      "community": 23,
       "norm_label": "config.py"
     },
     {
@@ -801,7 +801,7 @@
       "source_file": "ytfeed/config.py",
       "source_location": "L13",
       "id": "ytfeed_config_pathsconfig",
-      "community": 14,
+      "community": 23,
       "norm_label": "pathsconfig"
     },
     {
@@ -810,7 +810,7 @@
       "source_file": "ytfeed/config.py",
       "source_location": "L24",
       "id": "ytfeed_config_syncconfig",
-      "community": 14,
+      "community": 23,
       "norm_label": "syncconfig"
     },
     {
@@ -819,7 +819,7 @@
       "source_file": "ytfeed/config.py",
       "source_location": "L29",
       "id": "ytfeed_config_notebooklmconfig",
-      "community": 14,
+      "community": 23,
       "norm_label": "notebooklmconfig"
     },
     {
@@ -828,7 +828,7 @@
       "source_file": "ytfeed/config.py",
       "source_location": "L37",
       "id": "ytfeed_config_downloadconfig",
-      "community": 14,
+      "community": 23,
       "norm_label": "downloadconfig"
     },
     {
@@ -837,7 +837,7 @@
       "source_file": "ytfeed/config.py",
       "source_location": "L42",
       "id": "ytfeed_config_config",
-      "community": 2,
+      "community": 26,
       "norm_label": "config"
     },
     {
@@ -846,7 +846,7 @@
       "source_file": "ytfeed/config.py",
       "source_location": "L50",
       "id": "ytfeed_config_resolve",
-      "community": 6,
+      "community": 23,
       "norm_label": "_resolve()"
     },
     {
@@ -855,7 +855,7 @@
       "source_file": "ytfeed/config.py",
       "source_location": "L50",
       "id": "ytfeed_config_py_path",
-      "community": 6,
+      "community": 23,
       "norm_label": "path"
     },
     {
@@ -864,7 +864,7 @@
       "source_file": "ytfeed/config.py",
       "source_location": "L57",
       "id": "ytfeed_config_load_config",
-      "community": 6,
+      "community": 23,
       "norm_label": "load_config()"
     },
     {
@@ -873,7 +873,7 @@
       "source_file": "ytfeed/config.py",
       "source_location": "L1",
       "id": "ytfeed_config_rationale_1",
-      "community": 14,
+      "community": 23,
       "norm_label": "load config.toml (falling back to config.example.toml) into a config object."
     },
     {
@@ -891,7 +891,7 @@
       "source_file": "ytfeed/db/models.py",
       "source_location": "L1",
       "id": "db_models",
-      "community": 10,
+      "community": 27,
       "norm_label": "models.py"
     },
     {
@@ -900,7 +900,7 @@
       "source_file": "ytfeed/db/models.py",
       "source_location": "L20",
       "id": "db_models_utcnow",
-      "community": 10,
+      "community": 0,
       "norm_label": "utcnow()"
     },
     {
@@ -909,7 +909,7 @@
       "source_file": "ytfeed/db/models.py",
       "source_location": "L20",
       "id": "ytfeed_db_models_py_datetime",
-      "community": 10,
+      "community": 27,
       "norm_label": "datetime"
     },
     {
@@ -954,7 +954,7 @@
       "source_file": "ytfeed/db/models.py",
       "source_location": "L64",
       "id": "db_models_playlist",
-      "community": 28,
+      "community": 26,
       "norm_label": "playlist"
     },
     {
@@ -981,7 +981,7 @@
       "source_file": "ytfeed/db/models.py",
       "source_location": "L109",
       "id": "db_models_playlistitem",
-      "community": 0,
+      "community": 26,
       "norm_label": "playlistitem"
     },
     {
@@ -1017,7 +1017,7 @@
       "source_file": "ytfeed/db/models.py",
       "source_location": "L1",
       "id": "db_models_rationale_1",
-      "community": 10,
+      "community": 27,
       "norm_label": "sqlalchemy 2.0 models for ytfeed."
     },
     {
@@ -1035,7 +1035,7 @@
       "source_file": "ytfeed/db/session.py",
       "source_location": "L1",
       "id": "db_session",
-      "community": 5,
+      "community": 23,
       "norm_label": "session.py"
     },
     {
@@ -1044,7 +1044,7 @@
       "source_file": "ytfeed/db/session.py",
       "source_location": "L18",
       "id": "db_session_get_engine",
-      "community": 5,
+      "community": 23,
       "norm_label": "get_engine()"
     },
     {
@@ -1053,7 +1053,7 @@
       "source_file": "ytfeed/db/session.py",
       "source_location": "L18",
       "id": "ytfeed_db_session_py_config",
-      "community": 5,
+      "community": 23,
       "norm_label": "config"
     },
     {
@@ -1062,7 +1062,7 @@
       "source_file": "ytfeed/db/session.py",
       "source_location": "L18",
       "id": "engine",
-      "community": 5,
+      "community": 27,
       "norm_label": "engine"
     },
     {
@@ -1071,7 +1071,7 @@
       "source_file": "ytfeed/db/session.py",
       "source_location": "L44",
       "id": "db_session_get_session_factory",
-      "community": 5,
+      "community": 23,
       "norm_label": "get_session_factory()"
     },
     {
@@ -1089,7 +1089,7 @@
       "source_file": "ytfeed/db/session.py",
       "source_location": "L44",
       "id": "ytfeed_db_session_py_session",
-      "community": 5,
+      "community": 27,
       "norm_label": "session"
     },
     {
@@ -1098,7 +1098,7 @@
       "source_file": "ytfeed/db/session.py",
       "source_location": "L51",
       "id": "db_session_init_db",
-      "community": 5,
+      "community": 23,
       "norm_label": "init_db()"
     },
     {
@@ -1107,8 +1107,62 @@
       "source_file": "ytfeed/db/session.py",
       "source_location": "L1",
       "id": "db_session_rationale_1",
-      "community": 5,
+      "community": 23,
       "norm_label": "engine/session factory and schema creation."
+    },
+    {
+      "label": "desktop.py",
+      "file_type": "code",
+      "source_file": "ytfeed/desktop.py",
+      "source_location": "L1",
+      "id": "ytfeed_desktop",
+      "community": 6,
+      "norm_label": "desktop.py"
+    },
+    {
+      "label": "_free_port()",
+      "file_type": "code",
+      "source_file": "ytfeed/desktop.py",
+      "source_location": "L10",
+      "id": "ytfeed_desktop_free_port",
+      "community": 6,
+      "norm_label": "_free_port()"
+    },
+    {
+      "label": "_wait_until_up()",
+      "file_type": "code",
+      "source_file": "ytfeed/desktop.py",
+      "source_location": "L16",
+      "id": "ytfeed_desktop_wait_until_up",
+      "community": 6,
+      "norm_label": "_wait_until_up()"
+    },
+    {
+      "label": "_set_dock_icon()",
+      "file_type": "code",
+      "source_file": "ytfeed/desktop.py",
+      "source_location": "L27",
+      "id": "ytfeed_desktop_set_dock_icon",
+      "community": 6,
+      "norm_label": "_set_dock_icon()"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "ytfeed/desktop.py",
+      "source_location": "L43",
+      "id": "ytfeed_desktop_main",
+      "community": 6,
+      "norm_label": "main()"
+    },
+    {
+      "label": "Desktop launcher: run the ytfeed server on a free port inside a pywebview window",
+      "file_type": "rationale",
+      "source_file": "ytfeed/desktop.py",
+      "source_location": "L1",
+      "id": "ytfeed_desktop_rationale_1",
+      "community": 6,
+      "norm_label": "desktop launcher: run the ytfeed server on a free port inside a pywebview window"
     },
     {
       "label": "__init__.py",
@@ -1251,7 +1305,7 @@
       "source_file": "ytfeed/transcripts/categorize.py",
       "source_location": "L1",
       "id": "transcripts_categorize",
-      "community": 4,
+      "community": 26,
       "norm_label": "categorize.py"
     },
     {
@@ -1260,7 +1314,7 @@
       "source_file": "ytfeed/transcripts/categorize.py",
       "source_location": "L22",
       "id": "transcripts_categorize_category_for_video",
-      "community": 4,
+      "community": 5,
       "norm_label": "category_for_video()"
     },
     {
@@ -1269,7 +1323,7 @@
       "source_file": "ytfeed/transcripts/categorize.py",
       "source_location": "L22",
       "id": "ytfeed_transcripts_categorize_py_session",
-      "community": 28,
+      "community": 26,
       "norm_label": "session"
     },
     {
@@ -1278,7 +1332,7 @@
       "source_file": "ytfeed/transcripts/categorize.py",
       "source_location": "L1",
       "id": "transcripts_categorize_rationale_1",
-      "community": 4,
+      "community": 26,
       "norm_label": "derive a vault category for a video from its playlist memberships.  playlist nam"
     },
     {
@@ -1296,7 +1350,7 @@
       "source_file": "ytfeed/transcripts/markdown_writer.py",
       "source_location": "L9",
       "id": "transcripts_markdown_writer_sanitize_filename",
-      "community": 4,
+      "community": 5,
       "norm_label": "sanitize_filename()"
     },
     {
@@ -1521,7 +1575,7 @@
       "source_file": "ytfeed/transcripts/pipeline.py",
       "source_location": "L67",
       "id": "transcripts_pipeline_recover_stale_processing",
-      "community": 1,
+      "community": 2,
       "norm_label": "recover_stale_processing()"
     },
     {
@@ -1602,7 +1656,7 @@
       "source_file": "ytfeed/transcripts/pipeline.py",
       "source_location": "L68",
       "id": "transcripts_pipeline_rationale_68",
-      "community": 1,
+      "community": 2,
       "norm_label": "reset items stuck in 'processing' (e.g. after a server restart killed a run)."
     },
     {
@@ -1728,7 +1782,7 @@
       "source_file": "ytfeed/web/app.py",
       "source_location": "L1",
       "id": "web_app",
-      "community": 1,
+      "community": 23,
       "norm_label": "app.py"
     },
     {
@@ -1737,7 +1791,7 @@
       "source_file": "ytfeed/web/app.py",
       "source_location": "L44",
       "id": "web_app_retry_monitor",
-      "community": 1,
+      "community": 23,
       "norm_label": "_retry_monitor()"
     },
     {
@@ -1746,7 +1800,7 @@
       "source_file": "ytfeed/web/app.py",
       "source_location": "L64",
       "id": "web_app_startup",
-      "community": 1,
+      "community": 23,
       "norm_label": "_startup()"
     },
     {
@@ -1755,7 +1809,7 @@
       "source_file": "ytfeed/web/app.py",
       "source_location": "L1",
       "id": "web_app_rationale_1",
-      "community": 1,
+      "community": 23,
       "norm_label": "fastapi app: recents | subscriptions | playlists | queue | settings."
     },
     {
@@ -1764,7 +1818,7 @@
       "source_file": "ytfeed/web/app.py",
       "source_location": "L45",
       "id": "web_app_rationale_45",
-      "community": 1,
+      "community": 23,
       "norm_label": "pick up deferred queue items (e.g. ip-block retries) once they're due."
     },
     {
@@ -1935,7 +1989,7 @@
       "source_file": "ytfeed/web/routes/channel.py",
       "source_location": "L119",
       "id": "routes_channel_run_channel_sync",
-      "community": 5,
+      "community": 23,
       "norm_label": "_run_channel_sync()"
     },
     {
@@ -2241,7 +2295,7 @@
       "source_file": "ytfeed/web/routes/queue.py",
       "source_location": "L85",
       "id": "routes_queue_run_pipeline_bg",
-      "community": 2,
+      "community": 23,
       "norm_label": "_run_pipeline_bg()"
     },
     {
@@ -2394,7 +2448,7 @@
       "source_file": "ytfeed/web/routes/settings.py",
       "source_location": "L1",
       "id": "routes_settings",
-      "community": 28,
+      "community": 23,
       "norm_label": "settings.py"
     },
     {
@@ -2403,7 +2457,7 @@
       "source_file": "ytfeed/web/routes/settings.py",
       "source_location": "L16",
       "id": "routes_settings_mask",
-      "community": 28,
+      "community": 23,
       "norm_label": "_mask()"
     },
     {
@@ -2412,7 +2466,7 @@
       "source_file": "ytfeed/web/routes/settings.py",
       "source_location": "L22",
       "id": "routes_settings_settings_page",
-      "community": 28,
+      "community": 23,
       "norm_label": "settings_page()"
     },
     {
@@ -2421,7 +2475,7 @@
       "source_file": "ytfeed/web/routes/settings.py",
       "source_location": "L22",
       "id": "ytfeed_web_routes_settings_py_request",
-      "community": 28,
+      "community": 23,
       "norm_label": "request"
     },
     {
@@ -2430,7 +2484,7 @@
       "source_file": "ytfeed/web/routes/settings.py",
       "source_location": "L22",
       "id": "ytfeed_web_routes_settings_py_session",
-      "community": 28,
+      "community": 23,
       "norm_label": "session"
     },
     {
@@ -2439,7 +2493,7 @@
       "source_file": "ytfeed/web/routes/settings.py",
       "source_location": "L58",
       "id": "routes_settings_run_sync_bg",
-      "community": 0,
+      "community": 23,
       "norm_label": "_run_sync_bg()"
     },
     {
@@ -2448,7 +2502,7 @@
       "source_file": "ytfeed/web/routes/settings.py",
       "source_location": "L73",
       "id": "routes_settings_sync_is_running",
-      "community": 28,
+      "community": 23,
       "norm_label": "sync_is_running()"
     },
     {
@@ -2457,7 +2511,7 @@
       "source_file": "ytfeed/web/routes/settings.py",
       "source_location": "L85",
       "id": "routes_settings_start_sync",
-      "community": 28,
+      "community": 23,
       "norm_label": "start_sync()"
     },
     {
@@ -2466,7 +2520,7 @@
       "source_file": "ytfeed/web/routes/settings.py",
       "source_location": "L85",
       "id": "ytfeed_web_routes_settings_py_backgroundtasks",
-      "community": 28,
+      "community": 23,
       "norm_label": "backgroundtasks"
     },
     {
@@ -2475,7 +2529,7 @@
       "source_file": "ytfeed/web/routes/settings.py",
       "source_location": "L94",
       "id": "routes_settings_trigger_sync",
-      "community": 28,
+      "community": 23,
       "norm_label": "trigger_sync()"
     },
     {
@@ -2484,7 +2538,7 @@
       "source_file": "ytfeed/web/routes/settings.py",
       "source_location": "L104",
       "id": "routes_settings_trigger_subscriptions_sync",
-      "community": 28,
+      "community": 23,
       "norm_label": "trigger_subscriptions_sync()"
     },
     {
@@ -2493,7 +2547,7 @@
       "source_file": "ytfeed/web/routes/settings.py",
       "source_location": "L114",
       "id": "routes_settings_stop_sync",
-      "community": 28,
+      "community": 23,
       "norm_label": "stop_sync()"
     },
     {
@@ -2502,7 +2556,7 @@
       "source_file": "ytfeed/web/routes/settings.py",
       "source_location": "L135",
       "id": "routes_settings_trigger_playlists_sync",
-      "community": 28,
+      "community": 23,
       "norm_label": "trigger_playlists_sync()"
     },
     {
@@ -2511,7 +2565,7 @@
       "source_file": "ytfeed/web/routes/settings.py",
       "source_location": "L1",
       "id": "routes_settings_rationale_1",
-      "community": 28,
+      "community": 23,
       "norm_label": "settings page: config summary, db stats, manual sync."
     },
     {
@@ -2520,7 +2574,7 @@
       "source_file": "ytfeed/web/routes/settings.py",
       "source_location": "L86",
       "id": "routes_settings_rationale_86",
-      "community": 28,
+      "community": 23,
       "norm_label": "queue a sync unless one is already running. returns true if started."
     },
     {
@@ -3690,7 +3744,7 @@
       "source_file": "ytfeed/youtube/auth.py",
       "source_location": "L1",
       "id": "youtube_auth",
-      "community": 25,
+      "community": 23,
       "norm_label": "auth.py"
     },
     {
@@ -3699,7 +3753,7 @@
       "source_file": "ytfeed/youtube/auth.py",
       "source_location": "L17",
       "id": "youtube_auth_get_credentials",
-      "community": 25,
+      "community": 23,
       "norm_label": "get_credentials()"
     },
     {
@@ -3708,7 +3762,7 @@
       "source_file": "ytfeed/youtube/auth.py",
       "source_location": "L17",
       "id": "ytfeed_youtube_auth_py_path",
-      "community": 25,
+      "community": 23,
       "norm_label": "path"
     },
     {
@@ -3717,7 +3771,7 @@
       "source_file": "ytfeed/youtube/auth.py",
       "source_location": "L17",
       "id": "credentials",
-      "community": 25,
+      "community": 23,
       "norm_label": "credentials"
     },
     {
@@ -3726,7 +3780,7 @@
       "source_file": "ytfeed/youtube/auth.py",
       "source_location": "L39",
       "id": "youtube_auth_get_youtube_client",
-      "community": 25,
+      "community": 23,
       "norm_label": "get_youtube_client()"
     },
     {
@@ -3735,7 +3789,7 @@
       "source_file": "ytfeed/youtube/auth.py",
       "source_location": "L39",
       "id": "ytfeed_youtube_auth_py_config",
-      "community": 25,
+      "community": 23,
       "norm_label": "config"
     },
     {
@@ -3744,7 +3798,7 @@
       "source_file": "ytfeed/youtube/auth.py",
       "source_location": "L39",
       "id": "resource",
-      "community": 25,
+      "community": 23,
       "norm_label": "resource"
     },
     {
@@ -3753,7 +3807,7 @@
       "source_file": "ytfeed/youtube/auth.py",
       "source_location": "L1",
       "id": "youtube_auth_rationale_1",
-      "community": 25,
+      "community": 23,
       "norm_label": "oauth2 installedappflow for the youtube data api (readonly)."
     },
     {
@@ -3771,7 +3825,7 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L24",
       "id": "youtube_client_youtubesource",
-      "community": 27,
+      "community": 26,
       "norm_label": "youtubesource"
     },
     {
@@ -3780,7 +3834,7 @@
       "source_file": "",
       "source_location": "",
       "id": "protocol",
-      "community": 27,
+      "community": 26,
       "norm_label": "protocol"
     },
     {
@@ -3843,7 +3897,7 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L51",
       "id": "youtube_client_youtubesource_fetch_channels_content_details",
-      "community": 27,
+      "community": 26,
       "norm_label": ".fetch_channels_content_details()"
     },
     {
@@ -3933,7 +3987,7 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L182",
       "id": "youtube_client_build_source",
-      "community": 5,
+      "community": 23,
       "norm_label": "build_source()"
     },
     {
@@ -3942,7 +3996,7 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L182",
       "id": "ytfeed_youtube_client_py_config",
-      "community": 5,
+      "community": 23,
       "norm_label": "config"
     },
     {
@@ -3960,7 +4014,7 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L25",
       "id": "youtube_client_rationale_25",
-      "community": 27,
+      "community": 26,
       "norm_label": "the youtube data api operations the sync engine depends on."
     },
     {
@@ -4014,7 +4068,7 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L54",
       "id": "youtube_client_rationale_54",
-      "community": 27,
+      "community": 26,
       "norm_label": "resolve uploads-playlist ids for channels, batched 50 per request."
     },
     {
@@ -4041,7 +4095,7 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L183",
       "id": "youtube_client_rationale_183",
-      "community": 5,
+      "community": 23,
       "norm_label": "authenticate and wrap the youtube data api in a youtubesource."
     },
     {
@@ -4068,7 +4122,7 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L36",
       "id": "ytfeed_youtube_sync_py_datetime",
-      "community": 0,
+      "community": 26,
       "norm_label": "datetime"
     },
     {
@@ -4104,7 +4158,7 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L55",
       "id": "ytfeed_youtube_sync_py_video",
-      "community": 27,
+      "community": 26,
       "norm_label": "video"
     },
     {
@@ -4140,7 +4194,7 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L170",
       "id": "youtube_sync_sync_my_playlists",
-      "community": 26,
+      "community": 0,
       "norm_label": "sync_my_playlists()"
     },
     {
@@ -4158,7 +4212,7 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L284",
       "id": "youtube_sync_sync_channel_uploads",
-      "community": 0,
+      "community": 1,
       "norm_label": "sync_channel_uploads()"
     },
     {
@@ -4167,7 +4221,7 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L284",
       "id": "ytfeed_youtube_sync_py_channel",
-      "community": 0,
+      "community": 26,
       "norm_label": "channel"
     },
     {
@@ -4194,7 +4248,7 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L432",
       "id": "youtube_sync_sync_all",
-      "community": 26,
+      "community": 0,
       "norm_label": "sync_all()"
     },
     {
@@ -4239,7 +4293,7 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L173",
       "id": "youtube_sync_rationale_173",
-      "community": 26,
+      "community": 0,
       "norm_label": "upsert playlists + playlist_items + videos. returns (playlists, videos_upserted)"
     },
     {
@@ -4257,7 +4311,7 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L294",
       "id": "youtube_sync_rationale_294",
-      "community": 0,
+      "community": 1,
       "norm_label": "sync a channel's uploads playlist newest-first with early-stop.      stops (unle"
     },
     {
@@ -4275,7 +4329,7 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L440",
       "id": "youtube_sync_rationale_440",
-      "community": 26,
+      "community": 0,
       "norm_label": "run subscriptions -> playlists -> per-channel uploads, audit in sync_runs."
     },
     {
@@ -4311,7 +4365,7 @@
       "source_file": "ytfeed/youtube/sync_run.py",
       "source_location": "L40",
       "id": "youtube_sync_run_is_quota_error",
-      "community": 26,
+      "community": 0,
       "norm_label": "_is_quota_error()"
     },
     {
@@ -4796,7 +4850,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/web/app.py",
       "source_location": "L36",
-      "community": 1,
+      "community": 23,
       "norm_label": "pick up deferred queue items (e.g. ip-block retries) once they're due.",
       "id": "web_app_rationale_36"
     },
@@ -4913,7 +4967,7 @@
       "file_type": "code",
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L282",
-      "community": 0,
+      "community": 26,
       "norm_label": "channel",
       "id": "channel"
     },
@@ -4931,7 +4985,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L171",
-      "community": 26,
+      "community": 0,
       "norm_label": "upsert playlists + playlist_items + videos. returns (playlists, videos_upserted)",
       "id": "youtube_sync_rationale_171"
     },
@@ -4949,7 +5003,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L292",
-      "community": 0,
+      "community": 1,
       "norm_label": "sync a channel's uploads playlist newest-first with early-stop.      stops (unle",
       "id": "youtube_sync_rationale_292"
     },
@@ -4967,7 +5021,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L438",
-      "community": 26,
+      "community": 0,
       "norm_label": "run subscriptions -> playlists -> per-channel uploads, audit in sync_runs.",
       "id": "youtube_sync_rationale_438"
     },
@@ -5021,7 +5075,7 @@
       "file_type": "code",
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L319",
-      "community": 26,
+      "community": 0,
       "norm_label": "_is_quota_error()",
       "id": "youtube_sync_is_quota_error"
     },
@@ -5057,7 +5111,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L208",
-      "community": 26,
+      "community": 0,
       "norm_label": "upsert playlists + playlist_items + videos. returns (playlists, videos_upserted)",
       "id": "youtube_sync_rationale_208"
     },
@@ -5075,7 +5129,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L333",
-      "community": 0,
+      "community": 1,
       "norm_label": "sync a channel's uploads playlist newest-first with early-stop.      stops (unle",
       "id": "youtube_sync_rationale_333"
     },
@@ -5093,7 +5147,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L513",
-      "community": 26,
+      "community": 0,
       "norm_label": "run subscriptions -> playlists -> per-channel uploads, audit in sync_runs.",
       "id": "youtube_sync_rationale_513"
     },
@@ -5183,7 +5237,7 @@
       "file_type": "code",
       "source_file": "ytfeed/cli.py",
       "source_location": "L92",
-      "community": 6,
+      "community": 23,
       "norm_label": "cmd_refile()",
       "id": "ytfeed_cli_cmd_refile"
     },
@@ -5192,7 +5246,7 @@
       "file_type": "code",
       "source_file": "ytfeed/cli.py",
       "source_location": "L205",
-      "community": 6,
+      "community": 23,
       "norm_label": "cmd_people()",
       "id": "ytfeed_cli_cmd_people"
     },
@@ -5201,7 +5255,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/cli.py",
       "source_location": "L152",
-      "community": 6,
+      "community": 23,
       "norm_label": "backfill ## description sections into existing vault files from the db     (with",
       "id": "ytfeed_cli_rationale_152"
     },
@@ -5210,7 +5264,7 @@
       "file_type": "code",
       "source_file": "ytfeed/config.py",
       "source_location": "L43",
-      "community": 14,
+      "community": 23,
       "norm_label": "peopleconfig",
       "id": "ytfeed_config_peopleconfig"
     },
@@ -5264,7 +5318,7 @@
       "file_type": "code",
       "source_file": "ytfeed/transcripts/markdown_writer.py",
       "source_location": "L118",
-      "community": 6,
+      "community": 4,
       "norm_label": "ensure_people_frontmatter()",
       "id": "transcripts_markdown_writer_ensure_people_frontmatter"
     },
@@ -5300,7 +5354,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/transcripts/markdown_writer.py",
       "source_location": "L121",
-      "community": 6,
+      "community": 4,
       "norm_label": "for files written before person tagging existed; empty lists remove a     stale",
       "id": "transcripts_markdown_writer_rationale_121"
     },
@@ -5354,7 +5408,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/transcripts/pipeline.py",
       "source_location": "L86",
-      "community": 1,
+      "community": 2,
       "norm_label": "reset items stuck in 'processing' (e.g. after a server restart killed a run).",
       "id": "transcripts_pipeline_rationale_86"
     },
@@ -5417,7 +5471,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/transcripts/pipeline.py",
       "source_location": "L85",
-      "community": 1,
+      "community": 2,
       "norm_label": "reset items stuck in 'processing' (e.g. after a server restart killed a run).",
       "id": "transcripts_pipeline_rationale_85"
     },
@@ -5489,7 +5543,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/transcripts/pipeline.py",
       "source_location": "L84",
-      "community": 1,
+      "community": 2,
       "norm_label": "reset items stuck in 'processing' (e.g. after a server restart killed a run).",
       "id": "transcripts_pipeline_rationale_84"
     },
@@ -5579,7 +5633,7 @@
       "file_type": "code",
       "source_file": "tests/test_categorize.py",
       "source_location": "L30",
-      "community": 4,
+      "community": 5,
       "norm_label": ".test_smallest_playlist_is_most_specific()",
       "id": "tests_test_categorize_categorizetests_test_smallest_playlist_is_most_specific"
     },
@@ -5588,7 +5642,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/transcripts/categorize.py",
       "source_location": "L19",
-      "community": 4,
+      "community": 5,
       "norm_label": "name of the smallest playlist containing the video (live item counts,     not th",
       "id": "transcripts_categorize_rationale_19"
     },
@@ -5615,7 +5669,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/transcripts/pipeline.py",
       "source_location": "L67",
-      "community": 1,
+      "community": 2,
       "norm_label": "reset items stuck in 'processing' (e.g. after a server restart killed a run).",
       "id": "transcripts_pipeline_rationale_67"
     },
@@ -5696,7 +5750,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L197",
-      "community": 26,
+      "community": 0,
       "norm_label": "upsert playlists + playlist_items + videos. returns (playlists, videos_upserted)",
       "id": "youtube_sync_rationale_197"
     },
@@ -5714,7 +5768,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L319",
-      "community": 0,
+      "community": 1,
       "norm_label": "sync a channel's uploads playlist newest-first with early-stop.      stops (unle",
       "id": "youtube_sync_rationale_319"
     },
@@ -5732,7 +5786,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L499",
-      "community": 26,
+      "community": 0,
       "norm_label": "run subscriptions -> playlists -> per-channel uploads, audit in sync_runs.",
       "id": "youtube_sync_rationale_499"
     },
@@ -5741,7 +5795,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L188",
-      "community": 26,
+      "community": 0,
       "norm_label": "upsert playlists + playlist_items + videos. returns (playlists, videos_upserted)",
       "id": "youtube_sync_rationale_188"
     },
@@ -5759,7 +5813,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L308",
-      "community": 0,
+      "community": 1,
       "norm_label": "sync a channel's uploads playlist newest-first with early-stop.      stops (unle",
       "id": "youtube_sync_rationale_308"
     },
@@ -5777,7 +5831,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L479",
-      "community": 26,
+      "community": 0,
       "norm_label": "run subscriptions -> playlists -> per-channel uploads, audit in sync_runs.",
       "id": "youtube_sync_rationale_479"
     },
@@ -5786,7 +5840,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L152",
-      "community": 26,
+      "community": 0,
       "norm_label": "upsert playlists + playlist_items + videos. returns (playlists, videos_upserted)",
       "id": "youtube_sync_rationale_152"
     },
@@ -5804,7 +5858,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L253",
-      "community": 0,
+      "community": 1,
       "norm_label": "sync a channel's uploads playlist newest-first with early-stop.      stops (unle",
       "id": "youtube_sync_rationale_253"
     },
@@ -5822,7 +5876,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L390",
-      "community": 26,
+      "community": 0,
       "norm_label": "run subscriptions -> playlists -> per-channel uploads, audit in sync_runs.",
       "id": "youtube_sync_rationale_390"
     }
@@ -12058,6 +12112,89 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "ytfeed/desktop.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "ytfeed_desktop",
+      "target": "ytfeed_desktop_free_port",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/desktop.py",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "ytfeed_desktop",
+      "target": "ytfeed_desktop_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/desktop.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "ytfeed_desktop",
+      "target": "ytfeed_desktop_set_dock_icon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/desktop.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "ytfeed_desktop",
+      "target": "ytfeed_desktop_wait_until_up",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/desktop.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "ytfeed_desktop_rationale_1",
+      "target": "ytfeed_desktop",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/desktop.py",
+      "source_location": "L47",
+      "weight": 1.0,
+      "source": "ytfeed_desktop_main",
+      "target": "ytfeed_desktop_free_port",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/desktop.py",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "ytfeed_desktop_main",
+      "target": "ytfeed_desktop_wait_until_up",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/desktop.py",
+      "source_location": "L61",
+      "weight": 1.0,
+      "source": "ytfeed_desktop_main",
+      "target": "ytfeed_desktop_set_dock_icon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "ytfeed/metadata/ytdlp_client.py",
       "source_location": "L26",
       "weight": 1.0,
@@ -16609,9 +16746,9 @@
       "source_file": "ytfeed/web/static/channel_categories.js",
       "source_location": "L124",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "static_channel_categories",
-      "target": "static_channel_categories_refreshgrid",
-      "confidence_score": 1.0
+      "target": "static_channel_categories_refreshgrid"
     },
     {
       "relation": "contains",
@@ -16652,9 +16789,9 @@
       "source_file": "ytfeed/web/static/channel_categories.js",
       "source_location": "L120",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "static_channel_categories_selectsection",
-      "target": "static_channel_categories_refreshgrid",
-      "confidence_score": 1.0
+      "target": "static_channel_categories_refreshgrid"
     },
     {
       "relation": "calls",
@@ -16663,9 +16800,9 @@
       "source_file": "ytfeed/web/static/channel_categories.js",
       "source_location": "L127",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "static_channel_categories_refreshgrid",
-      "target": "static_channel_categories_loaditems",
-      "confidence_score": 1.0
+      "target": "static_channel_categories_loaditems"
     },
     {
       "relation": "contains",
@@ -26439,5 +26576,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "ee797511fa4ae19f8eff7a90ab28172059c63ffd"
+  "built_at_commit": "9cf30744357457551910c39a88d377f380b4db02"
 }

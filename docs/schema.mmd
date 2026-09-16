@@ -1,0 +1,114 @@
+erDiagram
+    channels {
+        int id PK
+        string channel_id
+        string title
+        string description
+        string thumbnail_url
+        string uploads_playlist_id
+        datetime subscribed_at
+        datetime last_synced_at
+        datetime last_video_published_at
+        boolean is_active
+        boolean is_monitored
+        int category_id FK
+        string notes
+    }
+    channel_categories {
+        int id PK
+        string name
+        string group
+        string type
+    }
+    playlists {
+        int id PK
+        string playlist_id
+        string title
+        string description
+        string thumbnail_url
+        int item_count
+        int synced_item_count
+        datetime last_synced_at
+    }
+    videos {
+        int id PK
+        string video_id
+        string channel_id FK
+        string channel_title
+        string title
+        string description
+        string thumbnail_url
+        datetime published_at
+        int duration_seconds
+        string tags
+        string source
+        string transcript_status
+        string transcript_source
+        string transcript_path FK
+        string audio_status
+        string audio_path
+        string notebooklm_notebook_id
+    }
+    playlist_items {
+        int id PK
+        string playlist_id FK
+        string video_id FK
+        int position
+        datetime added_at
+    }
+    channel_uploads {
+        int id PK
+        string channel_id FK
+        string video_id FK
+        datetime published_at
+    }
+    transcription_queue {
+        int id PK
+        string video_id FK
+        string status
+        boolean is_hidden
+        datetime requested_at
+        datetime not_before
+        datetime started_at
+        datetime completed_at
+        string error_message
+        int attempt_count
+    }
+    sync_runs {
+        int id PK
+        datetime started_at
+        datetime finished_at
+        string kind
+        int channels_synced
+        int videos_upserted
+        string error_message
+        string phase
+        int progress_current
+        int progress_total
+        string progress_detail
+        int api_calls
+        string log
+        boolean cancel_requested
+    }
+    vault_note {
+        string path PK
+        string video_id
+        string channel
+        date published
+        string url
+        string source
+        string category
+        unknown tags
+        string h1_title
+        string description_section
+        string transcript_section
+    }
+    channel_categories ||--o{ channels : "category_id"
+    channels ||--o{ videos : "channel_id"
+    playlists ||--o{ playlist_items : "playlist_id"
+    videos ||--o{ playlist_items : "video_id"
+    channels ||--o{ channel_uploads : "channel_id"
+    videos ||--o{ channel_uploads : "video_id"
+    videos ||--o{ transcription_queue : "video_id"
+    videos ||--o{ vault_note : "transcript_path"
+    playlists ||--o{ vault_note : "category_derived"

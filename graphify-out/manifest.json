@@ -180,8 +180,8 @@
     "semantic_hash": ""
   },
   "requirements.txt": {
-    "mtime": 1781397858.6452792,
-    "ast_hash": "b5d7e6f4d3c946d24d5d0a235a9229a0",
+    "mtime": 1784135795.746536,
+    "ast_hash": "4bea5a452d4eace656092a3934b013bd",
     "semantic_hash": ""
   },
   "ytfeed/web/templates/base.html": {
@@ -337,6 +337,11 @@
   "ytfeed/web/static/channel_categories.js": {
     "mtime": 1782057128.693496,
     "ast_hash": "d5f0f8f77b4627a7c4adb6381414b229",
+    "semantic_hash": ""
+  },
+  "ytfeed/desktop.py": {
+    "mtime": 1784136135.5134125,
+    "ast_hash": "51fa9f46c7e06b9d10315eb610e2c53e",
     "semantic_hash": ""
   }
 }
