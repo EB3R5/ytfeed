@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=ytfeed
+Comment=Personal YouTube feed
+Exec=@@REPO@@/packaging/desktop/linux/run.sh
+Icon=ytfeed
+Terminal=false
+Categories=AudioVideo;
+StartupWMClass=ytfeed

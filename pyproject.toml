@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "ytfeed"
 version = "0.1.0"
 description = "Personal YouTube feed: sync subscriptions/playlists into SQLite, browse locally, pipe transcripts into the Obsidian RAG vault"
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 dependencies = [
     "fastapi",
     "uvicorn[standard]",
@@ -19,12 +19,18 @@ dependencies = [
     "yt-dlp",
     "youtube-transcript-api",
     "notebooklm-py",
-    "pywebview",
 ]
+
+[project.optional-dependencies]
+# Desktop window (packaging/desktop/launcher.py); pywebview pulls pyobjc on macOS.
+desktop = ["pywebview>=6.2"]
+dev = ["pytest"]
 
 [project.scripts]
 ytfeed = "ytfeed.cli:main"
-ytfeed-app = "ytfeed.desktop:main"
 
 [tool.setuptools.packages.find]
 include = ["ytfeed*"]
+
+[tool.setuptools.package-data]
+ytfeed = ["web/templates/*.html", "web/static/**/*"]

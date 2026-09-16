@@ -4,6 +4,222 @@
   "graph": {},
   "nodes": [
     {
+      "label": "launcher.py",
+      "file_type": "code",
+      "source_file": "packaging/desktop/launcher.py",
+      "source_location": "L1",
+      "id": "desktop_launcher",
+      "community": 10,
+      "norm_label": "launcher.py"
+    },
+    {
+      "label": "_up()",
+      "file_type": "code",
+      "source_file": "packaging/desktop/launcher.py",
+      "source_location": "L41",
+      "id": "desktop_launcher_up",
+      "community": 10,
+      "norm_label": "_up()"
+    },
+    {
+      "label": "_free_port()",
+      "file_type": "code",
+      "source_file": "packaging/desktop/launcher.py",
+      "source_location": "L49",
+      "id": "desktop_launcher_free_port",
+      "community": 10,
+      "norm_label": "_free_port()"
+    },
+    {
+      "label": "_wait_until_up()",
+      "file_type": "code",
+      "source_file": "packaging/desktop/launcher.py",
+      "source_location": "L55",
+      "id": "desktop_launcher_wait_until_up",
+      "community": 10,
+      "norm_label": "_wait_until_up()"
+    },
+    {
+      "label": "_set_dock_icon()",
+      "file_type": "code",
+      "source_file": "packaging/desktop/launcher.py",
+      "source_location": "L64",
+      "id": "desktop_launcher_set_dock_icon",
+      "community": 10,
+      "norm_label": "_set_dock_icon()"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "packaging/desktop/launcher.py",
+      "source_location": "L80",
+      "id": "desktop_launcher_main",
+      "community": 10,
+      "norm_label": "main()"
+    },
+    {
+      "label": "Desktop window launcher \u2014 the same file in every app repo; only the CONFIG block",
+      "file_type": "rationale",
+      "source_file": "packaging/desktop/launcher.py",
+      "source_location": "L1",
+      "id": "desktop_launcher_rationale_1",
+      "community": 10,
+      "norm_label": "desktop window launcher \u2014 the same file in every app repo; only the config block"
+    },
+    {
+      "label": "install.sh",
+      "file_type": "code",
+      "source_file": "packaging/desktop/linux/install.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "id": "linux_install",
+      "community": 30,
+      "norm_label": "install.sh"
+    },
+    {
+      "label": "install.sh script",
+      "file_type": "code",
+      "source_file": "packaging/desktop/linux/install.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "id": "users_christian_documents_github_ytfeed_packaging_desktop_linux_install_sh__entry",
+      "community": 30,
+      "norm_label": "install.sh script"
+    },
+    {
+      "label": "run.sh",
+      "file_type": "code",
+      "source_file": "packaging/desktop/linux/run.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "id": "linux_run",
+      "community": 29,
+      "norm_label": "run.sh"
+    },
+    {
+      "label": "run.sh script",
+      "file_type": "code",
+      "source_file": "packaging/desktop/linux/run.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "id": "users_christian_documents_github_ytfeed_packaging_desktop_linux_run_sh__entry",
+      "community": 29,
+      "norm_label": "run.sh script"
+    },
+    {
+      "label": "GI_TYPELIB_PATH",
+      "file_type": "code",
+      "source_file": "packaging/desktop/linux/run.sh",
+      "source_location": "L15",
+      "metadata": {
+        "language": "bash",
+        "kind": "code"
+      },
+      "id": "linux_run_gi_typelib_path",
+      "community": 29,
+      "norm_label": "gi_typelib_path"
+    },
+    {
+      "label": "uninstall.sh",
+      "file_type": "code",
+      "source_file": "packaging/desktop/linux/uninstall.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "id": "linux_uninstall",
+      "community": 32,
+      "norm_label": "uninstall.sh"
+    },
+    {
+      "label": "uninstall.sh script",
+      "file_type": "code",
+      "source_file": "packaging/desktop/linux/uninstall.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "id": "users_christian_documents_github_ytfeed_packaging_desktop_linux_uninstall_sh__entry",
+      "community": 32,
+      "norm_label": "uninstall.sh script"
+    },
+    {
+      "label": "build.sh",
+      "file_type": "code",
+      "source_file": "packaging/desktop/macos/build.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "id": "macos_build",
+      "community": 33,
+      "norm_label": "build.sh"
+    },
+    {
+      "label": "build.sh script",
+      "file_type": "code",
+      "source_file": "packaging/desktop/macos/build.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "id": "users_christian_documents_github_ytfeed_packaging_desktop_macos_build_sh__entry",
+      "community": 33,
+      "norm_label": "build.sh script"
+    },
+    {
+      "label": "launcher.c",
+      "file_type": "code",
+      "source_file": "packaging/desktop/macos/launcher.c",
+      "source_location": "L1",
+      "id": "macos_launcher",
+      "community": 34,
+      "norm_label": "launcher.c"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "packaging/desktop/macos/launcher.c",
+      "source_location": "L19",
+      "id": "macos_launcher_main",
+      "community": 34,
+      "norm_label": "main()"
+    },
+    {
+      "label": "make_icon.py",
+      "file_type": "code",
+      "source_file": "packaging/desktop/macos/make_icon.py",
+      "source_location": "L1",
+      "id": "macos_make_icon",
+      "community": 35,
+      "norm_label": "make_icon.py"
+    },
+    {
+      "label": "Produce the 1024px master PNG for ytfeed.icns.  The source is icon-1024.png next",
+      "file_type": "rationale",
+      "source_file": "packaging/desktop/macos/make_icon.py",
+      "source_location": "L1",
+      "id": "macos_make_icon_rationale_1",
+      "community": 35,
+      "norm_label": "produce the 1024px master png for ytfeed.icns.  the source is icon-1024.png next"
+    },
+    {
       "label": "test_categorize.py",
       "file_type": "code",
       "source_file": "tests/test_categorize.py",
@@ -540,7 +756,7 @@
       "source_file": "tests/test_sync_run.py",
       "source_location": "L15",
       "id": "tests_test_sync_run_reportertests",
-      "community": 12,
+      "community": 25,
       "norm_label": "reportertests"
     },
     {
@@ -549,7 +765,7 @@
       "source_file": "tests/test_sync_run.py",
       "source_location": "L16",
       "id": "tests_test_sync_run_reportertests_setup",
-      "community": 12,
+      "community": 25,
       "norm_label": ".setup()"
     },
     {
@@ -558,7 +774,7 @@
       "source_file": "tests/test_sync_run.py",
       "source_location": "L21",
       "id": "tests_test_sync_run_reportertests_reporter",
-      "community": 12,
+      "community": 25,
       "norm_label": "._reporter()"
     },
     {
@@ -576,7 +792,7 @@
       "source_file": "tests/test_sync_run.py",
       "source_location": "L27",
       "id": "tests_test_sync_run_reportertests_test_log_collapses_repeats",
-      "community": 12,
+      "community": 25,
       "norm_label": ".test_log_collapses_repeats()"
     },
     {
@@ -585,7 +801,7 @@
       "source_file": "tests/test_sync_run.py",
       "source_location": "L37",
       "id": "tests_test_sync_run_reportertests_test_distinct_messages_each_get_a_line",
-      "community": 12,
+      "community": 25,
       "norm_label": ".test_distinct_messages_each_get_a_line()"
     },
     {
@@ -594,7 +810,7 @@
       "source_file": "tests/test_sync_run.py",
       "source_location": "L44",
       "id": "tests_test_sync_run_reportertests_test_progress_raises_when_cancel_requested",
-      "community": 12,
+      "community": 25,
       "norm_label": ".test_progress_raises_when_cancel_requested()"
     },
     {
@@ -603,7 +819,7 @@
       "source_file": "tests/test_sync_run.py",
       "source_location": "L55",
       "id": "tests_test_sync_run_reportertests_test_null_reporter_is_inert",
-      "community": 12,
+      "community": 25,
       "norm_label": ".test_null_reporter_is_inert()"
     },
     {
@@ -621,7 +837,7 @@
       "source_file": "tests/test_sync_run.py",
       "source_location": "L62",
       "id": "tests_test_sync_run_auditedruntests_setup",
-      "community": 12,
+      "community": 23,
       "norm_label": ".setup()"
     },
     {
@@ -837,7 +1053,7 @@
       "source_file": "ytfeed/config.py",
       "source_location": "L42",
       "id": "ytfeed_config_config",
-      "community": 26,
+      "community": 2,
       "norm_label": "config"
     },
     {
@@ -891,7 +1107,7 @@
       "source_file": "ytfeed/db/models.py",
       "source_location": "L1",
       "id": "db_models",
-      "community": 27,
+      "community": 26,
       "norm_label": "models.py"
     },
     {
@@ -909,7 +1125,7 @@
       "source_file": "ytfeed/db/models.py",
       "source_location": "L20",
       "id": "ytfeed_db_models_py_datetime",
-      "community": 27,
+      "community": 26,
       "norm_label": "datetime"
     },
     {
@@ -990,7 +1206,7 @@
       "source_file": "ytfeed/db/models.py",
       "source_location": "L122",
       "id": "db_models_channelupload",
-      "community": 27,
+      "community": 26,
       "norm_label": "channelupload"
     },
     {
@@ -1017,7 +1233,7 @@
       "source_file": "ytfeed/db/models.py",
       "source_location": "L1",
       "id": "db_models_rationale_1",
-      "community": 27,
+      "community": 26,
       "norm_label": "sqlalchemy 2.0 models for ytfeed."
     },
     {
@@ -1062,7 +1278,7 @@
       "source_file": "ytfeed/db/session.py",
       "source_location": "L18",
       "id": "engine",
-      "community": 27,
+      "community": 23,
       "norm_label": "engine"
     },
     {
@@ -1080,7 +1296,7 @@
       "source_file": "ytfeed/db/session.py",
       "source_location": "L44",
       "id": "sessionmaker",
-      "community": 12,
+      "community": 23,
       "norm_label": "sessionmaker"
     },
     {
@@ -1089,7 +1305,7 @@
       "source_file": "ytfeed/db/session.py",
       "source_location": "L44",
       "id": "ytfeed_db_session_py_session",
-      "community": 27,
+      "community": 23,
       "norm_label": "session"
     },
     {
@@ -1109,60 +1325,6 @@
       "id": "db_session_rationale_1",
       "community": 23,
       "norm_label": "engine/session factory and schema creation."
-    },
-    {
-      "label": "desktop.py",
-      "file_type": "code",
-      "source_file": "ytfeed/desktop.py",
-      "source_location": "L1",
-      "id": "ytfeed_desktop",
-      "community": 6,
-      "norm_label": "desktop.py"
-    },
-    {
-      "label": "_free_port()",
-      "file_type": "code",
-      "source_file": "ytfeed/desktop.py",
-      "source_location": "L10",
-      "id": "ytfeed_desktop_free_port",
-      "community": 6,
-      "norm_label": "_free_port()"
-    },
-    {
-      "label": "_wait_until_up()",
-      "file_type": "code",
-      "source_file": "ytfeed/desktop.py",
-      "source_location": "L16",
-      "id": "ytfeed_desktop_wait_until_up",
-      "community": 6,
-      "norm_label": "_wait_until_up()"
-    },
-    {
-      "label": "_set_dock_icon()",
-      "file_type": "code",
-      "source_file": "ytfeed/desktop.py",
-      "source_location": "L27",
-      "id": "ytfeed_desktop_set_dock_icon",
-      "community": 6,
-      "norm_label": "_set_dock_icon()"
-    },
-    {
-      "label": "main()",
-      "file_type": "code",
-      "source_file": "ytfeed/desktop.py",
-      "source_location": "L43",
-      "id": "ytfeed_desktop_main",
-      "community": 6,
-      "norm_label": "main()"
-    },
-    {
-      "label": "Desktop launcher: run the ytfeed server on a free port inside a pywebview window",
-      "file_type": "rationale",
-      "source_file": "ytfeed/desktop.py",
-      "source_location": "L1",
-      "id": "ytfeed_desktop_rationale_1",
-      "community": 6,
-      "norm_label": "desktop launcher: run the ytfeed server on a free port inside a pywebview window"
     },
     {
       "label": "__init__.py",
@@ -1786,10 +1948,19 @@
       "norm_label": "app.py"
     },
     {
+      "label": "healthz()",
+      "file_type": "code",
+      "source_file": "ytfeed/web/app.py",
+      "source_location": "L42",
+      "id": "web_app_healthz",
+      "community": 23,
+      "norm_label": "healthz()"
+    },
+    {
       "label": "_retry_monitor()",
       "file_type": "code",
       "source_file": "ytfeed/web/app.py",
-      "source_location": "L44",
+      "source_location": "L49",
       "id": "web_app_retry_monitor",
       "community": 23,
       "norm_label": "_retry_monitor()"
@@ -1798,7 +1969,7 @@
       "label": "_startup()",
       "file_type": "code",
       "source_file": "ytfeed/web/app.py",
-      "source_location": "L64",
+      "source_location": "L69",
       "id": "web_app_startup",
       "community": 23,
       "norm_label": "_startup()"
@@ -1816,8 +1987,8 @@
       "label": "Pick up deferred queue items (e.g. IP-block retries) once they're due.",
       "file_type": "rationale",
       "source_file": "ytfeed/web/app.py",
-      "source_location": "L45",
-      "id": "web_app_rationale_45",
+      "source_location": "L50",
+      "id": "web_app_rationale_50",
       "community": 23,
       "norm_label": "pick up deferred queue items (e.g. ip-block retries) once they're due."
     },
@@ -2295,7 +2466,7 @@
       "source_file": "ytfeed/web/routes/queue.py",
       "source_location": "L85",
       "id": "routes_queue_run_pipeline_bg",
-      "community": 23,
+      "community": 2,
       "norm_label": "_run_pipeline_bg()"
     },
     {
@@ -2448,7 +2619,7 @@
       "source_file": "ytfeed/web/routes/settings.py",
       "source_location": "L1",
       "id": "routes_settings",
-      "community": 23,
+      "community": 6,
       "norm_label": "settings.py"
     },
     {
@@ -2457,7 +2628,7 @@
       "source_file": "ytfeed/web/routes/settings.py",
       "source_location": "L16",
       "id": "routes_settings_mask",
-      "community": 23,
+      "community": 6,
       "norm_label": "_mask()"
     },
     {
@@ -2466,7 +2637,7 @@
       "source_file": "ytfeed/web/routes/settings.py",
       "source_location": "L22",
       "id": "routes_settings_settings_page",
-      "community": 23,
+      "community": 6,
       "norm_label": "settings_page()"
     },
     {
@@ -2475,7 +2646,7 @@
       "source_file": "ytfeed/web/routes/settings.py",
       "source_location": "L22",
       "id": "ytfeed_web_routes_settings_py_request",
-      "community": 23,
+      "community": 6,
       "norm_label": "request"
     },
     {
@@ -2484,7 +2655,7 @@
       "source_file": "ytfeed/web/routes/settings.py",
       "source_location": "L22",
       "id": "ytfeed_web_routes_settings_py_session",
-      "community": 23,
+      "community": 6,
       "norm_label": "session"
     },
     {
@@ -2502,7 +2673,7 @@
       "source_file": "ytfeed/web/routes/settings.py",
       "source_location": "L73",
       "id": "routes_settings_sync_is_running",
-      "community": 23,
+      "community": 6,
       "norm_label": "sync_is_running()"
     },
     {
@@ -2511,7 +2682,7 @@
       "source_file": "ytfeed/web/routes/settings.py",
       "source_location": "L85",
       "id": "routes_settings_start_sync",
-      "community": 23,
+      "community": 6,
       "norm_label": "start_sync()"
     },
     {
@@ -2520,7 +2691,7 @@
       "source_file": "ytfeed/web/routes/settings.py",
       "source_location": "L85",
       "id": "ytfeed_web_routes_settings_py_backgroundtasks",
-      "community": 23,
+      "community": 6,
       "norm_label": "backgroundtasks"
     },
     {
@@ -2529,7 +2700,7 @@
       "source_file": "ytfeed/web/routes/settings.py",
       "source_location": "L94",
       "id": "routes_settings_trigger_sync",
-      "community": 23,
+      "community": 6,
       "norm_label": "trigger_sync()"
     },
     {
@@ -2538,7 +2709,7 @@
       "source_file": "ytfeed/web/routes/settings.py",
       "source_location": "L104",
       "id": "routes_settings_trigger_subscriptions_sync",
-      "community": 23,
+      "community": 6,
       "norm_label": "trigger_subscriptions_sync()"
     },
     {
@@ -2547,7 +2718,7 @@
       "source_file": "ytfeed/web/routes/settings.py",
       "source_location": "L114",
       "id": "routes_settings_stop_sync",
-      "community": 23,
+      "community": 6,
       "norm_label": "stop_sync()"
     },
     {
@@ -2556,7 +2727,7 @@
       "source_file": "ytfeed/web/routes/settings.py",
       "source_location": "L135",
       "id": "routes_settings_trigger_playlists_sync",
-      "community": 23,
+      "community": 6,
       "norm_label": "trigger_playlists_sync()"
     },
     {
@@ -2565,7 +2736,7 @@
       "source_file": "ytfeed/web/routes/settings.py",
       "source_location": "L1",
       "id": "routes_settings_rationale_1",
-      "community": 23,
+      "community": 6,
       "norm_label": "settings page: config summary, db stats, manual sync."
     },
     {
@@ -2574,7 +2745,7 @@
       "source_file": "ytfeed/web/routes/settings.py",
       "source_location": "L86",
       "id": "routes_settings_rationale_86",
-      "community": 23,
+      "community": 6,
       "norm_label": "queue a sync unless one is already running. returns true if started."
     },
     {
@@ -3825,7 +3996,7 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L24",
       "id": "youtube_client_youtubesource",
-      "community": 26,
+      "community": 27,
       "norm_label": "youtubesource"
     },
     {
@@ -3834,7 +4005,7 @@
       "source_file": "",
       "source_location": "",
       "id": "protocol",
-      "community": 26,
+      "community": 27,
       "norm_label": "protocol"
     },
     {
@@ -3897,7 +4068,7 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L51",
       "id": "youtube_client_youtubesource_fetch_channels_content_details",
-      "community": 26,
+      "community": 27,
       "norm_label": ".fetch_channels_content_details()"
     },
     {
@@ -4014,7 +4185,7 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L25",
       "id": "youtube_client_rationale_25",
-      "community": 26,
+      "community": 27,
       "norm_label": "the youtube data api operations the sync engine depends on."
     },
     {
@@ -4068,7 +4239,7 @@
       "source_file": "ytfeed/youtube/client.py",
       "source_location": "L54",
       "id": "youtube_client_rationale_54",
-      "community": 26,
+      "community": 27,
       "norm_label": "resolve uploads-playlist ids for channels, batched 50 per request."
     },
     {
@@ -4212,7 +4383,7 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L284",
       "id": "youtube_sync_sync_channel_uploads",
-      "community": 1,
+      "community": 0,
       "norm_label": "sync_channel_uploads()"
     },
     {
@@ -4311,7 +4482,7 @@
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L294",
       "id": "youtube_sync_rationale_294",
-      "community": 1,
+      "community": 0,
       "norm_label": "sync a channel's uploads playlist newest-first with early-stop.      stops (unle"
     },
     {
@@ -4338,7 +4509,7 @@
       "source_file": "ytfeed/youtube/sync_run.py",
       "source_location": "L1",
       "id": "youtube_sync_run",
-      "community": 26,
+      "community": 12,
       "norm_label": "sync_run.py"
     },
     {
@@ -4365,7 +4536,7 @@
       "source_file": "ytfeed/youtube/sync_run.py",
       "source_location": "L40",
       "id": "youtube_sync_run_is_quota_error",
-      "community": 0,
+      "community": 12,
       "norm_label": "_is_quota_error()"
     },
     {
@@ -4500,7 +4671,7 @@
       "source_file": "ytfeed/youtube/sync_run.py",
       "source_location": "L1",
       "id": "youtube_sync_run_rationale_1",
-      "community": 26,
+      "community": 12,
       "norm_label": "the audited sync-run lifecycle, owned in one place.  a sync run records its own"
     },
     {
@@ -4747,10 +4918,19 @@
       "norm_label": "launching"
     },
     {
+      "label": "Packaging",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L54",
+      "id": "readme_packaging",
+      "community": 11,
+      "norm_label": "packaging"
+    },
+    {
       "label": "Web UI",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L57",
+      "source_location": "L63",
       "id": "readme_web_ui",
       "community": 11,
       "norm_label": "web ui"
@@ -4759,7 +4939,7 @@
       "label": "Transcript pipeline (3 tiers)",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L70",
+      "source_location": "L76",
       "id": "readme_transcript_pipeline_3_tiers",
       "community": 11,
       "norm_label": "transcript pipeline (3 tiers)"
@@ -4768,7 +4948,7 @@
       "label": "Vault file layout",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L84",
+      "source_location": "L90",
       "id": "readme_vault_file_layout",
       "community": 11,
       "norm_label": "vault file layout"
@@ -4777,7 +4957,7 @@
       "label": "Schema",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L117",
+      "source_location": "L123",
       "id": "readme_schema",
       "community": 11,
       "norm_label": "schema"
@@ -4786,7 +4966,7 @@
       "label": "Engineering notes",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L216",
+      "source_location": "L222",
       "id": "readme_engineering_notes",
       "community": 11,
       "norm_label": "engineering notes"
@@ -4795,10 +4975,82 @@
       "label": "Tests",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L226",
+      "source_location": "L232",
       "id": "readme_tests",
       "community": 11,
       "norm_label": "tests"
+    },
+    {
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "packaging/README.md",
+      "source_location": "L1",
+      "id": "packaging_readme",
+      "community": 14,
+      "norm_label": "readme.md"
+    },
+    {
+      "label": "Packaging targets",
+      "file_type": "document",
+      "source_file": "packaging/README.md",
+      "source_location": "L1",
+      "id": "packaging_readme_packaging_targets",
+      "community": 14,
+      "norm_label": "packaging targets"
+    },
+    {
+      "label": "server (venv)",
+      "file_type": "document",
+      "source_file": "packaging/README.md",
+      "source_location": "L14",
+      "id": "packaging_readme_server_venv",
+      "community": 14,
+      "norm_label": "server (venv)"
+    },
+    {
+      "label": "docker",
+      "file_type": "document",
+      "source_file": "packaging/README.md",
+      "source_location": "L21",
+      "id": "packaging_readme_docker",
+      "community": 14,
+      "norm_label": "docker"
+    },
+    {
+      "label": "desktop/launcher.py",
+      "file_type": "document",
+      "source_file": "packaging/README.md",
+      "source_location": "L42",
+      "id": "packaging_readme_desktop_launcher_py",
+      "community": 14,
+      "norm_label": "desktop/launcher.py"
+    },
+    {
+      "label": "desktop/macos",
+      "file_type": "document",
+      "source_file": "packaging/README.md",
+      "source_location": "L47",
+      "id": "packaging_readme_desktop_macos",
+      "community": 14,
+      "norm_label": "desktop/macos"
+    },
+    {
+      "label": "desktop/linux",
+      "file_type": "document",
+      "source_file": "packaging/README.md",
+      "source_location": "L55",
+      "id": "packaging_readme_desktop_linux",
+      "community": 14,
+      "norm_label": "desktop/linux"
+    },
+    {
+      "label": "Pick up deferred queue items (e.g. IP-block retries) once they're due.",
+      "file_type": "rationale",
+      "source_file": "ytfeed/web/app.py",
+      "source_location": "L45",
+      "community": 23,
+      "norm_label": "pick up deferred queue items (e.g. ip-block retries) once they're due.",
+      "id": "web_app_rationale_45"
     },
     {
       "label": "add_category()",
@@ -5003,7 +5255,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L292",
-      "community": 1,
+      "community": 0,
       "norm_label": "sync a channel's uploads playlist newest-first with early-stop.      stops (unle",
       "id": "youtube_sync_rationale_292"
     },
@@ -5129,7 +5381,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L333",
-      "community": 1,
+      "community": 0,
       "norm_label": "sync a channel's uploads playlist newest-first with early-stop.      stops (unle",
       "id": "youtube_sync_rationale_333"
     },
@@ -5768,7 +6020,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L319",
-      "community": 1,
+      "community": 0,
       "norm_label": "sync a channel's uploads playlist newest-first with early-stop.      stops (unle",
       "id": "youtube_sync_rationale_319"
     },
@@ -5813,7 +6065,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L308",
-      "community": 1,
+      "community": 0,
       "norm_label": "sync a channel's uploads playlist newest-first with early-stop.      stops (unle",
       "id": "youtube_sync_rationale_308"
     },
@@ -5858,7 +6110,7 @@
       "file_type": "rationale",
       "source_file": "ytfeed/youtube/sync.py",
       "source_location": "L253",
-      "community": 1,
+      "community": 0,
       "norm_label": "sync a channel's uploads playlist newest-first with early-stop.      stops (unle",
       "id": "youtube_sync_rationale_253"
     },
@@ -5882,6 +6134,191 @@
     }
   ],
   "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packaging/desktop/launcher.py",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "desktop_launcher",
+      "target": "desktop_launcher_free_port",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packaging/desktop/launcher.py",
+      "source_location": "L80",
+      "weight": 1.0,
+      "source": "desktop_launcher",
+      "target": "desktop_launcher_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packaging/desktop/launcher.py",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "desktop_launcher",
+      "target": "desktop_launcher_set_dock_icon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packaging/desktop/launcher.py",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "desktop_launcher",
+      "target": "desktop_launcher_up",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packaging/desktop/launcher.py",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "desktop_launcher",
+      "target": "desktop_launcher_wait_until_up",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "packaging/desktop/launcher.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "desktop_launcher_rationale_1",
+      "target": "desktop_launcher",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "packaging/desktop/launcher.py",
+      "source_location": "L94",
+      "weight": 1.0,
+      "source": "desktop_launcher_main",
+      "target": "desktop_launcher_up",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "packaging/desktop/launcher.py",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "desktop_launcher_wait_until_up",
+      "target": "desktop_launcher_up",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "packaging/desktop/launcher.py",
+      "source_location": "L99",
+      "weight": 1.0,
+      "source": "desktop_launcher_main",
+      "target": "desktop_launcher_free_port",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "packaging/desktop/launcher.py",
+      "source_location": "L105",
+      "weight": 1.0,
+      "source": "desktop_launcher_main",
+      "target": "desktop_launcher_wait_until_up",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "packaging/desktop/launcher.py",
+      "source_location": "L109",
+      "weight": 1.0,
+      "source": "desktop_launcher_main",
+      "target": "desktop_launcher_set_dock_icon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packaging/desktop/linux/install.sh",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "linux_install",
+      "target": "users_christian_documents_github_ytfeed_packaging_desktop_linux_install_sh__entry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "packaging/desktop/linux/run.sh",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "linux_run",
+      "target": "linux_run_gi_typelib_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packaging/desktop/linux/run.sh",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "linux_run",
+      "target": "users_christian_documents_github_ytfeed_packaging_desktop_linux_run_sh__entry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packaging/desktop/linux/uninstall.sh",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "linux_uninstall",
+      "target": "users_christian_documents_github_ytfeed_packaging_desktop_linux_uninstall_sh__entry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packaging/desktop/macos/build.sh",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "macos_build",
+      "target": "users_christian_documents_github_ytfeed_packaging_desktop_macos_build_sh__entry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packaging/desktop/macos/launcher.c",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "macos_launcher",
+      "target": "macos_launcher_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "packaging/desktop/macos/make_icon.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "macos_make_icon_rationale_1",
+      "target": "macos_make_icon",
+      "confidence_score": 1.0
+    },
     {
       "relation": "imports",
       "context": "import",
@@ -12112,89 +12549,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "ytfeed/desktop.py",
-      "source_location": "L10",
-      "weight": 1.0,
-      "source": "ytfeed_desktop",
-      "target": "ytfeed_desktop_free_port",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ytfeed/desktop.py",
-      "source_location": "L43",
-      "weight": 1.0,
-      "source": "ytfeed_desktop",
-      "target": "ytfeed_desktop_main",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ytfeed/desktop.py",
-      "source_location": "L27",
-      "weight": 1.0,
-      "source": "ytfeed_desktop",
-      "target": "ytfeed_desktop_set_dock_icon",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ytfeed/desktop.py",
-      "source_location": "L16",
-      "weight": 1.0,
-      "source": "ytfeed_desktop",
-      "target": "ytfeed_desktop_wait_until_up",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "ytfeed/desktop.py",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "ytfeed_desktop_rationale_1",
-      "target": "ytfeed_desktop",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "ytfeed/desktop.py",
-      "source_location": "L47",
-      "weight": 1.0,
-      "source": "ytfeed_desktop_main",
-      "target": "ytfeed_desktop_free_port",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "ytfeed/desktop.py",
-      "source_location": "L57",
-      "weight": 1.0,
-      "source": "ytfeed_desktop_main",
-      "target": "ytfeed_desktop_wait_until_up",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "ytfeed/desktop.py",
-      "source_location": "L61",
-      "weight": 1.0,
-      "source": "ytfeed_desktop_main",
-      "target": "ytfeed_desktop_set_dock_icon",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "ytfeed/metadata/ytdlp_client.py",
       "source_location": "L26",
       "weight": 1.0,
@@ -14373,6 +14727,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "ytfeed/web/app.py",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "web_app",
+      "target": "web_app_healthz",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/app.py",
       "source_location": "L35",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -14429,6 +14793,16 @@
       "confidence_score": 1.0,
       "source": "web_app_rationale_45",
       "target": "web_app_retry_monitor"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "ytfeed/web/app.py",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "web_app_rationale_50",
+      "target": "web_app_retry_monitor",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -26056,6 +26430,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "readme_ytfeed",
+      "target": "readme_packaging",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
       "source_location": "L81",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -26131,6 +26515,66 @@
       "confidence_score": 1.0,
       "source": "readme_ytfeed",
       "target": "readme_web_ui"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packaging/README.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "packaging_readme",
+      "target": "packaging_readme_packaging_targets",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packaging/README.md",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "packaging_readme_packaging_targets",
+      "target": "packaging_readme_desktop_launcher_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packaging/README.md",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "packaging_readme_packaging_targets",
+      "target": "packaging_readme_desktop_linux",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packaging/README.md",
+      "source_location": "L47",
+      "weight": 1.0,
+      "source": "packaging_readme_packaging_targets",
+      "target": "packaging_readme_desktop_macos",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packaging/README.md",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "packaging_readme_packaging_targets",
+      "target": "packaging_readme_docker",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packaging/README.md",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "packaging_readme_packaging_targets",
+      "target": "packaging_readme_server_venv",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -26576,5 +27020,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "9cf30744357457551910c39a88d377f380b4db02"
+  "built_at_commit": "3f64f2e45b0f84b4412f76948a82e4da8c9a6fe5"
 }

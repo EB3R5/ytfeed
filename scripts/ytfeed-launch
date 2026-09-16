@@ -11,7 +11,7 @@ cd "$ROOT"
 if [ ! -d .venv ]; then
   echo "ytfeed: creating venv (first run)…"
   python3 -m venv .venv
-  .venv/bin/pip install -q -r requirements.txt
+  .venv/bin/pip install -q -e .
 fi
 
 up() {

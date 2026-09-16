@@ -1,7 +1,7 @@
 {
   "scripts/ytfeed-launch": {
-    "mtime": 1781203664.6556313,
-    "ast_hash": "4d807da24401842a526d960801ee8852",
+    "mtime": 1789597876.799176,
+    "ast_hash": "ee5bbd0e13f3f99d96b421664be2603b",
     "semantic_hash": ""
   },
   "tests/test_markdown_writer.py": {
@@ -95,8 +95,8 @@
     "semantic_hash": ""
   },
   "ytfeed/web/app.py": {
-    "mtime": 1782055429.6405358,
-    "ast_hash": "f0b4dbd541f27ea0dc2429076b83c5e9",
+    "mtime": 1789597876.686308,
+    "ast_hash": "ebb2ba447b9418aeb6ed2ca1d318c136",
     "semantic_hash": ""
   },
   "ytfeed/web/dependencies.py": {
@@ -175,13 +175,8 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1781398485.3125818,
-    "ast_hash": "c97f949b0981764d2bd1e9872615991d",
-    "semantic_hash": ""
-  },
-  "requirements.txt": {
-    "mtime": 1784135795.746536,
-    "ast_hash": "4bea5a452d4eace656092a3934b013bd",
+    "mtime": 1789597876.8005896,
+    "ast_hash": "f1ea700238e452736d24735c7941df33",
     "semantic_hash": ""
   },
   "ytfeed/web/templates/base.html": {
@@ -285,8 +280,8 @@
     "semantic_hash": ""
   },
   "docs/schema.html": {
-    "mtime": 1781817925.7338657,
-    "ast_hash": "9404cedef37bfa7df0e05194c2dac866",
+    "mtime": 1787927096.3333755,
+    "ast_hash": "81473efab5e815b7532a4692b883d6af",
     "semantic_hash": ""
   },
   "docs/architecture.pdf": {
@@ -339,9 +334,54 @@
     "ast_hash": "d5f0f8f77b4627a7c4adb6381414b229",
     "semantic_hash": ""
   },
-  "ytfeed/desktop.py": {
-    "mtime": 1784136135.5134125,
-    "ast_hash": "51fa9f46c7e06b9d10315eb610e2c53e",
+  "packaging/desktop/launcher.py": {
+    "mtime": 1789597876.798211,
+    "ast_hash": "8d57f74339df355286e50517c7c5e380",
+    "semantic_hash": ""
+  },
+  "packaging/desktop/linux/install.sh": {
+    "mtime": 1789597876.8093064,
+    "ast_hash": "7717590b2609649736c86a8340d05538",
+    "semantic_hash": ""
+  },
+  "packaging/desktop/linux/run.sh": {
+    "mtime": 1789597876.8081715,
+    "ast_hash": "1b49f7df33f480aa09da0ef96dbbf2dd",
+    "semantic_hash": ""
+  },
+  "packaging/desktop/linux/uninstall.sh": {
+    "mtime": 1789597876.8103328,
+    "ast_hash": "6e4c0153d2587d6dcfacd27a8a39bb5b",
+    "semantic_hash": ""
+  },
+  "packaging/desktop/macos/build.sh": {
+    "mtime": 1789597876.8069706,
+    "ast_hash": "e8cb661dd2daf89723d2a8655098af52",
+    "semantic_hash": ""
+  },
+  "packaging/desktop/macos/launcher.c": {
+    "mtime": 1789597876.805605,
+    "ast_hash": "e695e8d4fe899eb34d8d67104a44e358",
+    "semantic_hash": ""
+  },
+  "packaging/desktop/macos/make_icon.py": {
+    "mtime": 1789597876.7982833,
+    "ast_hash": "48fcf77488192d1d7093198533aab076",
+    "semantic_hash": ""
+  },
+  "packaging/README.md": {
+    "mtime": 1789597876.8295882,
+    "ast_hash": "5c0ea2fbcaebb67525eccc520094a078",
+    "semantic_hash": ""
+  },
+  "packaging/desktop/linux/ytfeed.png": {
+    "mtime": 1789597876.779063,
+    "ast_hash": "1325de3eb47453b78d56902608781509",
+    "semantic_hash": ""
+  },
+  "packaging/desktop/macos/icon-1024.png": {
+    "mtime": 1789597876.7392216,
+    "ast_hash": "f5813c791f2bb14d83dd7a434f0bb4a3",
     "semantic_hash": ""
   }
 }

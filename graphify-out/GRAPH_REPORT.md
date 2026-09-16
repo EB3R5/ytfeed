@@ -1,16 +1,16 @@
-# Graph Report - ytfeed  (2026-07-15)
+# Graph Report - ytfeed  (2026-09-16)
 
 ## Corpus Check
-- 45 files · ~64,743 words
+- 52 files · ~116,831 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 653 nodes · 1959 edges · 27 communities
+- 677 nodes · 1978 edges · 36 communities (30 shown, 6 thin omitted)
 - Extraction: 75% EXTRACTED · 25% INFERRED · 0% AMBIGUOUS · INFERRED: 488 edges (avg confidence: 0.61)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `9cf30744`
+- Built from commit: `3f64f2e4`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -25,15 +25,23 @@
 - [[_COMMUNITY_Community 7|Community 7]]
 - [[_COMMUNITY_Community 8|Community 8]]
 - [[_COMMUNITY_Community 9|Community 9]]
+- [[_COMMUNITY_Community 10|Community 10]]
 - [[_COMMUNITY_Community 11|Community 11]]
 - [[_COMMUNITY_Community 12|Community 12]]
 - [[_COMMUNITY_Community 13|Community 13]]
+- [[_COMMUNITY_Community 14|Community 14]]
 - [[_COMMUNITY_Community 23|Community 23]]
 - [[_COMMUNITY_Community 24|Community 24]]
+- [[_COMMUNITY_Community 25|Community 25]]
 - [[_COMMUNITY_Community 26|Community 26]]
 - [[_COMMUNITY_Community 27|Community 27]]
 - [[_COMMUNITY_Community 28|Community 28]]
+- [[_COMMUNITY_Community 29|Community 29]]
+- [[_COMMUNITY_Community 30|Community 30]]
 - [[_COMMUNITY_Community 31|Community 31]]
+- [[_COMMUNITY_Community 32|Community 32]]
+- [[_COMMUNITY_Community 33|Community 33]]
+- [[_COMMUNITY_Community 35|Community 35]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `_()` - 104 edges
@@ -63,19 +71,19 @@
 - 1-file cycle: `ytfeed/youtube/sync.py -> ytfeed/youtube/sync.py`
 - 1-file cycle: `ytfeed/db/models.py -> ytfeed/db/models.py`
 
-## Communities (27 total, 0 thin omitted)
+## Communities (36 total, 6 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.08
-Nodes (45): utcnow(), SyncRun, _append_log(), _best_thumbnail(), _is_quota_error(), _parse_dt(), _progress(), Sync engine: subscriptions, playlists, and per-channel uploads with early-stop. (+37 more)
+Cohesion: 0.07
+Nodes (51): utcnow(), SyncRun, _append_log(), _best_thumbnail(), _is_quota_error(), _parse_dt(), _progress(), Sync engine: subscriptions, playlists, and per-channel uploads with early-stop. (+43 more)
 
 ### Community 1 - "Community 1"
-Cohesion: 0.13
-Nodes (11): ChannelUploadsTests, FakeSource, _item(), A canned YouTubeSource — no network, no google client to fake., Sync a channel's uploads playlist newest-first with early-stop.      Stops (unle, Sync a channel's uploads playlist newest-first with early-stop.      Stops (unle, Sync a channel's uploads playlist newest-first with early-stop.      Stops (unle, Sync a channel's uploads playlist newest-first with early-stop.      Stops (unle (+3 more)
+Cohesion: 0.19
+Nodes (4): ChannelUploadsTests, FakeSource, _item(), A canned YouTubeSource — no network, no google client to fake.
 
 ### Community 2 - "Community 2"
 Cohesion: 0.05
-Nodes (72): TranscriptionQueueItem, NotebookLMClient, clear_queue(), enqueue(), queue_view(), Transcription queue: enqueue, view, run, retry., Empty the queue page: cancel pending items, hide finished ones.      Rows stay i, retry_item() (+64 more)
+Nodes (74): TranscriptionQueueItem, NotebookLMClient, clear_queue(), enqueue(), queue_view(), Transcription queue: enqueue, view, run, retry., Empty the queue page: cancel pending items, hide finished ones.      Rows stay i, retry_item() (+66 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.11
@@ -90,8 +98,8 @@ Cohesion: 0.20
 Nodes (6): CategorizeTests, _playlist(), SanitizeTests, category_for_video(), Name of the smallest playlist containing the video (live item counts,     not th, sanitize_filename()
 
 ### Community 6 - "Community 6"
-Cohesion: 0.53
-Nodes (5): _free_port(), main(), Desktop launcher: run the ytfeed server on a free port inside a pywebview window, _set_dock_icon(), _wait_until_up()
+Cohesion: 0.34
+Nodes (13): _mask(), Settings page: config summary, DB stats, manual sync., Queue a sync unless one is already running. Returns True if started., settings_page(), start_sync(), stop_sync(), sync_is_running(), trigger_playlists_sync() (+5 more)
 
 ### Community 7 - "Community 7"
 Cohesion: 0.11
@@ -105,33 +113,41 @@ Nodes (25): count_call(), fetch_channels_content_details(), fetch_my_playlists()
 Cohesion: 0.39
 Nodes (8): Recents page: newest videos from monitored (or one-off picked) channels., Picked channels override; otherwise monitored channels. Returns (ids, used_picke, _recent_videos(), recents(), _selected_channel_ids(), toggle_monitor(), Request, Session
 
+### Community 10 - "Community 10"
+Cohesion: 0.52
+Nodes (6): _free_port(), main(), Desktop window launcher — the same file in every app repo; only the CONFIG block, _set_dock_icon(), _up(), _wait_until_up()
+
 ### Community 11 - "Community 11"
-Cohesion: 0.17
-Nodes (11): Engineering notes, Launching, Schema, Setup, Tests, Transcript pipeline (3 tiers), Usage, Vault file layout (+3 more)
+Cohesion: 0.15
+Nodes (12): Engineering notes, Launching, Packaging, Schema, Setup, Tests, Transcript pipeline (3 tiers), Usage (+4 more)
 
 ### Community 12 - "Community 12"
-Cohesion: 0.12
-Nodes (11): sessionmaker, AuditedRunTests, ReporterTests, audited_run(), Open a SyncRun, yield its reporter, and write the terminal state on exit.      S, Open a SyncRun, yield its reporter, and write the terminal state on exit.      S, Writes progress/log/quota-accounting into one SyncRun row.      The API-unit bas, RunReporter (+3 more)
+Cohesion: 0.15
+Nodes (11): AuditedRunTests, audited_run(), _is_quota_error(), The audited sync-run lifecycle, owned in one place.  A sync run records its own, Open a SyncRun, yield its reporter, and write the terminal state on exit.      S, Open a SyncRun, yield its reporter, and write the terminal state on exit.      S, Writes progress/log/quota-accounting into one SyncRun row.      The API-unit bas, RunReporter (+3 more)
 
 ### Community 13 - "Community 13"
 Cohesion: 0.29
 Nodes (6): download_audio(), fetch_video_metadata(), yt-dlp helpers: metadata enrichment and optional audio download., Download audio as mp3 (requires ffmpeg). Returns the file path or None., Any, Path
 
+### Community 14 - "Community 14"
+Cohesion: 0.29
+Nodes (6): desktop/launcher.py, desktop/linux, desktop/macos, docker, Packaging targets, server (venv)
+
 ### Community 23 - "Community 23"
 Cohesion: 0.05
-Nodes (75): Credentials, get_engine(), get_session_factory(), init_db(), Engine/session factory and schema creation., Namespace, Resource, _run_channel_sync() (+67 more)
+Nodes (65): Credentials, get_engine(), get_session_factory(), init_db(), Engine/session factory and schema creation., Engine, Namespace, Resource (+57 more)
 
 ### Community 24 - "Community 24"
 Cohesion: 0.13
 Nodes (34): ChannelCategory, ChannelCategory, Group -> Category -> Type taxonomy assigned to subscribed channels.      Mirrors, backfill_channel(), add_category(), api_add(), api_delete(), api_items() (+26 more)
 
 ### Community 26 - "Community 26"
-Cohesion: 0.18
-Nodes (27): Channel, Playlist, PlaylistItem, SyncRun, Exception, Protocol, Reporter, RunReporter (+19 more)
+Cohesion: 0.21
+Nodes (24): Channel, ChannelUpload, Playlist, PlaylistItem, SQLAlchemy 2.0 models for ytfeed., SyncRun, Exception, Reporter (+16 more)
 
 ### Community 27 - "Community 27"
 Cohesion: 0.17
-Nodes (17): ArgumentParser, Base, Channel, ChannelUpload, SQLAlchemy 2.0 models for ytfeed., Video, DeclarativeBase, Engine (+9 more)
+Nodes (16): ArgumentParser, Base, Channel, Video, DeclarativeBase, Protocol, _FakeListEndpoint, _FakeRequest (+8 more)
 
 ### Community 28 - "Community 28"
 Cohesion: 0.39
@@ -142,18 +158,19 @@ Cohesion: 0.23
 Nodes (5): buildGrid(), columnDefs(), loadItems(), refreshGrid(), selectSection()
 
 ## Knowledge Gaps
-- **32 isolated node(s):** `PathsConfig`, `SyncConfig`, `NotebookLMConfig`, `DownloadConfig`, `Any` (+27 more)
+- **43 isolated node(s):** `install.sh script`, `run.sh script`, `GI_TYPELIB_PATH`, `uninstall.sh script`, `build.sh script` (+38 more)
   These have ≤1 connection - possible missing edges or undocumented components.
+- **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Video` connect `Community 27` to `Community 0`, `Community 1`, `Community 2`, `Community 9`, `Community 23`, `Community 24`, `Community 26`, `Community 28`?**
-  _High betweenness centrality (0.115) - this node is a cross-community bridge._
-- **Why does `Config` connect `Community 26` to `Community 0`, `Community 2`, `Community 8`, `Community 12`, `Community 23`, `Community 27`?**
-  _High betweenness centrality (0.069) - this node is a cross-community bridge._
-- **Why does `Channel` connect `Community 27` to `Community 0`, `Community 1`, `Community 9`, `Community 23`, `Community 24`, `Community 26`?**
-  _High betweenness centrality (0.053) - this node is a cross-community bridge._
+- **Why does `Video` connect `Community 27` to `Community 0`, `Community 1`, `Community 2`, `Community 6`, `Community 9`, `Community 23`, `Community 24`, `Community 26`, `Community 28`?**
+  _High betweenness centrality (0.107) - this node is a cross-community bridge._
+- **Why does `Config` connect `Community 2` to `Community 0`, `Community 8`, `Community 23`, `Community 26`, `Community 27`?**
+  _High betweenness centrality (0.064) - this node is a cross-community bridge._
+- **Why does `Channel` connect `Community 27` to `Community 0`, `Community 1`, `Community 6`, `Community 9`, `Community 23`, `Community 24`, `Community 26`?**
+  _High betweenness centrality (0.049) - this node is a cross-community bridge._
 - **Are the 47 inferred relationships involving `Video` (e.g. with `ArgumentParser` and `Channel`) actually correct?**
   _`Video` has 47 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 35 inferred relationships involving `Channel` (e.g. with `ArgumentParser` and `Channel`) actually correct?**

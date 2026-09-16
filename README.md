@@ -15,7 +15,7 @@ lives in the SQLite DB.
 
 ```bash
 python3 -m venv .venv
-.venv/bin/pip install -r requirements.txt
+.venv/bin/pip install -e ".[desktop,dev]"
 cp config.example.toml config.toml   # then edit paths
 .venv/bin/python -m ytfeed init-db
 ```
@@ -47,12 +47,18 @@ opens the browser. Wire it up once:
 ln -sf "$(pwd)/scripts/ytfeed-launch" /opt/homebrew/bin/ytfeed   # macOS/Homebrew
 # (Linux: link into ~/.local/bin and swap `open` for `xdg-open` in the script)
 
-# macOS double-clickable app (drag ~/Applications/ytfeed.app to the Dock)
-osacompile -o ~/Applications/ytfeed.app \
-  -e 'do shell script "'"$(pwd)"'/scripts/ytfeed-launch"'
 ```
 
 The server log lands in `data/server.log`. Port override: `YTFEED_PORT=8080 ytfeed`.
+
+## Packaging
+
+`packaging/` holds the other launch targets — macOS `/Applications/ytfeed.app` (native pywebview
+window, compiled launcher; build with `packaging/desktop/macos/build.sh`), a Linux desktop entry,
+and a Docker image — so `ytfeed/` never changes for one. The window attaches to a server already
+on :8000 (e.g. one started by `ytfeed-launch`) or starts its own. See
+[`packaging/README.md`](packaging/README.md). ytfeed is deliberately not in the `homelab` compose
+file yet: its YouTube OAuth token, NotebookLM profile and SQLite file all live on the host.
 
 ## Web UI
 
