@@ -38,6 +38,11 @@ app.include_router(settings.router)
 app.include_router(storage.router)
 
 
+@app.get("/healthz")
+async def healthz():
+    return {"ok": True}
+
+
 RETRY_POLL_SECONDS = 60
 
 
