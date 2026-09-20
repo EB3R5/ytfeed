@@ -238,3 +238,7 @@ erDiagram
 ```bash
 .venv/bin/python -m unittest discover tests
 ```
+
+## License
+
+MIT — see [LICENSE](LICENSE).

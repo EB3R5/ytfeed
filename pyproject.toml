@@ -7,6 +7,8 @@ name = "ytfeed"
 version = "0.1.0"
 description = "Personal YouTube feed: sync subscriptions/playlists into SQLite, browse locally, pipe transcripts into the Obsidian RAG vault"
 requires-python = ">=3.12"
+license = "MIT"
+license-files = ["LICENSE"]
 dependencies = [
     "fastapi",
     "uvicorn[standard]",
