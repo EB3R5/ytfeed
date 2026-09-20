@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Queue — ytfeed{% endblock %}
+{% block content %}
+<h1>Transcription queue</h1>
+
+{% if queued is not none and queued is defined %}
+<div class="flash">Queued {{ queued }} video(s){% if skipped %} · skipped {{ skipped }} (already done/pending){% endif %}.</div>
+{% endif %}
+
+<div class="queue-bar">
+  <form method="post" action="/queue/run" class="inline">
+    <button type="submit" class="btn btn-primary" {{ 'disabled' if processing else '' }}>
+      {{ 'Transcription running…' if processing else 'Run transcription now' }}
+    </button>
+  </form>
+  <form method="post" action="/queue/clear" class="inline">
+    <button type="submit" class="btn">Clear queue</button>
+  </form>
+  <span class="hint">{{ pending_count }} pending</span>
+</div>
+
+{% include "partials/queue_table.html" %}
+{% endblock %}

@@ -1,0 +1,20 @@
+# Standalone ytfeed container. Copy .env.example to .env, set YTFEED_VAULT, then:
+#   docker compose up -d --build
+# Both Google logins happen on the host first (see packaging/README.md): run
+# `python -m ytfeed sync` once in a venv for the YouTube token, and
+# `notebooklm login` for NotebookLM. The container only refreshes/reuses them.
+services:
+  ytfeed:
+    build:
+      context: .
+      dockerfile: packaging/docker/Dockerfile
+    restart: unless-stopped
+    # run as your uid so transcripts written into the vault are owned by you, not root
+    user: "${YTFEED_UID:-1000}:${YTFEED_GID:-1000}"
+    volumes:
+      - ./data:/app/data                             # ytfeed.db (SQLite WAL) + caches
+      - ./secrets:/app/secrets                       # token.json; rewritten on refresh
+      - "${YTFEED_VAULT:?set YTFEED_VAULT in .env to your vault folder}:/rag/raw"
+      - "${NOTEBOOKLM_DIR:-~/.notebooklm}:/nlm"      # NOTEBOOKLM_HOME in the image
+    ports:
+      - "127.0.0.1:${YTFEED_PORT:-8040}:8000"        # loopback only; front it yourself if you need more

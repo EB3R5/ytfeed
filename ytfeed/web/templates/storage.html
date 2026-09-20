@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Storage — ytfeed{% endblock %}
+{% block content %}
+<h1>Storage</h1>
+
+<table class="channel-table">
+  <thead>
+    <tr><th>What</th><th>Where</th><th>Files</th><th>Size</th></tr>
+  </thead>
+  <tbody>
+    {% for row in rows %}
+    <tr>
+      <td>{{ row.label }}</td>
+      <td class="meta">{{ row.detail }}</td>
+      <td>{{ row.count if row.count is not none else '—' }}</td>
+      <td>{{ row.size }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+  <tfoot>
+    <tr>
+      <th>Data total (DB + vault + audio)</th><td></td><td></td><th>{{ data_total }}</th>
+    </tr>
+    <tr>
+      <th>Grand total (incl. app environment)</th><td></td><td></td><th>{{ grand_total }}</th>
+    </tr>
+  </tfoot>
+</table>
+
+{% if missing %}
+<p class="hint">{{ missing }} tracked file(s) missing on disk (moved or deleted outside ytfeed).</p>
+{% endif %}
+{% endblock %}

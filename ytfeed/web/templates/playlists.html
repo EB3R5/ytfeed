@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Playlists — ytfeed{% endblock %}
+{% block content %}
+<h1>Playlists</h1>
+{% if playlists %}
+<div class="filters">
+  <input type="search" id="playlists-search" placeholder="Search {{ playlists|length }} playlists…"
+         data-filter-rows="#playlists-table" data-filter-count="playlists-count"
+         data-filter-exact="#playlists-exact" autofocus>
+  <label class="cat-search-mode"><input type="checkbox" id="playlists-exact"
+         data-filter-trigger="#playlists-search"> Exact match</label>
+  <span class="hint" id="playlists-count"></span>
+</div>
+<table class="channel-table" id="playlists-table">
+  <thead><tr><th></th><th>Playlist</th><th>Items</th><th>Last synced</th><th></th></tr></thead>
+  <tbody>
+    {% for playlist in playlists %}
+    <tr>
+      <td class="thumb-cell">
+        {% if playlist.thumbnail_url %}<img src="{{ playlist.thumbnail_url }}" alt="" class="avatar" loading="lazy">{% endif %}
+      </td>
+      <td><a href="/playlists/{{ playlist.playlist_id }}">{{ playlist.title }}</a></td>
+      <td>{{ playlist.item_count }}</td>
+      <td>{{ playlist.last_synced_at.strftime('%Y-%m-%d %H:%M') if playlist.last_synced_at else 'never' }}</td>
+      <td>
+        <form method="post" action="/playlists/{{ playlist.playlist_id }}/sync" class="inline">
+          <button type="submit" class="btn btn-sm" title="Sync just this playlist now">Sync</button>
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<p class="hint">Single-playlist sync is prioritized and cheap (~1 API unit per 50 videos). Progress shows on <a href="/settings">Settings</a>.</p>
+{% else %}
+<p class="empty">No playlists synced yet. Run a sync from <a href="/settings">Settings</a>.</p>
+{% endif %}
+{% endblock %}

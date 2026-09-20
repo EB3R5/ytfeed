@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}Channel Categories — ytfeed{% endblock %}
+{% block content %}
+<div class="page-head">
+  <h1>Channel Categories</h1>
+  <span class="meta">Group → Category → Type taxonomy for subscribed channels. Independent of playlist-derived video categories.</span>
+</div>
+
+<div class="categories-layout">
+  <aside class="categories-sections">
+    <div class="categories-sections-head">
+      <span id="section-label">Group</span>
+      <button type="button" class="btn" id="add-section" title="Add a new group">＋</button>
+    </div>
+    <ul id="section-list"></ul>
+  </aside>
+
+  <section class="categories-detail">
+    <div class="grid-toolbar">
+      <h2 id="detail-title" class="categories-detail-title">—</h2>
+      <button type="button" class="btn" id="add-row">➕ Add</button>
+      <button type="button" class="btn btn-danger" id="delete-rows">🗑 Delete selected</button>
+      <span id="categories-status" class="hint"></span>
+    </div>
+    <div class="cat-search-bar">
+      <input type="search" id="cat-search" placeholder="Search categories…">
+      <label class="cat-search-mode"><input type="checkbox" id="cat-exact"> Exact match</label>
+      <label class="cat-search-mode"><input type="checkbox" id="cat-allgroups"> All groups</label>
+    </div>
+    <div id="grid" class="ag-theme-quartz-dark categories-grid"></div>
+  </section>
+</div>
+
+<!-- Add-category modal -->
+<div id="row-modal" class="modal-backdrop" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="row-modal-title">
+    <div class="modal-head">
+      <h3 id="row-modal-title">Add category</h3>
+      <button type="button" class="modal-close" id="row-close" aria-label="Close">×</button>
+    </div>
+    <form id="row-form" class="acct-form">
+      <div class="acct-form-grid" id="row-fields"></div>
+      <div class="modal-actions">
+        <span id="row-status" class="hint"></span>
+        <button type="button" class="btn" id="row-cancel">Cancel</button>
+        <button type="submit" class="btn btn-primary">Add</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="/static/channel_categories.js?v={{ asset_v('channel_categories.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,6 @@
+<form class="channel-notes" hx-post="/channels/{{ channel.channel_id }}/notes"
+      hx-swap="outerHTML">
+  <label>Notes</label>
+  <textarea name="notes" rows="3" placeholder="Notes about this channel…">{{ channel.notes or '' }}</textarea>
+  <button type="submit" class="btn">Save notes</button>
+</form>

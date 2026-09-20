@@ -1,0 +1,21 @@
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+config.toml
+!packaging/docker/config.toml
+secrets/
+!secrets/.gitkeep
+data/
+!data/.gitkeep
+.DS_Store
+._*
+graphify-out/cache/
+graphify-out/
+plan.md
+# Google OAuth client JSON dropped at the repo root by mistake (belongs in secrets/)
+client_secret.json
+
+
+# compose settings for the standalone container (see .env.example)
+.env

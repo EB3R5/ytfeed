@@ -1,0 +1,240 @@
+# ytfeed
+
+Personal YouTube feed: sync subscriptions/playlists/recent uploads into a local
+SQLite DB, browse/search/filter them in a local web UI, queue videos for
+transcription, and pipe transcripts into an Obsidian RAG vault.
+
+**Storage split**: the Obsidian vault gets markdown files with frontmatter,
+the video description (recipes, links, and chapter notes often live there),
+and the transcript. Descriptions are compiled from two sources: sync fills
+them from the YouTube Data API, and yt-dlp covers whatever sync missed at
+transcription time. Everything else — statuses, queue history, sync audit —
+lives in the SQLite DB.
+
+## Setup
+
+```bash
+python3 -m venv .venv
+.venv/bin/pip install -e ".[desktop,dev]"
+cp config.example.toml config.toml   # then set the two required paths
+.venv/bin/python -m ytfeed init-db
+```
+
+Two paths in `config.toml` have no default and must be set before `sync` or
+`transcribe` will run (each fails with a message naming the key otherwise):
+`paths.client_secret_path` and `paths.rag_output_dir`.
+
+Requirements outside this repo:
+- A Google OAuth client secret JSON (`paths.client_secret_path`) with the
+  YouTube Data API enabled — first sync opens a browser for one-time consent;
+  the token is stored at `secrets/token.json`.
+- An Obsidian vault folder to write transcripts into (`paths.rag_output_dir`);
+  the layout it produces is described under "Vault file layout" below.
+- An authenticated `notebooklm-py` profile in `~/.notebooklm/` (run
+  `notebooklm login` once) for transcript tier 1.
+
+## Usage
+
+```bash
+.venv/bin/python -m ytfeed sync            # subscriptions + playlists + uploads
+.venv/bin/python -m ytfeed sync --full     # ignore early-stop, walk full history
+.venv/bin/python -m ytfeed serve --port 8040  # web UI (Docker owns 8040 when the container is up)
+.venv/bin/python -m ytfeed transcribe --limit 5
+.venv/bin/python -m ytfeed describe --apply --fetch  # backfill ## Description sections
+```
+
+## Launching
+
+`scripts/ytfeed-launch` opens the browser on the server already answering :8040 (the Docker
+container in day-to-day use), and only starts a venv server there if nothing does. Wire it up once:
+
+```bash
+ln -sf "$(pwd)/scripts/ytfeed-launch" ~/.local/bin/ytfeed          # Linux
+ln -sf "$(pwd)/scripts/ytfeed-launch" /opt/homebrew/bin/ytfeed     # macOS/Homebrew
+```
+
+The venv server log lands in `data/server.log`. Port override: `YTFEED_PORT=8080 ytfeed`.
+
+## Packaging
+
+`packaging/` holds the other launch targets — the Docker image (`compose.yml` at the repo root runs
+it on `127.0.0.1:8040`), macOS `/Applications/ytfeed.app` (native pywebview window, compiled launcher;
+build with `packaging/desktop/macos/build.sh`) and a Linux desktop entry
+(`packaging/desktop/linux/install.sh`) — so `ytfeed/` never changes for one. The window attaches
+to the server on :8040 or starts its own. See [`packaging/README.md`](packaging/README.md) for the
+host-state mounts and which logins stay on the host.
+
+## Web UI
+
+- **Recents** — newest videos from ★-monitored channels; the channel picker
+  overrides for one-off views; title search and transcript-status filters.
+- **Subscriptions** — all subs with star toggles; channels open in a new tab
+  with "Refresh recent" and "Load full history".
+- **Playlists** — your playlists and their videos.
+- **Queue** — every video list has checkboxes (shift-click selects a range,
+  plus a select-all toggle) and "Queue selected for transcription".
+  "Run transcription now" processes the queue in batches with live progress;
+  "Clear queue" cancels pending items and hides history (rows stay in the DB).
+- **Settings** — config summary, DB stats, manual "Sync now".
+
+## Transcript pipeline (3 tiers)
+
+1. **NotebookLM** (`notebooklm-py`) — videos batched 50 per throwaway
+   `ytfeed-batch-*` notebook; transcripts extracted via source fulltext
+   (verbatim caption track), then the notebook is deleted.
+2. **youtube-transcript-api** — direct caption fetch, paced 1 req/s.
+   IP rate-limits (`IpBlocked`/`RequestBlocked`) are treated as transient:
+   nothing is written, the item is deferred 5 minutes and retried
+   automatically by a background monitor thread (up to 5 attempts). After
+   3 consecutive blocks the rest of the batch defers immediately.
+3. **Placeholder** — `*(PLACEHOLDER).md` stub for videos with no captions;
+   re-queuing a placeholder/failed video re-enters the pipeline, and a later
+   success replaces the stub. Videos already `done` are never re-queued.
+
+## Vault file layout
+
+Each transcript file is flat in `raw/` with frontmatter, the description, and
+the transcript:
+
+```
+---
+video_id: QZWxpB8zGQM
+channel: "Cowboy Kent Rollins"
+published: 2026-04-01T19:30:03Z
+url: https://www.youtube.com/watch?v=QZWxpB8zGQM
+source: notebooklm
+category: "Cooking"
+tags: []
+---
+
+# <title>
+
+## Description
+
+<video description — recipes, links, chapter notes>
+
+## Transcript
+
+<transcript>
+```
+
+`category` is the video's playlist, derived at write time
+(`transcripts/categorize.py`): the most recently added playlist membership
+wins (ties and missing timestamps fall back to the smallest playlist;
+same-named playlists merge). Videos in no playlist get no `category` line.
+The `## Description` section is omitted when the video has no description.
+
+## Schema
+
+Generated from `ytfeed/db/models.py` — refresh with `scripts/update-erd`.
+
+<!-- ERD:START (generated by scripts/update-erd — do not edit by hand) -->
+```mermaid
+erDiagram
+  channel_uploads {
+    integer id PK
+    varchar(64) channel_id FK
+    varchar(32) video_id FK
+    datetime published_at
+  }
+  channels {
+    integer id PK
+    varchar(64) channel_id UK
+    varchar(255) title
+    text description
+    varchar(512) thumbnail_url
+    varchar(64) uploads_playlist_id
+    datetime subscribed_at
+    datetime last_synced_at
+    datetime last_video_published_at
+    boolean is_active
+    boolean is_monitored
+  }
+  playlist_items {
+    integer id PK
+    varchar(64) playlist_id FK
+    varchar(32) video_id FK
+    integer position
+    datetime added_at
+  }
+  playlists {
+    integer id PK
+    varchar(64) playlist_id UK
+    varchar(255) title
+    text description
+    varchar(512) thumbnail_url
+    integer item_count
+    integer synced_item_count
+    datetime last_synced_at
+  }
+  sync_runs {
+    integer id PK
+    datetime started_at
+    datetime finished_at
+    varchar(32) kind
+    integer channels_synced
+    integer videos_upserted
+    text error_message
+    varchar(32) phase
+    integer progress_current
+    integer progress_total
+    varchar(255) progress_detail
+    integer api_calls
+    text log
+    boolean cancel_requested
+  }
+  transcription_queue {
+    integer id PK
+    varchar(32) video_id FK
+    varchar(16) status
+    boolean is_hidden
+    datetime requested_at
+    datetime not_before
+    datetime started_at
+    datetime completed_at
+    text error_message
+    integer attempt_count
+  }
+  videos {
+    integer id PK
+    varchar(32) video_id UK
+    varchar(64) channel_id FK
+    varchar(255) channel_title
+    varchar(512) title
+    text description
+    varchar(512) thumbnail_url
+    datetime published_at
+    integer duration_seconds
+    text tags
+    varchar(32) source
+    varchar(16) transcript_status
+    varchar(16) transcript_source
+    varchar(512) transcript_path
+    varchar(16) audio_status
+    varchar(512) audio_path
+    varchar(64) notebooklm_notebook_id
+  }
+  channels ||--o{ channel_uploads : "channel_id"
+  videos ||--o{ channel_uploads : "video_id"
+  playlists ||--o{ playlist_items : "playlist_id"
+  videos ||--o{ playlist_items : "video_id"
+  videos ||--o{ transcription_queue : "video_id"
+  channels |o--o{ videos : "channel_id"
+```
+<!-- ERD:END -->
+
+## Engineering notes
+
+- SQLite runs in WAL mode with a 30s busy timeout; sync keeps all network
+  I/O outside write transactions so the web app stays responsive mid-sync.
+- Sync early-stops per channel once it hits known videos (~1 quota
+  unit/channel steady-state); first sync backfills `sync.initial_backfill`
+  videos (default 50), full history on demand.
+- One pipeline run at a time (process-wide lock); interrupted runs are
+  recovered on server startup.
+
+## Tests
+
+```bash
+.venv/bin/python -m unittest discover tests
+```

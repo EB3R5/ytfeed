@@ -1,0 +1,40 @@
+#!/bin/zsh
+# Launch ytfeed: start the server if it isn't running, then open the browser.
+# Safe to run repeatedly — an already-running server is reused, never duplicated.
+set -e
+
+# resolve symlinks (this script may be invoked via a PATH symlink)
+ROOT="$(cd "$(dirname "${0:A}")/.." && pwd)"
+PORT="${YTFEED_PORT:-8040}"
+cd "$ROOT"
+
+if [ ! -d .venv ]; then
+  echo "ytfeed: creating venv (first run)…"
+  python3 -m venv .venv
+  .venv/bin/pip install -q -e .
+fi
+
+up() {
+  .venv/bin/python - "$PORT" <<'PY'
+import socket, sys
+s = socket.socket()
+s.settimeout(1)
+sys.exit(0 if s.connect_ex(("127.0.0.1", int(sys.argv[1]))) == 0 else 1)
+PY
+}
+
+if ! up; then
+  mkdir -p data
+  nohup .venv/bin/python -m ytfeed serve --port "$PORT" >> data/server.log 2>&1 &
+  for _ in {1..40}; do
+    up && break
+    sleep 0.5
+  done
+fi
+
+if up; then
+  if command -v open >/dev/null; then open "http://127.0.0.1:$PORT/"; else xdg-open "http://127.0.0.1:$PORT/"; fi
+else
+  echo "ytfeed: server failed to start — see $ROOT/data/server.log" >&2
+  exit 1
+fi

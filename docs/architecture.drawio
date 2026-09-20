@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="drawio" version="26.0.0">
+  <diagram name="ytfeed-architecture">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1480" pageHeight="1080" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ============ LAYER BANDS ============ -->
+        <mxCell id="b1" value="1 · Entry &amp; Launchers" style="swimlane;startSize=26;html=1;fontStyle=1;fontSize=13;fillColor=#fbfbfb;strokeColor=#9673a6;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="1040" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="b2" value="2 · Interfaces" style="swimlane;startSize=26;html=1;fontStyle=1;fontSize=13;fillColor=#fbfbfb;strokeColor=#6c8ebf;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="40" y="160" width="1040" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="b3" value="3 · Core Engines" style="swimlane;startSize=26;html=1;fontStyle=1;fontSize=13;fillColor=#fbfbfb;strokeColor=#82b366;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="40" y="410" width="1040" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="b4" value="4 · Integration Clients &amp; Providers" style="swimlane;startSize=26;html=1;fontStyle=1;fontSize=13;fillColor=#fbfbfb;strokeColor=#d79b00;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="40" y="560" width="1040" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="b5" value="5 · External Services (network)" style="swimlane;startSize=26;html=1;fontStyle=1;fontSize=13;fillColor=#fbfbfb;strokeColor=#b85450;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="40" y="750" width="1040" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="rc" value="Data Access &amp; Config (cross-cutting)" style="swimlane;startSize=26;html=1;fontStyle=1;fontSize=13;fillColor=#fbfbfb;strokeColor=#666666;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="160" width="340" height="710" as="geometry" />
+        </mxCell>
+        <mxCell id="b6" value="6 · Local Storage" style="swimlane;startSize=26;html=1;fontStyle=1;fontSize=13;fillColor=#fbfbfb;strokeColor=#666666;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="40" y="890" width="1400" height="150" as="geometry" />
+        </mxCell>
+
+        <!-- ============ LAYER 1: ENTRY ============ -->
+        <mxCell id="e1" value="ytfeed.app&#xa;(macOS dock app)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="90" y="80" width="200" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="scripts/ytfeed-launch&#xa;(start server · open browser)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="330" y="80" width="250" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="python -m ytfeed&#xa;__main__.py → cli.py" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="620" y="80" width="240" height="48" as="geometry" />
+        </mxCell>
+
+        <!-- ============ LAYER 2: INTERFACES ============ -->
+        <mxCell id="cliHdr" value="CLI — ytfeed/cli.py" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="200" width="430" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cSync" value="sync" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="80" y="244" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cServe" value="serve" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="215" y="244" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cTrans" value="transcribe" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="350" y="244" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cDesc" value="describe" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="80" y="300" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cInit" value="init-db" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="215" y="300" width="120" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="webHdr" value="Web UI — FastAPI (web/app.py + dependencies.py · startup recovery)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="540" y="200" width="500" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="rRec" value="recents" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="540" y="244" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="rChan" value="channel" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="700" y="244" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="rPlay" value="playlist" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="860" y="244" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="rQueue" value="queue" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="540" y="300" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="rSet" value="settings" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="700" y="300" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="rStore" value="storage" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="860" y="300" width="150" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ============ LAYER 3: CORE ENGINES ============ -->
+        <mxCell id="syncEng" value="YouTube Sync Engine&#xa;youtube/sync.py&#xa;(subs · playlists · uploads · early-stop)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="80" y="445" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="pipe" value="Transcript Pipeline&#xa;transcripts/pipeline.py&#xa;(queue runner · 3-tier · monitor)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="350" y="445" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="cat" value="categorize.py&#xa;(playlist → category)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="620" y="445" width="190" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="mdw" value="markdown_writer.py&#xa;(vault file writer)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="850" y="445" width="200" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- ============ LAYER 4: INTEGRATION ============ -->
+        <mxCell id="auth" value="youtube/auth.py&#xa;(OAuth flow)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="70" y="600" width="150" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="client" value="youtube/client.py&#xa;(Data API wrapper)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="235" y="600" width="150" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="t1" value="Tier 1&#xa;NotebookLM&#xa;notebooklm_provider.py" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="400" y="600" width="160" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="t2" value="Tier 2&#xa;caption fetch&#xa;youtube_api_provider.py" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="575" y="600" width="170" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="t3" value="Tier 3&#xa;placeholder.py&#xa;(stub .md)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="760" y="600" width="150" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ytdlp" value="metadata/&#xa;ytdlp_client.py&#xa;(descriptions)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="925" y="600" width="140" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- ============ LAYER 5: EXTERNAL ============ -->
+        <mxCell id="xApi" value="YouTube&#xa;Data API v3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="80" y="785" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xOauth" value="Google OAuth&#xa;(consent · token)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="260" y="785" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xNlm" value="NotebookLM&#xa;(web · notebooklm-py)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="440" y="785" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xYta" value="youtube-transcript-api&#xa;(caption track)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="640" y="785" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xYtdlp" value="yt-dlp / YouTube" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="860" y="785" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ============ DATA ACCESS & CONFIG (right column) ============ -->
+        <mxCell id="cfg" value="config.py / config.toml&#xa;(paths · sync opts · transcript opts)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="210" width="270" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="models" value="db/models.py — ORM&#xa;Channel · Video · Playlist&#xa;PlaylistItem · ChannelUpload&#xa;TranscriptionQueue · SyncRun" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="330" width="270" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="sess" value="db/session.py&#xa;SQLAlchemy engine&#xa;(WAL · 30s busy timeout)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="470" width="270" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cfgNote" value="Read by CLI, Web UI,&#xa;and every engine" style="text;html=1;align=center;fontStyle=2;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="600" width="270" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ============ LAYER 6: STORAGE ============ -->
+        <mxCell id="sqlite" value="SQLite DB  (WAL mode)&#xa;channels · videos · playlists · playlist_items&#xa;channel_uploads · transcription_queue · sync_runs" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="140" y="930" width="380" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="vault" value="Obsidian RAG Vault&#xa;raw/*.md  (frontmatter + ## Description + ## Transcript)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="900" y="935" width="440" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- ============ EDGES ============ -->
+        <!-- Entry chain -->
+        <mxCell id="x_e1e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="e1" target="e2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="x_e2web" value="runs serve" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;" edge="1" parent="1" source="e2" target="webHdr"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="x_e3cli" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="e3" target="cliHdr"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- CLI / Web → Core -->
+        <mxCell id="x_serveweb" value="starts server" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;" edge="1" parent="1" source="cServe" target="webHdr"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="x_synceng" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="cSync" target="syncEng"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="x_transpipe" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="cTrans" target="pipe"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="x_queuepipe" value="run transcription" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="rQueue" target="pipe"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="x_setsync" value="Sync now" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="rSet" target="syncEng"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- Web / CLI → Data access -->
+        <mxCell id="x_webmodels" value="read / write" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.2;entryDx=0;entryDy=0;" edge="1" parent="1" source="rStore" target="models"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="x_initsess" value="create tables" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="cInit" target="sess"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1080" y="320" /></Array></mxGeometry></mxCell>
+
+        <!-- Sync engine → integration -->
+        <mxCell id="x_syncauth" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="syncEng" target="auth"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="x_syncclient" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="syncEng" target="client"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="x_syncmodels" value="upsert" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.8;entryDx=0;entryDy=0;" edge="1" parent="1" source="syncEng" target="models"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1085" y="480" /><mxPoint x="1085" y="410" /></Array></mxGeometry></mxCell>
+
+        <!-- Pipeline → providers -->
+        <mxCell id="x_pt1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="pipe" target="t1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="x_pt2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.65;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="pipe" target="t2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="x_pt3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.8;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="pipe" target="t3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="x_pcat" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.4;exitDx=0;exitDy=0;entryX=0;entryY=0.4;entryDx=0;entryDy=0;" edge="1" parent="1" source="pipe" target="cat"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="x_pmdw" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.7;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;" edge="1" parent="1" source="pipe" target="mdw"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="620" y="500" /></Array></mxGeometry></mxCell>
+        <mxCell id="x_pdesc" value="fetch desc" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;exitX=0.95;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="pipe" target="ytdlp"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="995" y="540" /></Array></mxGeometry></mxCell>
+        <mxCell id="x_psess" value="queue status" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;exitX=1;exitY=0.9;exitDx=0;exitDy=0;entryX=0;entryY=0.6;entryDx=0;entryDy=0;" edge="1" parent="1" source="pipe" target="sess"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1090" y="510" /></Array></mxGeometry></mxCell>
+        <mxCell id="x_descdlp" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="cDesc" target="ytdlp"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="995" y="320" /></Array></mxGeometry></mxCell>
+
+        <!-- Integration → external -->
+        <mxCell id="x_clientapi" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="client" target="xApi"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="x_authoauth" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="auth" target="xOauth"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="x_t1nlm" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="t1" target="xNlm"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="x_t2yta" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="t2" target="xYta"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="x_dlpx" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ytdlp" target="xYtdlp"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- Data access → storage / writer → vault -->
+        <mxCell id="x_sesssql" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="sess" target="sqlite"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1265" y="870" /><mxPoint x="330" y="870" /></Array></mxGeometry></mxCell>
+        <mxCell id="x_mdwvault" value="write .md" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="mdw" target="vault"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1090" y="535" /><mxPoint x="1090" y="910" /><mxPoint x="1120" y="910" /></Array></mxGeometry></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Subscriptions — ytfeed{% endblock %}
+{% block content %}
+<h1>Subscriptions</h1>
+{% if channel_rows %}
+<div class="filters">
+  <input type="search" placeholder="Search {{ channel_rows|length }} subscriptions…"
+         data-filter-rows="#subs-table" data-filter-count="subs-count" autofocus>
+  <span class="hint" id="subs-count"></span>
+</div>
+<table class="channel-table" id="subs-table">
+  <thead>
+    <tr><th></th><th>Channel</th><th>Category</th><th>Synced videos</th><th>Last synced</th><th></th></tr>
+  </thead>
+  <tbody>
+    {% for channel, upload_count, category in channel_rows %}
+    <tr>
+      <td class="thumb-cell">
+        {% if channel.thumbnail_url %}<img src="{{ channel.thumbnail_url }}" alt="" class="avatar" loading="lazy">{% endif %}
+      </td>
+      <td>
+        <a href="/channels/{{ channel.channel_id }}" target="_blank">{{ channel.title }}</a>
+      </td>
+      <td class="category-cell">
+        {% if category %}<span class="tag">{{ category.group }} · {{ category.name }}{% if category.type %} · {{ category.type }}{% endif %}</span>{% endif %}
+      </td>
+      <td>{{ upload_count }}</td>
+      <td>{{ channel.last_synced_at.strftime('%Y-%m-%d %H:%M') if channel.last_synced_at else 'never' }}</td>
+      <td>{% include "partials/monitor_button.html" %}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p class="empty">No subscriptions synced yet. Run a sync from <a href="/settings">Settings</a> or <code>python -m ytfeed sync</code>.</p>
+{% endif %}
+{% endblock %}

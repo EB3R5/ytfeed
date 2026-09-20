@@ -1,0 +1,387 @@
+{
+  "scripts/ytfeed-launch": {
+    "mtime": 1789597876.799176,
+    "ast_hash": "ee5bbd0e13f3f99d96b421664be2603b",
+    "semantic_hash": ""
+  },
+  "tests/test_markdown_writer.py": {
+    "mtime": 1781397891.254485,
+    "ast_hash": "3e7784eb44e68a10f5e1fe72135c8bf5",
+    "semantic_hash": ""
+  },
+  "ytfeed/__init__.py": {
+    "mtime": 1781055921.677031,
+    "ast_hash": "4867131295172353fe6c2295851defc7",
+    "semantic_hash": ""
+  },
+  "ytfeed/__main__.py": {
+    "mtime": 1781055922.583382,
+    "ast_hash": "5a36846f8256504c1d3a59ea2997f1d6",
+    "semantic_hash": ""
+  },
+  "ytfeed/cli.py": {
+    "mtime": 1781819524.5009453,
+    "ast_hash": "08b18b77c37c0209b651b1658237065a",
+    "semantic_hash": ""
+  },
+  "ytfeed/config.py": {
+    "mtime": 1781398736.6012897,
+    "ast_hash": "6cefb44fb5789cbb6f648fc6b5a9f0ed",
+    "semantic_hash": ""
+  },
+  "ytfeed/db/__init__.py": {
+    "mtime": 1781055937.5565453,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "ytfeed/db/models.py": {
+    "mtime": 1782055374.7615304,
+    "ast_hash": "69bced0662c519604bd05debf5819f80",
+    "semantic_hash": ""
+  },
+  "ytfeed/db/session.py": {
+    "mtime": 1782055388.5217834,
+    "ast_hash": "2c9777c4ab4d4ad87cb4153aa33cf821",
+    "semantic_hash": ""
+  },
+  "ytfeed/metadata/__init__.py": {
+    "mtime": 1781056321.174761,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "ytfeed/metadata/ytdlp_client.py": {
+    "mtime": 1781056327.1779683,
+    "ast_hash": "25697004417fbf9cac16c3735200cc62",
+    "semantic_hash": ""
+  },
+  "ytfeed/transcripts/__init__.py": {
+    "mtime": 1781056267.4009142,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "ytfeed/transcripts/base.py": {
+    "mtime": 1781119947.732016,
+    "ast_hash": "bc32ebd15cede6cb77a98565b213b8ce",
+    "semantic_hash": ""
+  },
+  "ytfeed/transcripts/markdown_writer.py": {
+    "mtime": 1781397740.1498268,
+    "ast_hash": "56f7dba8167de8ce8a107a924f932073",
+    "semantic_hash": ""
+  },
+  "ytfeed/transcripts/notebooklm_provider.py": {
+    "mtime": 1781056290.7478647,
+    "ast_hash": "0bdaf95153439fd7711d3c813df5dfa6",
+    "semantic_hash": ""
+  },
+  "ytfeed/transcripts/pipeline.py": {
+    "mtime": 1781397773.0562441,
+    "ast_hash": "3f104c2c29a61551afeb985a2ece2891",
+    "semantic_hash": ""
+  },
+  "ytfeed/transcripts/placeholder.py": {
+    "mtime": 1781397747.7580028,
+    "ast_hash": "d631ec410c9c7716ab9f96342b172327",
+    "semantic_hash": ""
+  },
+  "ytfeed/transcripts/youtube_api_provider.py": {
+    "mtime": 1781119956.1283998,
+    "ast_hash": "d7d8786c90208d3789e119fb0974d729",
+    "semantic_hash": ""
+  },
+  "ytfeed/web/__init__.py": {
+    "mtime": 1781056052.6946957,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "ytfeed/web/app.py": {
+    "mtime": 1789597876.686308,
+    "ast_hash": "ebb2ba447b9418aeb6ed2ca1d318c136",
+    "semantic_hash": ""
+  },
+  "ytfeed/web/dependencies.py": {
+    "mtime": 1781205774.5111375,
+    "ast_hash": "b5479657190be3b736b9a4d98ced47e9",
+    "semantic_hash": ""
+  },
+  "ytfeed/web/routes/__init__.py": {
+    "mtime": 1781056061.8462534,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "ytfeed/web/routes/channel.py": {
+    "mtime": 1782055456.5268257,
+    "ast_hash": "152fe3fe460d317f5f8784c6334c6593",
+    "semantic_hash": ""
+  },
+  "ytfeed/web/routes/playlist.py": {
+    "mtime": 1781205434.9778674,
+    "ast_hash": "5c784edc1b664ac7244c7decf1680d94",
+    "semantic_hash": ""
+  },
+  "ytfeed/web/routes/queue.py": {
+    "mtime": 1781118235.4586687,
+    "ast_hash": "e94616712d9ccc2dfdb109b5842f96c8",
+    "semantic_hash": ""
+  },
+  "ytfeed/web/routes/recents.py": {
+    "mtime": 1781056074.6374965,
+    "ast_hash": "f62fececbc672144ad42704d26b2a7f9",
+    "semantic_hash": ""
+  },
+  "ytfeed/web/routes/settings.py": {
+    "mtime": 1781819532.398994,
+    "ast_hash": "34db856f0df851336eac40cfcc2575ba",
+    "semantic_hash": ""
+  },
+  "ytfeed/web/routes/storage.py": {
+    "mtime": 1781120779.1994932,
+    "ast_hash": "0c4afcc68abf795bc2a1d234b6f05c2f",
+    "semantic_hash": ""
+  },
+  "ytfeed/web/static/app.js": {
+    "mtime": 1782057275.0249832,
+    "ast_hash": "13c250cf9a8968ad0e7b273a9a3d057c",
+    "semantic_hash": ""
+  },
+  "ytfeed/web/static/htmx.min.js": {
+    "mtime": 1781117664.1703148,
+    "ast_hash": "2e713ba95db2e33981bb607ae5183305",
+    "semantic_hash": ""
+  },
+  "ytfeed/youtube/__init__.py": {
+    "mtime": 1781055963.6820977,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "ytfeed/youtube/auth.py": {
+    "mtime": 1781055968.9123747,
+    "ast_hash": "110ac627335581ef5bc29e9ec98b6b2a",
+    "semantic_hash": ""
+  },
+  "ytfeed/youtube/client.py": {
+    "mtime": 1781819379.1962113,
+    "ast_hash": "ea169e3d58ac00f303943cbf34aa0352",
+    "semantic_hash": ""
+  },
+  "ytfeed/youtube/sync.py": {
+    "mtime": 1781819512.7477202,
+    "ast_hash": "61d275ef49b0ae48735f21dadaa7d76f",
+    "semantic_hash": ""
+  },
+  "PLAN.md": {
+    "mtime": 1781054051.2903676,
+    "ast_hash": "cd1bce2f1a35b987c91496ee88a7e3fb",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1789597876.8005896,
+    "ast_hash": "f1ea700238e452736d24735c7941df33",
+    "semantic_hash": ""
+  },
+  "ytfeed/web/templates/base.html": {
+    "mtime": 1782055864.2063792,
+    "ast_hash": "8e5bec12b6f5f626e9606af8c200486e",
+    "semantic_hash": ""
+  },
+  "ytfeed/web/templates/channel.html": {
+    "mtime": 1782055474.6900678,
+    "ast_hash": "4c316141d7accc3c2c0c1ff35bae7ff6",
+    "semantic_hash": ""
+  },
+  "ytfeed/web/templates/partials/flash.html": {
+    "mtime": 1781056141.6443715,
+    "ast_hash": "aa5bf629cd8e9d806355e5fcf24d2e89",
+    "semantic_hash": ""
+  },
+  "ytfeed/web/templates/partials/monitor_button.html": {
+    "mtime": 1781117671.7916532,
+    "ast_hash": "c2deb6892ea107159f5a044bec13ccb0",
+    "semantic_hash": ""
+  },
+  "ytfeed/web/templates/partials/queue_table.html": {
+    "mtime": 1781056176.5727093,
+    "ast_hash": "fb31e76f186292a68421ac978e2632dc",
+    "semantic_hash": ""
+  },
+  "ytfeed/web/templates/partials/sync_status.html": {
+    "mtime": 1781282883.0549548,
+    "ast_hash": "c1a3ec881cefbeae5459f7ad87ceae51",
+    "semantic_hash": ""
+  },
+  "ytfeed/web/templates/partials/video_list.html": {
+    "mtime": 1781118224.8368955,
+    "ast_hash": "142ddaeb92564f4fa2a889781cf73ae6",
+    "semantic_hash": ""
+  },
+  "ytfeed/web/templates/partials/video_row.html": {
+    "mtime": 1781056130.0580344,
+    "ast_hash": "efca2b88bc919f485b5345279e761456",
+    "semantic_hash": ""
+  },
+  "ytfeed/web/templates/playlist.html": {
+    "mtime": 1781205454.2038605,
+    "ast_hash": "b8e7ecf65d720e5bd9bc5406aac480dc",
+    "semantic_hash": ""
+  },
+  "ytfeed/web/templates/playlists.html": {
+    "mtime": 1782057281.9550393,
+    "ast_hash": "dc93aac3f0d31d6b499e047232b653bc",
+    "semantic_hash": ""
+  },
+  "ytfeed/web/templates/queue.html": {
+    "mtime": 1781118238.6057956,
+    "ast_hash": "fafc4ac7097938aeed35552e667841df",
+    "semantic_hash": ""
+  },
+  "ytfeed/web/templates/recents.html": {
+    "mtime": 1781117674.711745,
+    "ast_hash": "14bdf9ba57d47badb50b13970b26d693",
+    "semantic_hash": ""
+  },
+  "ytfeed/web/templates/settings.html": {
+    "mtime": 1781205443.956221,
+    "ast_hash": "078f7ecf100d37b0fb7973d46080a4f3",
+    "semantic_hash": ""
+  },
+  "ytfeed/web/templates/storage.html": {
+    "mtime": 1781120783.516936,
+    "ast_hash": "b1bcda963dcea7a62bca40bea214500a",
+    "semantic_hash": ""
+  },
+  "ytfeed/web/templates/subscriptions.html": {
+    "mtime": 1782055481.9445171,
+    "ast_hash": "77e95daa032b5af54491a0c1b793a3ce",
+    "semantic_hash": ""
+  },
+  "scripts/update-erd": {
+    "mtime": 1781285128.6522312,
+    "ast_hash": "1194d7d7078de4ec717d448555cbac48",
+    "semantic_hash": ""
+  },
+  "tests/test_categorize.py": {
+    "mtime": 1781301212.209401,
+    "ast_hash": "a539fc6d50b707cbb83d0ad9d8985cc4",
+    "semantic_hash": ""
+  },
+  "ytfeed/transcripts/categorize.py": {
+    "mtime": 1781301193.926788,
+    "ast_hash": "5db5a88f45d7c328b74143a244746d6e",
+    "semantic_hash": ""
+  },
+  "tests/test_sync_run.py": {
+    "mtime": 1781819150.2467873,
+    "ast_hash": "b9435bc358056a66b23f852efd81ba35",
+    "semantic_hash": ""
+  },
+  "ytfeed/youtube/sync_run.py": {
+    "mtime": 1781819419.8005893,
+    "ast_hash": "e47bf9ca628e9f9306c347a885419071",
+    "semantic_hash": ""
+  },
+  "docs/schema.html": {
+    "mtime": 1787927096.3333755,
+    "ast_hash": "81473efab5e815b7532a4692b883d6af",
+    "semantic_hash": ""
+  },
+  "docs/architecture.pdf": {
+    "mtime": 1781766212.5649095,
+    "ast_hash": "1fee45262acf0c9483bf01ce7e5e66b7",
+    "semantic_hash": ""
+  },
+  "docs/architecture.drawio.png": {
+    "mtime": 1781766210.7264194,
+    "ast_hash": "a4c64999caeb82bb328d7b2d0f439663",
+    "semantic_hash": ""
+  },
+  "docs/architecture.png": {
+    "mtime": 1781766162.3189669,
+    "ast_hash": "78548450f59d7bc78ef8f86bd8790467",
+    "semantic_hash": ""
+  },
+  "docs/architecture.svg": {
+    "mtime": 1781766214.5529528,
+    "ast_hash": "e6db0d310204fad5ac28e61ffcee2b37",
+    "semantic_hash": ""
+  },
+  "tests/test_sync.py": {
+    "mtime": 1781819601.5649683,
+    "ast_hash": "6677da729e269939e41101e1bc950016",
+    "semantic_hash": ""
+  },
+  "ytfeed/web/routes/channel_category.py": {
+    "mtime": 1782056142.1645424,
+    "ast_hash": "eb6496aea236509f896bf8ab317e4870",
+    "semantic_hash": ""
+  },
+  "ytfeed/web/templates/channel_categories.html": {
+    "mtime": 1782056131.427086,
+    "ast_hash": "be7d83723ba7ccd1098e1a5a6378daa6",
+    "semantic_hash": ""
+  },
+  "ytfeed/web/templates/partials/channel_category.html": {
+    "mtime": 1782055465.7819602,
+    "ast_hash": "81d65640ee15e7aa757bbe7ab01b80c7",
+    "semantic_hash": ""
+  },
+  "ytfeed/web/templates/partials/channel_notes.html": {
+    "mtime": 1782055469.8401167,
+    "ast_hash": "d961500763273ef39d80dab8238d5ddc",
+    "semantic_hash": ""
+  },
+  "ytfeed/web/static/channel_categories.js": {
+    "mtime": 1782057128.693496,
+    "ast_hash": "d5f0f8f77b4627a7c4adb6381414b229",
+    "semantic_hash": ""
+  },
+  "packaging/desktop/launcher.py": {
+    "mtime": 1789597876.798211,
+    "ast_hash": "8d57f74339df355286e50517c7c5e380",
+    "semantic_hash": ""
+  },
+  "packaging/desktop/linux/install.sh": {
+    "mtime": 1789597876.8093064,
+    "ast_hash": "7717590b2609649736c86a8340d05538",
+    "semantic_hash": ""
+  },
+  "packaging/desktop/linux/run.sh": {
+    "mtime": 1789597876.8081715,
+    "ast_hash": "1b49f7df33f480aa09da0ef96dbbf2dd",
+    "semantic_hash": ""
+  },
+  "packaging/desktop/linux/uninstall.sh": {
+    "mtime": 1789597876.8103328,
+    "ast_hash": "6e4c0153d2587d6dcfacd27a8a39bb5b",
+    "semantic_hash": ""
+  },
+  "packaging/desktop/macos/build.sh": {
+    "mtime": 1789597876.8069706,
+    "ast_hash": "e8cb661dd2daf89723d2a8655098af52",
+    "semantic_hash": ""
+  },
+  "packaging/desktop/macos/launcher.c": {
+    "mtime": 1789597876.805605,
+    "ast_hash": "e695e8d4fe899eb34d8d67104a44e358",
+    "semantic_hash": ""
+  },
+  "packaging/desktop/macos/make_icon.py": {
+    "mtime": 1789597876.7982833,
+    "ast_hash": "48fcf77488192d1d7093198533aab076",
+    "semantic_hash": ""
+  },
+  "packaging/README.md": {
+    "mtime": 1789597876.8295882,
+    "ast_hash": "5c0ea2fbcaebb67525eccc520094a078",
+    "semantic_hash": ""
+  },
+  "packaging/desktop/linux/ytfeed.png": {
+    "mtime": 1789597876.779063,
+    "ast_hash": "1325de3eb47453b78d56902608781509",
+    "semantic_hash": ""
+  },
+  "packaging/desktop/macos/icon-1024.png": {
+    "mtime": 1789597876.7392216,
+    "ast_hash": "f5813c791f2bb14d83dd7a434f0bb4a3",
+    "semantic_hash": ""
+  }
+}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}{{ channel.title }} — ytfeed{% endblock %}
+{% block content %}
+<div class="channel-header">
+  {% if channel.thumbnail_url %}<img src="{{ channel.thumbnail_url }}" alt="" class="avatar-lg">{% endif %}
+  <div>
+    <h1>{{ channel.title }} {% include "partials/monitor_button.html" %}</h1>
+    <p class="meta">
+      {{ videos|length }} synced videos
+      {% if channel.last_synced_at %}· last synced {{ channel.last_synced_at.strftime('%Y-%m-%d %H:%M') }}{% endif %}
+    </p>
+    <div class="channel-actions">
+      <form method="post" action="/channels/{{ channel.channel_id }}/refresh" class="inline">
+        <button type="submit" class="btn">Refresh recent</button>
+      </form>
+      <form method="post" action="/channels/{{ channel.channel_id }}/backfill" class="inline">
+        <button type="submit" class="btn">Load full history</button>
+      </form>
+    </div>
+    <div class="channel-meta-edit">
+      {% include "partials/channel_category.html" %}
+      {% include "partials/channel_notes.html" %}
+    </div>
+  </div>
+</div>
+
+<form class="filters"
+      hx-get="/channels/{{ channel.channel_id }}"
+      hx-target="#video-list"
+      hx-swap="outerHTML"
+      hx-trigger="keyup changed delay:300ms from:input[name='q']">
+  <input type="search" name="q" value="{{ q }}" placeholder="Search this channel…">
+</form>
+
+{% include "partials/video_list.html" %}
+{% endblock %}

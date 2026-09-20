@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}ytfeed{% endblock %}</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ag-grid-community@31.3.4/styles/ag-grid.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ag-grid-community@31.3.4/styles/ag-theme-quartz.css">
+  <script src="https://cdn.jsdelivr.net/npm/ag-grid-community@31.3.4/dist/ag-grid-community.min.js"></script>
+  <link rel="stylesheet" href="/static/style.css?v={{ asset_v('style.css') }}">
+  <script src="/static/htmx.min.js?v={{ asset_v('htmx.min.js') }}"></script>
+  <script src="/static/app.js?v={{ asset_v('app.js') }}" defer></script>
+</head>
+<body>
+  <nav class="topnav">
+    <span class="brand">ytfeed</span>
+    <a href="/" class="{{ 'active' if active_page == 'recents' else '' }}">Recents</a>
+    <a href="/subscriptions" class="{{ 'active' if active_page == 'subscriptions' else '' }}">Subscriptions</a>
+    <a href="/channel-categories" class="{{ 'active' if active_page == 'channel-categories' else '' }}">Categories</a>
+    <a href="/playlists" class="{{ 'active' if active_page == 'playlists' else '' }}">Playlists</a>
+    <a href="/queue" class="{{ 'active' if active_page == 'queue' else '' }}">Queue</a>
+    <a href="/settings" class="{{ 'active' if active_page == 'settings' else '' }}">Settings</a>
+    <a href="/storage" class="{{ 'active' if active_page == 'storage' else '' }}">Storage</a>
+  </nav>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

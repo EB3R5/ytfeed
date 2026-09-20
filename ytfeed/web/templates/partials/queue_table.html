@@ -1,0 +1,31 @@
+<div id="queue-table"
+     {% if processing %}hx-get="/queue" hx-trigger="every 2s" hx-swap="outerHTML"{% endif %}>
+  {% if rows %}
+  <table class="queue-table">
+    <thead>
+      <tr><th>Video</th><th>Status</th><th>Requested</th><th>Attempts</th><th>Error</th><th></th></tr>
+    </thead>
+    <tbody>
+      {% for item, video in rows %}
+      <tr>
+        <td><a href="{{ video.url }}" target="_blank">{{ video.title }}</a>
+          <div class="meta">{{ video.channel_title }}</div></td>
+        <td><span class="badge badge-{{ item.status }}">{{ item.status }}</span></td>
+        <td>{{ item.requested_at.strftime('%Y-%m-%d %H:%M') if item.requested_at else '' }}</td>
+        <td>{{ item.attempt_count }}</td>
+        <td class="error-cell">{{ item.error_message or '' }}</td>
+        <td>
+          {% if item.status == 'failed' %}
+          <form method="post" action="/queue/{{ item.id }}/retry" class="inline">
+            <button type="submit" class="btn btn-sm">Retry</button>
+          </form>
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p class="empty">Queue is empty. Select videos on Recents, a channel page, or a playlist and hit "Queue selected for transcription".</p>
+  {% endif %}
+</div>

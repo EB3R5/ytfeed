@@ -1,0 +1,20 @@
+# Config baked into the Docker image as /app/config.toml. Paths are container paths; compose.yml
+# bind-mounts the host directories onto them. Edit the host's own config.toml for the venv.
+[paths]
+db_path = "data/ytfeed.db"                  # ./data is mounted from the repo
+client_secret_path = "secrets/client_secret.json"   # only needed for first consent, which runs on the host
+token_path = "secrets/token.json"           # ./secrets is mounted from the repo (refresh rewrites it)
+rag_output_dir = "/rag/raw"                 # the Obsidian RAG vault, mounted read-write
+audio_output_dir = "data/audio"
+
+[sync]
+initial_backfill = 50
+
+[notebooklm]
+enabled = true
+batch_size = 50
+profile = "default"                         # ~/.notebooklm is mounted at NOTEBOOKLM_HOME
+delete_notebook_after_extract = true
+
+[download]
+download_audio = false                      # the image has no ffmpeg

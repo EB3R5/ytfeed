@@ -1,0 +1,28 @@
+# Copy to config.toml and edit. config.toml is gitignored.
+#
+# client_secret_path and rag_output_dir have no default: `sync` and
+# `transcribe` refuse to run until they are set. Relative paths resolve
+# against the repo root; ~ is expanded.
+
+[paths]
+db_path = "data/ytfeed.db"
+# Google OAuth "Desktop app" client JSON from Google Cloud Console, with the
+# YouTube Data API enabled. Only read for the one-time browser consent.
+# Conventionally "secrets/client_secret.json" (secrets/ is gitignored).
+client_secret_path = ""
+token_path = "secrets/token.json"
+# Folder in your Obsidian vault where transcript .md files are written.
+rag_output_dir = ""
+audio_output_dir = "data/audio"
+
+[sync]
+initial_backfill = 50   # videos per channel on first sync; full history on demand
+
+[notebooklm]
+enabled = true
+batch_size = 50          # free-tier source limit per notebook
+profile = "default"
+delete_notebook_after_extract = true
+
+[download]
+download_audio = false
